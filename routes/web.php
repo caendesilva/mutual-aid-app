@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,8 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('projects', ProjectController::class);
+Route::resource('requests', RequestController::class);
+Route::resource('offers', OfferController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

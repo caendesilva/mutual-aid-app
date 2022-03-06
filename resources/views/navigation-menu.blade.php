@@ -23,6 +23,12 @@
                     <x-jet-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
                         {{ __('Projects') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('offers.index') }}" :active="request()->routeIs('offers.*')">
+                        {{ __('Offers') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('requests.index') }}" :active="request()->routeIs('requests.*')">
+                        {{ __('Requests') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -156,13 +162,24 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         
 
-        @guest
    
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
+                {{ __('Projects') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('offers.index') }}" :active="request()->routeIs('offers.*')">
+                {{ __('Offers') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('requests.index') }}" :active="request()->routeIs('requests.*')">
+                {{ __('Requests') }}
+            </x-jet-responsive-nav-link>
         </div>
+        
+        @guest
 
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
