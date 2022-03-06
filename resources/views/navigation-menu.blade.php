@@ -20,6 +20,9 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     @endauth
+                    <x-jet-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
+                        {{ __('Projects') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
