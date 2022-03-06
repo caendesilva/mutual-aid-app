@@ -7,11 +7,11 @@ use Kolirt\Openstreetmap\Facade\Openstreetmap as OSM;
 
 class OpenStreetMap extends Component
 {
-    public object $mapData;
+    public object|null $mapData = null;
 
-    public string $boundingBox;
+    public string|null $boundingBox = null;
     
-    public string $mapSource;
+    public string|null $mapSource = null;
 
     /**
      * Create a new component instance.
@@ -20,7 +20,11 @@ class OpenStreetMap extends Component
      */
     public function __construct(string $search)
     {
-        $this->mapData = OSM::search($search, 1)[0];
+        $result = OSM::search($search, 1);
+        if (!$result) {
+            return;
+        }
+        $this->mapData = $result[0];
 
         // We need to reorder the array because the OSM API does not return data in the same format it accepts.
         $array = $this->mapData->boundingbox;
