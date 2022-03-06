@@ -26,7 +26,7 @@ class RequestController extends Controller
      */
     public function index()
     {
-        return view('request.index');
+        return view('request.index', ['requests' => Request::all()]);
     }
 
     /**

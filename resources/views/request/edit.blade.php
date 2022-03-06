@@ -88,7 +88,7 @@
                         <legend class="font-bold">Optional Fields</legend>
 
                         <div class="flex flex-col m-3 max-w-lg">
-                            <label for="body">Request Details</label>
+                            <label for="body">Request Details - Remember to specify your contact information here</label>
                             <textarea name="body" id="body" cols="30" rows="2"
                                 placeholder="e.g. We need food and shelter.">{{ $request->body ?? "" }}</textarea>
                         </div>
