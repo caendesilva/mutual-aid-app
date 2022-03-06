@@ -12,13 +12,27 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                        {{ __('Home') }}
+                    </x-jet-nav-link>
+                    @auth
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
+                    @endauth
                 </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                @guest
+                <x-jet-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                    {{ __('Login') }}
+                </x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                    {{ __('Register') }}
+                </x-jet-nav-link>
+                @endguest
+                @auth
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
@@ -120,6 +134,7 @@
                         </x-slot>
                     </x-jet-dropdown>
                 </div>
+                @endauth
             </div>
 
             <!-- Hamburger -->
@@ -136,6 +151,28 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        
+
+        @guest
+   
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                {{ __('Home') }}
+            </x-jet-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                {{ __('Login') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                {{ __('Register') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        @endguest
+
+        @auth
+
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
@@ -211,5 +248,6 @@
                 @endif
             </div>
         </div>
+        @endauth
     </div>
 </nav>
