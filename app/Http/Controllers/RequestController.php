@@ -63,7 +63,7 @@ class RequestController extends Controller
      */
     public function show(Request $request)
     {
-        return view('request.show');
+        return view('request.show', ['request' => $request]);
     }
 
     /**
