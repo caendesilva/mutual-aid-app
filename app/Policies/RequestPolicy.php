@@ -18,7 +18,7 @@ class RequestPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class RequestPolicy
      */
     public function view(User $user, Request $request)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class RequestPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreRequestRequest extends FormRequest
 {
@@ -13,7 +14,17 @@ class StoreRequestRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return $this->user()->can('create', Request::class);
+    }
+
+
+    /**
+     * Set the user ID to the request user ID
+     * @return void
+     */
+    protected function prepareForValidation()
+    {
+        $this->request->add(['user_id'=> Auth::id()]);
     }
 
     /**
@@ -24,7 +35,12 @@ class StoreRequestRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'exists:App\Models\User,id',
+            'subject' => 'required|string|max:64',
+            'location' => 'required|string|max:255',
+            'body' => 'nullable|string|max:2048',
+            'expires_at' => 'nullable|date',
+            'resources' => 'nullable|array',
         ];
     }
 }

@@ -5,9 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Request;
 use App\Http\Requests\StoreRequestRequest;
 use App\Http\Requests\UpdateRequestRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class RequestController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +36,7 @@ class RequestController extends Controller
      */
     public function create()
     {
-        $this->authorize('create');
+        $this->authorize('create', Request::class);
         return view('request.create');
     }
 
@@ -37,7 +48,11 @@ class RequestController extends Controller
      */
     public function store(StoreRequestRequest $request)
     {
-        //
+        // The incoming request is validated and authorized
+
+        $validated = $request->validated();
+        $model = Request::create($validated);
+        return Redirect::to(route('requests.show', $model));
     }
 
     /**
@@ -59,7 +74,7 @@ class RequestController extends Controller
      */
     public function edit(Request $request)
     {
-        $this->authorize('update');
+        $this->authorize('update', $request);
         return view('request.edit');
     }
 
@@ -72,7 +87,7 @@ class RequestController extends Controller
      */
     public function update(UpdateRequestRequest $requestModel, Request $request)
     {
-        $this->authorize('delete');
+        $this->authorize('delete', $request);
     }
 
     /**
