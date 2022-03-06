@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::resource('projects', ProjectController::class);
+// Route::resource('projects', ProjectController::class);
 Route::resource('requests', RequestController::class);
 Route::resource('offers', OfferController::class);
 

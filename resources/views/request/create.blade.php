@@ -1,8 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Submit Request') }}
-        </h2>
+        <div class="flex row items-center justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Submit Request') }}
+            </h2>
+            <a href="{{ route('requests.index') }}">
+                <x-jet-secondary-button>
+                    Go back
+                </x-jet-secondary-button>
+            </a>
+        </div>
     </x-slot>
 
     <div class="py-12">

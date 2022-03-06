@@ -75,19 +75,22 @@ class RequestController extends Controller
     public function edit(Request $request)
     {
         $this->authorize('update', $request);
-        return view('request.edit');
+        return view('request.edit', ['request' => $request]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateRequestRequest  $requestModel
+     * @param  \App\Http\Requests\UpdateRequestRequest  $formRequest
      * @param  \App\Models\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequestRequest $requestModel, Request $request)
+    public function update(UpdateRequestRequest $formRequest, Request $request)
     {
-        $this->authorize('delete', $request);
+        $this->authorize('update', $request);
+        $validated = $formRequest->validated();
+        $request->update($validated);
+        return Redirect::to(route('requests.show', $request));
     }
 
     /**

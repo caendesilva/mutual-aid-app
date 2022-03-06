@@ -53,7 +53,7 @@ class RequestPolicy
      */
     public function update(User $user, Request $request)
     {
-        //
+        return $user->isAdmin || $user->id === $request->user->id;
     }
 
     /**

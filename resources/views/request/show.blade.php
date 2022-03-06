@@ -1,8 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Request Details') }}
-        </h2>
+        <div class="flex row items-center justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Request Details') }}
+            </h2>
+            @can('update', $request)
+            <a href="{{ route('requests.edit', $request) }}">
+                <x-jet-button>
+                    Update Request
+                </x-jet-button>
+            </a>
+            @endcan
+        </div>
     </x-slot>
 
     <div class="py-12">

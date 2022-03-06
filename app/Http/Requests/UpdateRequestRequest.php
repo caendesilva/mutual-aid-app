@@ -13,7 +13,7 @@ class UpdateRequestRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true; // We are handling this in the controller
     }
 
     /**
@@ -24,7 +24,11 @@ class UpdateRequestRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'subject' => 'required|string|max:64',
+            'location' => 'required|string|max:255',
+            'body' => 'nullable|string|max:2048',
+            'expires_at' => 'nullable|date',
+            'resources' => 'nullable|array',
         ];
     }
 }

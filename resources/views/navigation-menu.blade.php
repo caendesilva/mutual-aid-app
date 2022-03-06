@@ -20,9 +20,9 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     @endauth
-                    <x-jet-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
+                    {{-- <x-jet-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
                         {{ __('Projects') }}
-                    </x-jet-nav-link>
+                    </x-jet-nav-link> --}}
                     <x-jet-nav-link href="{{ route('offers.index') }}" :active="request()->routeIs('offers.*')">
                         {{ __('Offers') }}
                     </x-jet-nav-link>
@@ -168,9 +168,9 @@
                 {{ __('Home') }}
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
+            {{-- <x-jet-responsive-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
                 {{ __('Projects') }}
-            </x-jet-responsive-nav-link>
+            </x-jet-responsive-nav-link> --}}
             <x-jet-responsive-nav-link href="{{ route('offers.index') }}" :active="request()->routeIs('offers.*')">
                 {{ __('Offers') }}
             </x-jet-responsive-nav-link>
