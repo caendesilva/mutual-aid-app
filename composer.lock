@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63d274509c634868de447639f4195ab1",
+    "content-hash": "117152355144abd39fdccdfbf6373325",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1128,6 +1128,64 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "kolirt/laravel-openstreetmap",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kolirt/laravel-openstreetmap.git",
+                "reference": "a12ead0c13540fbf375600d973ea91e7f358e7e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kolirt/laravel-openstreetmap/zipball/a12ead0c13540fbf375600d973ea91e7f358e7e2",
+                "reference": "a12ead0c13540fbf375600d973ea91e7f358e7e2",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "> 6.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kolirt\\Openstreetmap\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Openstreetmap": "Kolirt\\Openstreetmap\\Facade\\Openstreetmap"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Kolirt\\Openstreetmap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Asan Abdurakhmanov",
+                    "email": "asan11@outlook.com"
+                }
+            ],
+            "description": "Package for openstreetmap.org",
+            "keywords": [
+                "OpenStreetMap",
+                "laravel",
+                "map"
+            ],
+            "support": {
+                "issues": "https://github.com/kolirt/laravel-openstreetmap/issues",
+                "source": "https://github.com/kolirt/laravel-openstreetmap/tree/v1.0.3"
+            },
+            "time": "2020-12-21T12:27:03+00:00"
         },
         {
             "name": "laravel/fortify",
