@@ -67,6 +67,8 @@ class ProjectForm extends Component
         $this->model = $model;
 
         $this->modelName = basename(get_class($model));
+        // Fix in case basename does not work
+        $this->modelName = str_replace('App\Models\\', '', $this->modelName);
 
         // Get the base route from the route name and determine which action is being made.
         $route = explode('.', request()->route()->getName());
