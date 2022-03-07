@@ -41,6 +41,10 @@
                             </li>
                             @endforeach
                         </ul>
+                        @else
+                        <h4>
+                            The requester did not specify any resources.
+                        </h4>
                         @endif
 
                     </div>

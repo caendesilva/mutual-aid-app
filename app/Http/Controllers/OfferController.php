@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Offer;
 use App\Http\Requests\StoreOfferRequest;
 use App\Http\Requests\UpdateOfferRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class OfferController extends Controller
 {
@@ -52,7 +53,11 @@ class OfferController extends Controller
      */
     public function store(StoreOfferRequest $request)
     {
-        //
+        // The incoming request is validated
+
+        $validated = $request->validated();
+        $model = Offer::create($validated);
+        return Redirect::to(route('offers.show', $model));
     }
 
     /**
@@ -63,7 +68,7 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
-        return view('offer.show');
+        return view('offer.show', ['offer' => $offer]);
     }
 
     /**
@@ -74,7 +79,7 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        return view('offer.edit');
+        return view('offer.edit', ['offer' => $offer]);
     }
 
     /**
@@ -86,7 +91,9 @@ class OfferController extends Controller
      */
     public function update(UpdateOfferRequest $request, Offer $offer)
     {
-        //
+        $validated = $request->validated();
+        $offer->update($validated);
+        return Redirect::to(route('offers.show', $offer));
     }
 
     /**

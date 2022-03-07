@@ -22,7 +22,7 @@
                                 <h3 class="text-lg font-bold">
                                     <a href="{{ route('offers.show', $offer) }}">{{ $offer->subject }}</a>
                                 </h3>
-                                offered <time datetime="{{ $offer->created_at }}">{{ $offer->created_at }}</time>
+                                Offered <time datetime="{{ $offer->created_at }}">{{ $offer->created_at }}</time>
                                 by <address class="inline" rel="author" style="display: inline;">{{ $offer->user->name }}</address>.
                             </header>
                             <div>

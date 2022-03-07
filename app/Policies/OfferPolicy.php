@@ -19,7 +19,7 @@ class OfferPolicy extends BasePolicy
      */
     public function view(User $user, Offer $offer)
     {
-        //
+        return true;
     }
 
     /**
