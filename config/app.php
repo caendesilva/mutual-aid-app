@@ -179,6 +179,8 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+        App\Core\CoreServiceProvider::class,
+
     ],
 
     /*
