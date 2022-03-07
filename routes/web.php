@@ -24,6 +24,6 @@ Route::get('/', function () {
 Route::resource('requests', RequestController::class);
 Route::resource('offers', OfferController::class);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified', 'can:accessDashboard'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
