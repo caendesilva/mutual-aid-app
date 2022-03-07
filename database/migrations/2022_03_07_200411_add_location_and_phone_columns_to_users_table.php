@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('phone', 16) // Phone number, compatible with the E.164 standard.
                 ->after('email')
+                ->unique()
                 ->nullable();
             $table->string('area', 12) // The area identifier (ZIP code)
                 ->after('phone')

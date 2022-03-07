@@ -23,7 +23,7 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name'  => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['nullable', 'string', 'max:16'],
+            'phone' => ['nullable', 'string', 'max:16', 'unique:users'],
             'area'  => ['nullable', 'string', 'max:12'],
             // 'location' => ['nullable', 'string', 'max:128'], // Thinking we may do location in the profile update, to not clutter the registration too much
             'password' => $this->passwordRules(),
