@@ -2,11 +2,14 @@
 
 namespace App\Http\Requests;
 
+use App\Actions\ProjectValidationRules;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
 class StoreRequestRequest extends FormRequest
 {
+    use ProjectValidationRules;
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -33,13 +36,6 @@ class StoreRequestRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'user_id' => 'exists:App\Models\User,id',
-            'subject' => 'required|string|max:64',
-            'location' => 'required|string|max:255',
-            'body' => 'nullable|string|max:2048',
-            'expires_at' => 'nullable|date',
-            'resources' => 'nullable|array',
-        ];
+        return $this->baseRules();
     }
 }
