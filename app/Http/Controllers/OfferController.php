@@ -25,8 +25,15 @@ class OfferController extends Controller
      */
     public function create()
     {
+        // Check if the request is authorized
         $this->authorize('create', Offer::class);
-        return view('offer.create');
+        
+        // Return the create view with a new Offer model.
+        // While it is not yet persisted in the database, this is 
+        // helpful as it unifies the state of the reusable form component.
+        return view('offer.create', [
+            'model' => new Offer
+        ]);
     }
 
     /**
