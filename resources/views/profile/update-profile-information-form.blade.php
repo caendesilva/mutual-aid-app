@@ -54,16 +54,38 @@
 
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="name" value="{{ __('Name') }}" />
+            <x-jet-label for="name" value="{{ __('Name*') }}" />
             <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
             <x-jet-input-error for="name" class="mt-2" />
         </div>
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="email" value="{{ __('Email') }}" />
+            <x-jet-label for="email" value="{{ __('Email*') }}" />
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
+        </div>
+
+        <!-- Phone Number -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="phone" value="{{ __('Phone Number') }}" />
+            <x-jet-input id="phone" type="text" class="mt-1 block w-full" wire:model.defer="state.phone" />
+            <x-jet-input-error for="phone" class="mt-2" />
+        </div>
+
+        <!-- Area Code -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="area" value="{{ __('Area/ZIP Code') }}" />
+            <x-jet-input id="area" type="text" class="mt-1 block w-full" wire:model.defer="state.area" />
+            <x-jet-input-error for="area" class="mt-2" />
+        </div>
+
+        <!-- Location -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="location" value="{{ __('Location') }}" />
+            <x-jet-input id="location" type="text" class="mt-1 block w-full" wire:model.defer="state.location" />
+            <small>If you'd like, you can enter your address here.</small>
+            <x-jet-input-error for="location" class="mt-2" />
         </div>
     </x-slot>
 
