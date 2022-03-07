@@ -35,6 +35,7 @@ return [
 	'request.create.body' => 'Request Details - Remember to specify your contact information here',
 	'request.create.body.placeholder' => 'e.g. We need food and shelter. Please contact us on 123-123-123 or hello@example.com.',
 	'request.create.expires_at' => 'Request Expiration - Do you need aid before a certain date?',
+	'request.create.resources' => 'Resources in Request',
 
 	// Offer Create Values
 	'offer.create.subject' => 'PleaseReplaceMe',
@@ -48,4 +49,6 @@ return [
 	'offer.create.resource.other.description' => 'PleaseReplaceMe',
 	'offer.create.body' => 'PleaseReplaceMe',
 	'offer.create.body.placeholder' => 'PleaseReplaceMe',
-	'offer.create.expires_at' => 'PleaseReplaceMe',];
+	'offer.create.expires_at' => 'PleaseReplaceMe',
+	'offer.create.resources' => 'Resources in Offer',
+];

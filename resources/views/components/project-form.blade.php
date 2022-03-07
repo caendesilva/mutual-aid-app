@@ -9,7 +9,7 @@
     </fieldset>
 
     <fieldset name="resources" class="mb-3">
-        <legend class="font-bold">Resources in Request</legend>
+        <legend class="font-bold">{{ __($langKey . 'resources') }}</legend>
 
         <div class="flex flex-col m-3 max-w-lg">
             <legend>Check all that apply</legend>
