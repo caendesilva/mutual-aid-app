@@ -14,9 +14,8 @@ class StoreRequestRequest extends FormRequest
      */
     public function authorize()
     {
-        return $this->user()->can('create', Request::class);
+        return true; // We check authorization in the resource controller
     }
-
 
     /**
      * Set the user ID to the request user ID

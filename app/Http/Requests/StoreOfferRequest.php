@@ -13,7 +13,7 @@ class StoreOfferRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true; // We check authorization in the resource controller
     }
 
     /**

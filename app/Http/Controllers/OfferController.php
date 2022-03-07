@@ -9,13 +9,24 @@ use App\Http\Requests\UpdateOfferRequest;
 class OfferController extends Controller
 {
     /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+        $this->authorizeResource(Offer::class, 'offer');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('offer.index');
+        return view('offer.index', ['offers' => Offer::all()]);
     }
 
     /**
@@ -25,9 +36,6 @@ class OfferController extends Controller
      */
     public function create()
     {
-        // Check if the request is authorized
-        $this->authorize('create', Offer::class);
-        
         // Return the create view with a new Offer model.
         // While it is not yet persisted in the database, this is 
         // helpful as it unifies the state of the reusable form component.
@@ -66,7 +74,6 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        $this->authorize('update', $offer);
         return view('offer.edit');
     }
 
@@ -79,7 +86,7 @@ class OfferController extends Controller
      */
     public function update(UpdateOfferRequest $request, Offer $offer)
     {
-        $this->authorize('update', $offer);
+        //
     }
 
     /**
@@ -90,6 +97,6 @@ class OfferController extends Controller
      */
     public function destroy(Offer $offer)
     {
-        $this->authorize('delete', $offer);
+        //
     }
 }

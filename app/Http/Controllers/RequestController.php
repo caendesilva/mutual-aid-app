@@ -17,6 +17,7 @@ class RequestController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index', 'show']);
+        $this->authorizeResource(Request::class, 'request');
     }
 
     /**
@@ -36,9 +37,6 @@ class RequestController extends Controller
      */
     public function create()
     {
-        // Check if the request is authorized
-        $this->authorize('create', Request::class);
-
         // Return the create view with a new Request model.
         // While it is not yet persisted in the database, this is 
         // helpful as it unifies the state of the reusable form component.
@@ -55,7 +53,7 @@ class RequestController extends Controller
      */
     public function store(StoreRequestRequest $request)
     {
-        // The incoming request is validated and authorized
+        // The incoming request is validated
 
         $validated = $request->validated();
         $model = Request::create($validated);
@@ -81,7 +79,6 @@ class RequestController extends Controller
      */
     public function edit(Request $request)
     {
-        $this->authorize('update', $request);
         return view('request.edit', ['request' => $request]);
     }
 
@@ -94,7 +91,8 @@ class RequestController extends Controller
      */
     public function update(UpdateRequestRequest $formRequest, Request $request)
     {
-        $this->authorize('update', $request);
+        // The incoming request is validated
+        
         $validated = $formRequest->validated();
         $request->update($validated);
         return Redirect::to(route('requests.show', $request));

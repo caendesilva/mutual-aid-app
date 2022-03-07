@@ -13,7 +13,7 @@ class UpdateRequestRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; // We are handling this in the controller
+        return true; // We check authorization in the resource controller
     }
 
     /**

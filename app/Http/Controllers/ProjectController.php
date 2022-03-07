@@ -8,6 +8,18 @@ use App\Http\Requests\UpdateProjectRequest;
 
 class ProjectController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+        $this->authorizeResource(Project::class, 'project');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +37,6 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $this->authorize('create');
         return view('project.create');
     }
 
@@ -59,7 +70,6 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        $this->authorize('update');
         return view('project.edit');
     }
 
@@ -72,7 +82,7 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        $this->authorize('delete');
+        //
     }
 
     /**
