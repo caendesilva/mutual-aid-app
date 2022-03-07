@@ -33,7 +33,7 @@
                             using email and add your location.
                         </li>
                         <li>
-                            You will recieve an email asking you to verify your account. Open the message and follow the instructions. <br>
+                            You will receive an email asking you to verify your account. Open the message and follow the instructions. <br>
                         </li>
                         <li>
                             Once your account is verified, you can  <a href="{{ route('requests.create') }}">request resources</a> directly from providers listed in your area. <br>
