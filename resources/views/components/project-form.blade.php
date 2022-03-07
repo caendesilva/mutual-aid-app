@@ -1,4 +1,4 @@
-<form action="{{ $formActionURL }}" method="{{ $formMethod }}" class="max-w-lg p-4">
+<form action="{{ $formActionURL }}" method="POST" class="max-w-lg p-4">
     @csrf
     @method($formMethod)
     <fieldset name="required-fields" class="mb-1">
@@ -32,10 +32,10 @@
         	<x-jet-label for="body" value="{{ __($langKey . 'body') }}" class="text-base" />
             <textarea name="body" id="body" cols="30" rows="5"
             class="border-gray-600 focus:border-indigo-600 focus:ring focus:ring-indigo-500 focus:ring-opacity-75 rounded-md shadow-sm block mt-1 w-full peer"
-                placeholder="{{ __($langKey . 'body' . '.placeholder') }}"></textarea>
+                placeholder="{{ __($langKey . 'body' . '.placeholder') }}">{{ $model->body }}</textarea>
         </div>
 
-        <x-project-form-input type="date" property="expires_at" min="{{ date('Y-m-d') }}" :placeholder="null"/>
+        <x-project-form-input type="date" property="expires_at" min="{{ date('Y-m-d') }}" :placeholder="null" :value="optional($model->expires_at)->format('Y-m-d')"/>
     </fieldset>
 
 

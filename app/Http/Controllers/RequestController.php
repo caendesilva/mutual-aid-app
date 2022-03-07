@@ -79,7 +79,7 @@ class RequestController extends Controller
      */
     public function edit(Request $request)
     {
-        return view('request.edit', ['request' => $request]);
+        return view('request.edit', ['model' => $request]);
     }
 
     /**

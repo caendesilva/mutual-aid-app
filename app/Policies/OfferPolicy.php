@@ -31,7 +31,7 @@ class OfferPolicy extends BasePolicy
      */
     public function update(User $user, Offer $offer)
     {
-        //
+        return $user->isAdmin || $user->id === $offer->user->id;
     }
 
     /**

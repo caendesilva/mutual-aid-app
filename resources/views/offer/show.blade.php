@@ -42,9 +42,9 @@
                             @endforeach
                         </ul>
                         @else
-                        <h4>
+                        <blockquote>
                             The offerer did not specify any resources.
-                        </h4>
+                        </blockquote>
                         @endif
 
                     </div>

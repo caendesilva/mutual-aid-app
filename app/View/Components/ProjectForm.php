@@ -92,6 +92,7 @@ class ProjectForm extends Component
 
         $this->langKey = strtolower(implode('.', ['form-input', $this->modelName, $this->actionType, '']));
         view()->share(['langKey' => $this->langKey]);
+        view()->share(['model' => $this->model]);
     }
 
     /**

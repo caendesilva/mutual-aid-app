@@ -79,7 +79,7 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        return view('offer.edit', ['offer' => $offer]);
+        return view('offer.edit', ['model' => $offer]);
     }
 
     /**

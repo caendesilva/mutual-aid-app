@@ -9,6 +9,7 @@
 		placeholder="{{ __($langKey . $property . '.placeholder') }}" 
 		class="block mt-1 w-full peer"
 		{{ $attributes }}
+		:value="$model->$property"
 		/>
 	@if($focusHint)
 		<label for="{{ $property }}" class="invisible peer-focus:visible"><small>{{ $focusHint }}</small></label>

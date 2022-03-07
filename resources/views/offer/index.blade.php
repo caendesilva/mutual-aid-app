@@ -33,6 +33,9 @@
                             </div>
                             <footer class="mt-3">
                                 <a class="text-indigo-700" href="{{ route('offers.show', $offer) }}">View offer</a>
+                                @can('update', $offer)
+                                <a class="text-indigo-700 mx-2 text-sm" href="{{ route('offers.edit', $offer) }}">Edit offer</a>
+                                @endcan
                             </footer>
                         </article>
                     @endforeach
