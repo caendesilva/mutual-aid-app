@@ -25,7 +25,7 @@
                         Requested <time datetime="{{ $request->created_at }}">{{ $request->created_at }}</time>
                         by <address class="inline" rel="author" style="display: inline;">{{ $request->user->name }}</address>.
                     </header>
-                    <hr class="mx-3 w-2/3">
+                    <hr class="mx-3">
                     <div class="article-content prose p-3">
                         <h2 class="text-lg mb-1">Request Details</h2>
 

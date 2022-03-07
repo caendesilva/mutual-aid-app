@@ -36,8 +36,15 @@ class RequestController extends Controller
      */
     public function create()
     {
+        // Check if the request is authorized
         $this->authorize('create', Request::class);
-        return view('request.create');
+
+        // Return the create view with a new Request model.
+        // While it is not yet persisted in the database, this is 
+        // helpful as it unifies the state of the reusable form component.
+        return view('request.create', [
+            'model' => new Request
+        ]);
     }
 
     /**
