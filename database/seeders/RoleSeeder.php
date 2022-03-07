@@ -50,13 +50,6 @@ class RoleSeeder extends Seeder
             ]);
         }
 
-        if (!Role::where(['key' => 'vol'])) {
-            Role::create([
-                'key' => 'vol',
-                'name' => 'Volunteer'
-            ]);
-        }
-
         if (!Role::where(['key' => 'worker'])) {
             Role::create([
                 'key' => 'worker',
