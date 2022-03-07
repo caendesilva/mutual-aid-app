@@ -6,20 +6,9 @@ use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class OfferPolicy
+class OfferPolicy extends BasePolicy
 {
     use HandlesAuthorization;
-
-    /**
-     * Determine whether the user can view any models.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function viewAny(User $user)
-    {
-        //
-    }
 
     /**
      * Determine whether the user can view the model.
@@ -29,17 +18,6 @@ class OfferPolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function view(User $user, Offer $offer)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can create models.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function create(User $user)
     {
         //
     }

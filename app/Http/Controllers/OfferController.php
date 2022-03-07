@@ -25,7 +25,7 @@ class OfferController extends Controller
      */
     public function create()
     {
-        $this->authorize('create');
+        $this->authorize('create', Offer::class);
         return view('offer.create');
     }
 
@@ -59,7 +59,7 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        $this->authorize('update');
+        $this->authorize('update', $offer);
         return view('offer.edit');
     }
 
@@ -72,7 +72,7 @@ class OfferController extends Controller
      */
     public function update(UpdateOfferRequest $request, Offer $offer)
     {
-        $this->authorize('delete');
+        $this->authorize('update', $offer);
     }
 
     /**
@@ -83,6 +83,6 @@ class OfferController extends Controller
      */
     public function destroy(Offer $offer)
     {
-        //
+        $this->authorize('delete', $offer);
     }
 }
