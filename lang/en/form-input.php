@@ -37,6 +37,21 @@ return [
 	'request.create.expires_at' => 'Request Expiration - Do you need aid before a certain date?',
 	'request.create.resources' => 'Resources in Request',
 
+	// Request Edit Values
+	'offer.edit.subject' => 'PleaseReplaceMe',
+	'offer.edit.subject.placeholder' => 'PleaseReplaceMe',
+	'offer.edit.location' => 'PleaseReplaceMe',
+	'offer.edit.location.placeholder' => 'PleaseReplaceMe',
+	'offer.edit.resource.water.description' => 'PleaseReplaceMe',
+	'offer.edit.resource.food.description' => 'PleaseReplaceMe',
+	'offer.edit.resource.money.description' => 'PleaseReplaceMe',
+	'offer.edit.resource.shelter.description' => 'PleaseReplaceMe',
+	'offer.edit.resource.other.description' => 'PleaseReplaceMe',
+	'offer.edit.body' => 'PleaseReplaceMe',
+	'offer.edit.body.placeholder' => 'PleaseReplaceMe',
+	'offer.edit.expires_at' => 'PleaseReplaceMe',
+	'offer.edit.resources' => 'Resources in Offer',
+
 	// Offer Create Values
 	'offer.create.subject' => 'PleaseReplaceMe',
 	'offer.create.subject.placeholder' => 'PleaseReplaceMe',
@@ -51,4 +66,20 @@ return [
 	'offer.create.body.placeholder' => 'PleaseReplaceMe',
 	'offer.create.expires_at' => 'PleaseReplaceMe',
 	'offer.create.resources' => 'Resources in Offer',
+
+	// Offer Edit Values
+	'offer.edit.subject' => 'PleaseReplaceMe',
+	'offer.edit.subject.placeholder' => 'PleaseReplaceMe',
+	'offer.edit.location' => 'PleaseReplaceMe',
+	'offer.edit.location.placeholder' => 'PleaseReplaceMe',
+	'offer.edit.resource.water.description' => 'PleaseReplaceMe',
+	'offer.edit.resource.food.description' => 'PleaseReplaceMe',
+	'offer.edit.resource.money.description' => 'PleaseReplaceMe',
+	'offer.edit.resource.shelter.description' => 'PleaseReplaceMe',
+	'offer.edit.resource.other.description' => 'PleaseReplaceMe',
+	'offer.edit.body' => 'PleaseReplaceMe',
+	'offer.edit.body.placeholder' => 'PleaseReplaceMe',
+	'offer.edit.expires_at' => 'PleaseReplaceMe',
+	'offer.edit.resources' => 'Resources in Offer',
+
 ];
