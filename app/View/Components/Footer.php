@@ -48,7 +48,9 @@ class Footer extends Component
             $diffVerb = $diff[0];
             $diffCount = $diff[1];
 
-            return "On branch $branch. $diffCount commits $diffVerb <a href=\"https://github.com/caendesilva/mutual-aid-app\" class=\"text-indigo-700\">$originBranch</a>.";
+            $commits = $diffCount <= 1 ? 'commit' : 'commits';
+
+            return "On branch $branch. $diffCount $commits $diffVerb <a href=\"https://github.com/caendesilva/mutual-aid-app\" class=\"text-indigo-700\">$originBranch</a>.";
         } catch (\Throwable $th) {
             return "";
         }
