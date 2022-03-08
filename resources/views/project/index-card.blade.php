@@ -3,7 +3,7 @@
 		<h3 class="text-lg font-bold">
 			<a href="{{ route($modelName. 's.show', $model) }}">{{ $model->subject }}</a>
 		</h3>
-		{{ ucwords($modelName) }}ed <time datetime="{{ $model->created_at }} {{ $model->created_at->format('e') }}" title="{{ $model->created_at }} {{ $model->created_at->format('e') }}">{{ $model->niceDate }}</time>
+		{{ ucwords($modelName) }}ed <x-time :carbon="$model->created_at" :niceDate="true" />
 		by <address class="inline" rel="author" style="display: inline;">{{ $model->user->name }}</address>.
 	</header>
 	<div>
