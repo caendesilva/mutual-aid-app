@@ -31,3 +31,12 @@ Which results in
 </time>
 ```
 > The `niceDate` parameter is optional and changes the output to "Today/Yesterday at... " if the date is today or yesterday. Without it it's displayed in the `2022-03-06 10:17` format instead.
+
+## Blade Directives
+To aid in collaborative editing we use Markdown for longer content sections. They are stored in the `resources/markdown/content/` directory. You can access the Markdown as parsed HTML using the directive
+```blade
+@markdownSection("welcome")
+
+{{-- Or if the file is in a subdirectory: --}}
+@markdownSection("welcome/header")
+```

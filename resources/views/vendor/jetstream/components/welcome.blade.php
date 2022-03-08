@@ -3,23 +3,9 @@
         <x-jet-application-logo class="block h-12 w-auto" />
     </div>
 
-    <div class="mt-8 text-2xl">
-        Welcome to The United States Mutual Aid App!
+    <div class="mt-8">
+        @markdownSection("welcome/header")
     </div>
-
-    <div class="mt-6 text-gray-500">
-        This mutual aid app is designed for people living in the United States to offer or access freely available resources.
-        We want to enable people in need to easily find resources that they require to get them through difficult times.
-        We also want to enable those willing to volunteer their time or resources to be able to offer them seamlessly
-        and individually without being part of an organization.
-    </div>
-
-    <div>
-        Follow our work on GitHub: 
-        <x-link to="https://github.com/caendesilva/mutual-aid-app" external>GitHub</x-link>
-    </div>
-
-    <small>We are working on adding support for SMS registration and verification.</small>
 </div>
 
 <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
@@ -31,7 +17,7 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500">
-                <div class="mt-2 text-sm text-gray-500 prose prose-a:text-indigo-500 prose-a:no-underline">
+                <div class="mt-2 text-sm text-gray-500 prose">
                     <ol>
                         <li>
                             <a href="{{ route('register') }}">Register for an account here</a>

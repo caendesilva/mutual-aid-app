@@ -3,6 +3,7 @@
 namespace App\Core;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 /**
  * The Core Service Provider for the Mutual Aid App
@@ -26,6 +27,9 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Register the @markdownSection directive
+        Blade::directive('markdownSection', function ($expression) {
+            return "<?php echo(\App\Core\MarkdownSection::parse($expression)); ?>";
+        });
     }
 }
