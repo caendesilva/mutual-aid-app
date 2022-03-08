@@ -28,7 +28,7 @@ class OfferController extends Controller
     public function index()
     {
         return view('offer.index', [
-            'offers' => Offer::paginate()
+            'offers' => Offer::orderByDesc('created_at')->paginate()
         ]);
     }
 

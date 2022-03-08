@@ -28,7 +28,7 @@ class RequestController extends Controller
     public function index()
     {
         return view('request.index', [
-            'requests' => Request::paginate()
+            'requests' => Request::orderByDesc('created_at')->paginate()
         ]);
     }
 
