@@ -39,6 +39,10 @@
                             </footer>
                         </article>
                     @endforeach
+                    
+                    <footer class="m-4">
+                        {{ $requests->links() }}
+                    </footer>
                 @endif
             </div>
         </div>
