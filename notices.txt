@@ -1,0 +1,3 @@
+Tuesday, 8 March 2022 ca 12:40 - Database will be reset pending new migrations.
+
+Tuesday, 8 March 2022 ca 12:50 - I have begun adding roles and permissions. If you'd like to get a staff role such as Admin/Mod/Volunteer, let me know. I need help with testing. 

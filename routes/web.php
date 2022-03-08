@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NoticeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\ProjectController;
@@ -27,3 +28,6 @@ Route::resource('offers', OfferController::class);
 Route::middleware(['auth:sanctum', 'verified', 'can:accessDashboard'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::get('notices.txt', NoticeController::class);
