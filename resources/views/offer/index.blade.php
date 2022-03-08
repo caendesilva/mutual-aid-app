@@ -41,7 +41,7 @@
                     @endforeach
                     
                     <footer class="m-4">
-                        {{ $requests->links() }}
+                        {{ $offers->links() }}
                     </footer>
                 @endif
             </div>
