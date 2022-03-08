@@ -52,14 +52,14 @@ class CreateNewUser implements CreatesNewUsers
                 // We attach the roles this way to be sure only whitelisted roles can be added.
                 switch ($input['roles']) {
                     case 'pin':
-                        $user->roles()->attach(Role::where(['key' => 'pin']))->first();
+                        $user->roles()->attach(Role::where(['key' => 'pin'])->first());
                         break;
                     case 'map':
-                        $user->roles()->attach(Role::where(['key' => 'map']))->first();
+                        $user->roles()->attach(Role::where(['key' => 'map'])->first());
                         break;
                     case 'both':
-                        $user->roles()->attach(Role::where(['key' => 'pin']))->first();
-                        $user->roles()->attach(Role::where(['key' => 'map']))->first();
+                        $user->roles()->attach(Role::where(['key' => 'pin'])->first());
+                        $user->roles()->attach(Role::where(['key' => 'map'])->first());
                         break;
                     default:
                         # code...

@@ -52,6 +52,10 @@ class RoleSelector extends Component
                     Auth::user()->roles()->attach(Role::where(['key' => 'map'])->first());
                 }
                 break;
+            case '';
+                Auth::user()->roles()->detach(Role::where(['key' => 'pin'])->first());
+                Auth::user()->roles()->detach(Role::where(['key' => 'map'])->first());
+                break;
             default:
                 abort(400, 'Invalid role');
                 break;
