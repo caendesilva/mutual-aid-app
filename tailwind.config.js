@@ -8,14 +8,30 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
+    
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        a: {
+                            color: '#6366f1',
+                            '&:hover': {
+                                color: '#4338ca',
+                            },
+                            textDecoration: 'none'
+                        },
+                    },
+                },
+            },
         },
     },
-
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography')
+    ],
 };
