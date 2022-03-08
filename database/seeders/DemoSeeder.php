@@ -14,10 +14,11 @@ class DemoSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(12)->create();
         $this->call([
-            RequestSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class,
             OfferSeeder::class,
+            RequestSeeder::class,
         ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Role;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -38,6 +39,31 @@ class UserFactory extends Factory
         ];
     }
 
+    /**
+     * Configure the model factory.
+     *
+     * @return $this
+     */
+    public function configure()
+    {
+        return $this->afterMaking(function (User $user) {
+            //
+        })->afterCreating(function (User $user) {
+            $rand = rand(0, 10);
+            if ($rand == 0) {
+                return;
+            } else if ($rand < 5) {
+                $user->roles()->attach(Role::where(['key' => 'pin'])->first());
+            } else if ($rand < 8) {
+                $user->roles()->attach(Role::where(['key' => 'map'])->first());
+            } else if ($rand < 10) {
+                $user->roles()->attach(Role::where(['key' => 'pin'])->first());
+                $user->roles()->attach(Role::where(['key' => 'map'])->first());
+            }
+            return;
+        });
+    }
+ 
     /**
      * As FakerPHP often gives names like Ms. Emmalee Greenholt IV,
      * we introduce some variation in the names by assembling
