@@ -27,8 +27,11 @@ class RequestController extends Controller
      */
     public function index()
     {
-        return view('request.index', [
-            'requests' => Request::orderByDesc('created_at')->paginate()
+        $langKey = strtolower(implode('.', ['frontend.project', 'request', 'index.']));
+        view()->share(['langKey' => $langKey]);
+        return view('project.index', [
+            'modelName' => 'request',
+            'models' => Request::orderByDesc('created_at')->paginate()
         ]);
     }
 

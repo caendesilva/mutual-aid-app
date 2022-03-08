@@ -27,8 +27,11 @@ class OfferController extends Controller
      */
     public function index()
     {
-        return view('offer.index', [
-            'offers' => Offer::orderByDesc('created_at')->paginate()
+        $langKey = strtolower(implode('.', ['frontend.project', 'offer', 'index.']));
+        view()->share(['langKey' => $langKey]);
+        return view('project.index', [
+            'modelName' => 'offer',
+            'models' => Offer::orderByDesc('created_at')->paginate()
         ]);
     }
 
