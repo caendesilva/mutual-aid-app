@@ -21,7 +21,6 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->index(['role_id', 'user_id']);
             $table->unique(['role_id', 'user_id']);
-            $table->timestamps();
         });
     }
 

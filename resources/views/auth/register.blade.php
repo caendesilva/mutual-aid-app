@@ -40,15 +40,29 @@
                     Optional fields
                 </legend>
 
+                {{-- Phone number addition is implemented, however we don't have any infrastructure to use the phone numbers,
+                thus it is commented out as to not clutter the registration page. It can still be updated and set on the
+                account settings page.
                 <div>
                     <x-jet-label for="phone" value="{{ __('Phone Number') }}" />
                     <x-jet-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" />
                 </div>
+                --}}
 
-                <div class="mt-4">
+                <div>
                     <x-jet-label for="area" value="{{ __('Zip Code') }}" />
                     <x-jet-input id="area" class="block mt-1 w-full" type="text" name="area" :value="old('area')" />
                     <small>To show results near you</small>
+                </div>
+
+                <div class="mt-4">
+                    <x-jet-label for="roles" value="{{ __('Select Role') }}" />
+                    <select id="roles" class="border-gray-400 focus:border-indigo-600 focus:ring focus:ring-indigo-500 focus:ring-opacity-75 rounded-md shadow-sm block mt-1 w-full" type="select" name="roles">
+                        <option disabled selected>Please Select</option>
+                        <option value="pin">Person In Need</option>
+                        <option value="map">Mutual Aid Provider</option>
+                        <option value="both">Both</option>
+                    </select>
                 </div>
             </fieldset>
 
