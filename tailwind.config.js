@@ -24,6 +24,14 @@ module.exports = {
                             },
                             textDecoration: 'none'
                         },
+                        blockquote: {
+                            'p::before': {
+                                content: 'unset',
+                            },
+                            'p::after': {
+                                content: 'unset',
+                            },
+                        }
                     },
                 },
             },
