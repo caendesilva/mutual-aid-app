@@ -4,7 +4,7 @@
     </div>
 
     <div class="mt-8">
-        @markdownSection("welcome/header")
+        @markdownSection("welcome/header", 'max-w-none')
     </div>
 </div>
 
@@ -17,20 +17,8 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500">
-                <div class="mt-2 text-sm text-gray-500 prose">
-                    <ol>
-                        <li>
-                            <a href="{{ route('register') }}">Register for an account here</a>
-                            using email and add your location.
-                        </li>
-                        <li>
-                            You will receive an email asking you to verify your account. Open the message and follow the instructions. <br>
-                        </li>
-                        <li>
-                            Once your account is verified, you can  <a href="{{ route('requests.create') }}">request resources</a> directly from providers listed in your area. <br>
-                        </li>
-                    </ol>
-                    Note: Some Mutual Aid Providers may require you to contact them directly and verify who you are. <br>
+                <div class="mt-2 text-sm">
+                    @markdownSection("welcome/person-in-need-requirements", 'text-sm')
                 </div>
             </div>
 
@@ -67,19 +55,7 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500 prose prose-a:text-indigo-500 prose-a:no-underline">
-                <ol>
-                    <li>
-                        <a href="{{ route('register') }}">Register for an account here</a>
-                        using email and add your location.
-                    </li>
-                    <li>
-                        Open the text message/email verification message and follow the instructions.
-                    </li>
-                    <li>
-                        <a href="{{ route('offers.create') }}">Post the resources</a> you are willing to offer.
-                        If you do not see a category that matches, please select Other and provide more details.
-                    </li>
-                </ol>
+                @markdownSection("welcome/mutual-aid-provider-requirements", 'text-sm')
             </div>
 
             @guest

@@ -39,4 +39,7 @@ To aid in collaborative editing we use Markdown for longer content sections. The
 
 {{-- Or if the file is in a subdirectory: --}}
 @markdownSection("welcome/header")
+
+{{-- You can also pass custom classes in the second parameter: --}}
+@markdownSection("welcome/header", "text-sm")
 ```

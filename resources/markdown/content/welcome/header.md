@@ -4,4 +4,4 @@ This mutual aid app is designed for people living in the United States to offer 
 
 Follow our work [on GitHub](https://github.com/caendesilva/mutual-aid-app)!
 
-> We are working on adding support for SMS registration and verification.
+> <small> We are working on adding support for SMS registration and verification.</small>
