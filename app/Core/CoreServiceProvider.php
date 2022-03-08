@@ -28,8 +28,8 @@ class CoreServiceProvider extends ServiceProvider
     public function boot()
     {
         // Register the @markdownSection directive
-        Blade::directive('markdownSection', function ($expression) {
-            return "<?php echo(\App\Core\MarkdownSection::parse($expression)); ?>";
+        Blade::directive('markdownSection', function ($arguments) {
+            return "<?php echo(\App\Core\MarkdownSection::parse({$arguments})); ?>";
         });
     }
 }

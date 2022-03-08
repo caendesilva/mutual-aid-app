@@ -12,14 +12,17 @@ use Laravel\Jetstream\Jetstream;
 class MarkdownSection
 {
     /**
+     * @param string $markdownPath relative path to the Markdown file
+     * @param string $classes optionally specify extra classes to add
+     * @return string $html
      * @throws Exception if the file does not exist
      */
-    public static function parse(string $markdownPath): string
+    public static function parse(string $markdownPath, string $classes = ''): string
     {
         $file = Jetstream::localizedMarkdownPath('content/' . $markdownPath . '.md');
         if (!file_exists($file)) {
             throw new Exception("File '$markdownPath' not found!");
         }
-        return '<div class="prose">' . Str::markdown(file_get_contents($file)) . '</div>';
+        return sprintf("<div class=\"prose %s\">%s</div>", $classes, Str::markdown(file_get_contents($file)));
     }
 }
