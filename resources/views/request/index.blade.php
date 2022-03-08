@@ -22,7 +22,7 @@
                                 <h3 class="text-lg font-bold">
                                     <a href="{{ route('requests.show', $request) }}">{{ $request->subject }}</a>
                                 </h3>
-                                Requested <time datetime="{{ $request->created_at }}">{{ $request->created_at }}</time>
+                                Requested <time datetime="{{ $request->created_at }} {{ $offer->created_at->format('e') }}" title="{{ $request->created_at }} {{ $offer->created_at->format('e') }}">{{ $request->niceDate }}</time>
                                 by <address class="inline" rel="author" style="display: inline;">{{ $request->user->name }}</address>.
                             </header>
                             <div>
