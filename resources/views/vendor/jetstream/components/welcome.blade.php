@@ -14,6 +14,11 @@
         and individually without being part of an organization.
     </div>
 
+    <div>
+        Follow our work on GitHub: 
+        <x-link to="https://github.com/caendesilva/mutual-aid-app" external>GitHub</x-link>
+    </div>
+
     <small>We are working on adding support for SMS registration and verification.</small>
 </div>
 

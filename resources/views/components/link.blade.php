@@ -1,0 +1,1 @@
+<a class="text-indigo-500 hover:text-indigo-700" href="{{ $to }}" {!! isset($external) ? 'title="Opens an external website"' : '' !!}>{{ $slot }}</a>
