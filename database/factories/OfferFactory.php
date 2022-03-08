@@ -7,17 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Offer>
  */
-class OfferFactory extends Factory
+class OfferFactory extends ProjectFactory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition()
-    {
-        return [
-            //
-        ];
-    }
+    
 }
