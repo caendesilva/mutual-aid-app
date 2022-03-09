@@ -16,7 +16,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <article class="p-4 bg-white overflow-hidden shadow-xl sm:rounded-lg flex ">
+            <article class="p-4 bg-white overflow-hidden shadow-xl sm:rounded-lg flex">
                 <div class="max-w-5xl">
                     <header class="p-3">
                         <h1 class="text-2xl">
@@ -24,6 +24,7 @@
                         </h1>
                         Offered <time datetime="{{ $offer->created_at }}">{{ $offer->created_at }}</time>
                         by <address class="inline" rel="author" style="display: inline;">{{ $offer->user->name }}</address>.
+                        @includeWhen($offer->is_religious, 'components.badges-religious-provider', ['attributes' => 'class=inline'])
                     </header>
                     <hr class="mx-3">
                     <div class="article-content prose p-3">
