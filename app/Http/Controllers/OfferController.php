@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Offer;
 use App\Http\Requests\StoreOfferRequest;
 use App\Http\Requests\UpdateOfferRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Cookie;
 
 class OfferController extends Controller
 {
@@ -23,15 +25,28 @@ class OfferController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param \Illuminate\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        // Get tne language key for the model
         $langKey = strtolower(implode('.', ['frontend.project', 'offer', 'index.']));
         view()->share(['langKey' => $langKey]);
+
+        // Handle the religious providers filter and form
+        if (request()->has('includeReligiousProviders')) {
+            $offers = Offer::orderByDesc('created_at')->paginate();
+            $includeReligiousProviders = true;
+        } else {
+            $offers = Offer::where('is_religious', '!=', true)->orderByDesc('created_at')->paginate();
+        }
+
+        // Return the view
         return view('project.index', [
             'modelName' => 'offer',
-            'models' => Offer::orderByDesc('created_at')->paginate()
+            'models' => $offers,
+            'includeReligiousProviders' => $includeReligiousProviders ?? false,
         ]);
     }
 
@@ -59,7 +74,7 @@ class OfferController extends Controller
     public function store(StoreOfferRequest $request)
     {
         // The incoming request is validated
-
+        
         $validated = $request->validated();
         $model = Offer::create($validated);
         return Redirect::to(route('offers.show', $model));

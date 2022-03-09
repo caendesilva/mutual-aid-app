@@ -1,11 +1,14 @@
 <form action="{{ $formActionURL }}" method="POST" class="max-w-lg p-4">
     @csrf
     @method($formMethod)
+
+    <x-jet-validation-errors />
+    
     <fieldset name="required-fields" class="mb-1">
         <legend class="font-bold">Required Fields</legend>
 
         <x-project-form-input property="subject" required maxlength="64"/>
-        <x-project-form-input property="location" required maxlength="255" focusHint="It's okay to just put country and postal code. Though specificity helps the map."/>
+        <x-project-form-input property="location" required maxlength="255" autocomplete="zip" focusHint="It's okay to just put country and postal code. Though specificity helps the map."/>
     </fieldset>
 
     <fieldset name="resources" class="mb-3">
@@ -36,6 +39,27 @@
         </div>
 
         <x-project-form-input type="date" property="expires_at" min="{{ date('Y-m-d') }}" :placeholder="null" :value="optional($model->expires_at)->format('Y-m-d')"/>
+    
+        <div class="mt-4">
+            @if($modelName === 'Offer')
+        	<div class="flex">
+                <x-jet-label for="is_religious" value="{{ __('Is this offer from a religious organization?') }}" class="text-base" />
+                <button type="button" class="mx-2 text-sm text-indigo-500" onclick="alert('We ask this so persons in need can filter offers depending on their preference.')">Why do we ask for this?</button>
+            </div>
+            <div class="flex items-center">
+                <div class="m-1">
+                    <input type="radio" id="is_religious_false" name="is_religious" value="0" @checked(optional($model)->is_religious == false)>
+                    <label for="is_religious_false">No</label>
+                </div>
+                <div class="m-1">
+                    <input type="radio" id="is_religious_true" name="is_religious" value="1" @checked(optional($model)->is_religious == true)>
+                    <label for="is_religious_true">Yes</label>
+                </div>
+            </div>
+            @else
+                
+            @endif
+        </div>
     </fieldset>
 
 

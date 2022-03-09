@@ -7,5 +7,5 @@ namespace Database\Factories;
  */
 class RequestFactory extends ProjectFactory
 {
-   
+	public string $religiousAttribute = 'no_religious';
 }

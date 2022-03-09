@@ -1,5 +1,8 @@
 <article class="m-4 my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg">
 	<header>
+		@if($modelName === 'offer' && $model->is_religious)
+		<x-badges-religious-provider class="float-right" />
+		@endif
 		<h3 class="text-lg font-bold">
 			<a href="{{ route($modelName. 's.show', $model) }}">{{ $model->subject }}</a>
 		</h3>
