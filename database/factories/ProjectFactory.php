@@ -25,6 +25,7 @@ class ProjectFactory extends Factory
             'resources' => $this->selectResources(),
             'created_at' => $this->faker->dateTimeBetween('-1month', 'now'),
             'expires_at' => $this->faker->dateTimeBetween('now', '+1month'),
+			$this->religiousAttribute => rand(0, rand(0, 1)),
         ];
     }
 

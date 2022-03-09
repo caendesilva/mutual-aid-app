@@ -36,6 +36,8 @@ class UpdateOfferRequest extends FormRequest
      */
     public function rules()
     {
-        return $this->baseRules();
+        return array_merge($this->baseRules(), [
+            'is_religious' => 'nullable|boolean',
+        ]);
     }
 }
