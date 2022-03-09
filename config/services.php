@@ -30,4 +30,6 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'github_webhook_secret' => env('GITHUB_WEBHOOK_ENDPOINT_SECRET'),
+
 ];
