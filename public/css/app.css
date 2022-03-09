@@ -941,6 +941,17 @@ select {
 .prose > :where(:last-child):not(:where([class~="not-prose"] *)) {
   margin-bottom: 0;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 .invisible {
   visibility: hidden;
 }
@@ -976,6 +987,9 @@ select {
 }
 .col-span-2 {
   grid-column: span 2 / span 2;
+}
+.float-right {
+  float: right;
 }
 .m-4 {
   margin: 1rem;
