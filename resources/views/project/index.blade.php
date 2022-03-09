@@ -24,12 +24,13 @@
                                     <div class="mr-2">
                                         {{ __('Include offers from religous providers') }}
                                     </div>
+                                    <input type="hidden" name="toggleUserPreference" value="true">
                                     <x-jet-checkbox
                                         name="includeReligiousProviders"
                                         id="includeReligiousProviders"
                                         title="Click to toggle"
                                         value="true"
-                                        :checked="request()->has('includeReligiousProviders')"
+                                        :checked="$includeReligiousProviders"
                                         onchange="this.form.submit()"
                                     />
                                 </div>
