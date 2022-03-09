@@ -30,12 +30,15 @@ class GitHubWebhookController extends Controller
         $signatureParts = explode('=', $signature);
 
         if (count($signatureParts) !== 2) {
+            file_put_contents(base_path('webhook.log'), PHP_EOL . 'Signature has invalid format', FILE_APPEND);
             throw new BadRequestHttpException('Signature has invalid format');
         }
 
         $knownSignature = hash_hmac('sha1', $request->getContent(), $knownToken);
 
         if (!hash_equals($knownSignature, $signatureParts[1])) {
+            file_put_contents(base_path('webhook.log'), PHP_EOL . 'Could not verify request signature ' . $signatureParts[1], FILE_APPEND);
+    
             throw new UnauthorizedHttpException('Could not verify request signature ' . $signatureParts[1]);
         }
         
@@ -45,7 +48,7 @@ class GitHubWebhookController extends Controller
         file_put_contents(base_path('webhook.log'), "\n ". now() .
         ": Fetching origin.\n", FILE_APPEND);
 
-        $output = shell_exec('git fetch');
+        $output = shell_exec('git fetch -v');
 
         file_put_contents(base_path('webhook.log'), "\n ". now() .
         ": Output: $output\n", FILE_APPEND);
