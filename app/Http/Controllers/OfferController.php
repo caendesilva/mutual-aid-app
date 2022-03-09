@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Offer;
 use App\Http\Requests\StoreOfferRequest;
 use App\Http\Requests\UpdateOfferRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class OfferController extends Controller
@@ -23,15 +24,23 @@ class OfferController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param \Illuminate\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $langKey = strtolower(implode('.', ['frontend.project', 'offer', 'index.']));
         view()->share(['langKey' => $langKey]);
+
+        if (request()->has('includeReligiousProviders')) {
+            $offers = Offer::orderByDesc('created_at')->paginate();
+        } else {
+            $offers = Offer::where('is_religious', '!=', true)->orderByDesc('created_at')->paginate();
+        }
+
         return view('project.index', [
             'modelName' => 'offer',
-            'models' => Offer::orderByDesc('created_at')->paginate()
+            'models' => $offers,
         ]);
     }
 
