@@ -69,18 +69,52 @@ class DistanceController extends Controller
     /**
      * Construct the class.
      */
-    public function __construct() {
+    public function __construct(float $lat1 = 59.3293, float $lat2 = 18.0686, float $long1 = 51.5072, float $long2 = 0.1276) {
+        $this->lat1  = $lat1;
+        $this->lat2  = $lat2;
+        $this->long1 = $long1;
+        $this->long2 = $long2;
+
         $this->tup1 = [$this->lat1, $this->long1];
         $this->tup2 = [$this->lat2, $this->long2];
+    }
 
+    /**
+     * Get the calculated array.
+     * 
+     * @return array
+     */
+    public function get()
+    {
         $this->distance = $this->calculate();
 
         $this->results = [
+            'meters' => $this->distance,
+            'metersRounded' => round($this->distance),
             'kilometers' => $this->distance / 1000,
             'kilometersRounded' => round($this->distance / 1000),
             'miles' => ($this->distance * 0.00062137),
             'milesRounded' => round($this->distance * 0.00062137),
         ];
+
+        return $this->results;
+    }
+
+    /**
+     * Set the coordinates from an array
+     * Must follow format [φ1, λ1, φ2, λ2]
+     */
+    public function fromArray(array $array)
+    {
+        $this->lat1  = $array[0];
+        $this->lat2  = $array[1];
+        $this->long1 = $array[2];
+        $this->long2 = $array[3];
+
+        $this->tup1 = [$array[0], $array[1]];
+        $this->tup2 = [$array[2], $array[3]];
+
+        return $this;
     }
 
     /**
