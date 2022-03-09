@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Kolirt\Openstreetmap\Facade\Openstreetmap as OSM;
 
 /**
  * Calculate the distance between two points
@@ -22,25 +23,25 @@ class DistanceController extends Controller
      * The point A latitude
      * @var float φ1
      */
-    public float $lat1 = 59.3293;
+    public float $lat1;
 
     /**
      * The point A longitude
      * @var float λ1
      */
-    public float $long1 = 18.0686;
+    public float $long1;
 
     /**
      * The point B latitude
      * @var float φ2
      */
-    public float $lat2 = 51.5072;
+    public float $lat2;
 
     /**
      * The point B longitude
      * @var float λ2
      */
-    public float $long2 = 0.1276;
+    public float $long2;
 
     /**
      * Coordinate array of point A 
@@ -69,23 +70,15 @@ class DistanceController extends Controller
     /**
      * Construct the class.
      */
-    public function __construct(float $lat1 = 59.3293, float $lat2 = 18.0686, float $long1 = 51.5072, float $long2 = 0.1276) {
-        $this->lat1  = $lat1;
-        $this->lat2  = $lat2;
-        $this->long1 = $long1;
-        $this->long2 = $long2;
+    public function __construct(string $pointA, string $pointB) {
+        $mapDataA = $this->OSMSearch($pointA);
+        $this->lat1  = $mapDataA->lat;
+        $this->long1  = $mapDataA->lon;
 
-        $this->tup1 = [$this->lat1, $this->long1];
-        $this->tup2 = [$this->lat2, $this->long2];
-    }
+        $mapDataB = $this->OSMSearch($pointB);
+        $this->lat2  = $mapDataB->lat;
+        $this->long2  = $mapDataB->lon;
 
-    /**
-     * Get the calculated array.
-     * 
-     * @return array
-     */
-    public function get()
-    {
         $this->distance = $this->calculate();
 
         $this->results = [
@@ -96,25 +89,44 @@ class DistanceController extends Controller
             'miles' => ($this->distance * 0.00062137),
             'milesRounded' => round($this->distance * 0.00062137),
         ];
+    }
 
+    /**
+     * Get the calculated array.
+     * 
+     * @return array
+     */
+    public function get()
+    {
         return $this->results;
     }
 
     /**
-     * Set the coordinates from an array
-     * Must follow format [φ1, λ1, φ2, λ2]
+     * Get the result in miles
      */
-    public function fromArray(array $array)
+    public function getMiles()
     {
-        $this->lat1  = $array[0];
-        $this->lat2  = $array[1];
-        $this->long1 = $array[2];
-        $this->long2 = $array[3];
+        return $this->results['miles'];
+    }
 
-        $this->tup1 = [$array[0], $array[1]];
-        $this->tup2 = [$array[2], $array[3]];
+    /**
+     * Get the result in kilometers
+     */
+    public function getKilometers()
+    {
+        return $this->results['kilometers'];
+    }
 
-        return $this;
+    /**
+     * Conduct the OSM search and return the results object
+     */
+    private function OSMSearch(string $search) {
+        $result = OSM::search($search, 1);
+        if (!$result) {
+            return [0, 0];
+        }
+
+        return $result[0];
     }
 
     /**
