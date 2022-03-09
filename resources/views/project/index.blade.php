@@ -24,7 +24,6 @@
                                     <div class="mr-2">
                                         {{ __('Include offers from religous providers') }}
                                     </div>
-                                    <input type="hidden" name="toggleUserPreference" value="true">
                                     <x-jet-checkbox
                                         name="includeReligiousProviders"
                                         id="includeReligiousProviders"

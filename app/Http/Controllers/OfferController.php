@@ -35,21 +35,11 @@ class OfferController extends Controller
         view()->share(['langKey' => $langKey]);
 
         // Handle the religious providers filter and form
-
-        // Does the request include the checkbox data, or is a cookie set?
-        if (request()->has('includeReligiousProviders') || request()->cookie('includeReligiousProviders')) {
+        if (request()->has('includeReligiousProviders')) {
             $offers = Offer::orderByDesc('created_at')->paginate();
-            Cookie::queue('includeReligiousProviders', true, 2592000);
             $includeReligiousProviders = true;
         } else {
-            Cookie::queue('includeReligiousProviders', false, 2592000);
             $offers = Offer::where('is_religious', '!=', true)->orderByDesc('created_at')->paginate();
-        }
-
-        // If the checkbox has been disabled, set the state to false
-        if (request()->has('toggleUserPreference') && !request()->has('includeReligiousProviders')) {
-            Cookie::queue('includeReligiousProviders', false, 2592000);
-            $includeReligiousProviders = false;
         }
 
         // Return the view
