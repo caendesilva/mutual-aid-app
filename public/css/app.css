@@ -1133,6 +1133,9 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
+.mt-auto {
+  margin-top: auto;
+}
 .block {
   display: block;
 }
