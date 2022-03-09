@@ -596,7 +596,7 @@ select {
   --tw-backdrop-sepia:  ;
 }
 .prose {
-  color: #333;
+  color: var(--tw-prose-body);
   max-width: 65ch;
 }
 .prose :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
@@ -676,12 +676,6 @@ select {
   margin-top: 1.6em;
   margin-bottom: 1.6em;
   padding-left: 1em;
-}
-.prose :where(blockquote):not(:where([class~="not-prose"] *))::before {
-  content: "";
-}
-.prose :where(blockquote):not(:where([class~="not-prose"] *))::after {
-  content: "";
 }
 .prose :where(blockquote):not(:where([class~="not-prose"] *)) p::before {
   content: unset;
@@ -980,6 +974,12 @@ select {
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+.m-4 {
+  margin: 1rem;
+}
 .m-1 {
   margin: 0.25rem;
 }
@@ -989,9 +989,6 @@ select {
 .m-2 {
   margin: 0.5rem;
 }
-.m-4 {
-  margin: 1rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -999,6 +996,10 @@ select {
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .my-4 {
   margin-top: 1rem;
@@ -1011,10 +1012,6 @@ select {
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
-}
-.my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -1199,14 +1196,17 @@ select {
 .max-w-xl {
   max-width: 36rem;
 }
+.max-w-none {
+  max-width: none;
+}
+.max-w-2xl {
+  max-width: 42rem;
+}
 .max-w-lg {
   max-width: 32rem;
 }
 .max-w-5xl {
   max-width: 64rem;
-}
-.max-w-none {
-  max-width: none;
 }
 .flex-1 {
   flex: 1 1 0%;

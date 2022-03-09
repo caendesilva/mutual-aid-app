@@ -1,3 +1,5 @@
+Tuesday, 8 March 2022 ca 23:00 - I have added a basic kind of CMS for frontend text content. They can now easily be edited in as Markdown files stored in resources/markdown/content/. Feel free to edit them on GitHub!
+
 Tuesday, 8 March 2022 ca 12:40 - Database will be reset pending new migrations.
 
 Tuesday, 8 March 2022 ca 12:50 - I have begun adding roles and permissions. If you'd like to get a staff role such as Admin/Mod/Volunteer, let me know. I need help with testing. 
