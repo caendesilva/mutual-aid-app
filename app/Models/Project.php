@@ -25,6 +25,8 @@ class Project extends Model
         'body',
         'expires_at',
         'resources',
+        'is_religious',
+        'no_religious',
     ];
 
     /**

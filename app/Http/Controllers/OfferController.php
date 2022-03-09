@@ -84,7 +84,7 @@ class OfferController extends Controller
     public function store(StoreOfferRequest $request)
     {
         // The incoming request is validated
-
+        
         $validated = $request->validated();
         $model = Offer::create($validated);
         return Redirect::to(route('offers.show', $model));
