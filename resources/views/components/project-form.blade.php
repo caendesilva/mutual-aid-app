@@ -48,11 +48,11 @@
             </div>
             <div class="flex items-center">
                 <div class="m-1">
-                    <input type="radio" id="is_religious_false" name="is_religious" value="0">
+                    <input type="radio" id="is_religious_false" name="is_religious" value="0" @checked(optional($model)->is_religious == false)>
                     <label for="is_religious_false">No</label>
                 </div>
                 <div class="m-1">
-                    <input type="radio" id="is_religious_true" name="is_religious" value="1">
+                    <input type="radio" id="is_religious_true" name="is_religious" value="1" @checked(optional($model)->is_religious == true)>
                     <label for="is_religious_true">Yes</label>
                 </div>
             </div>
