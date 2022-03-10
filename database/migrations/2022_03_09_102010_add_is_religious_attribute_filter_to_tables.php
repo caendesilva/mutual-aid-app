@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
+     * @deprecated
+     * 
      * Run the migrations.
      *
      * @return void
