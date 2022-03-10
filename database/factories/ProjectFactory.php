@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
+ * @deprecated
  * @extends \Illuminate\Database\Eloquent\Factories\Factory
  */
 class ProjectFactory extends Factory
