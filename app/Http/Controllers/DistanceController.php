@@ -160,6 +160,7 @@ class DistanceController extends Controller
      * Calculate the distance using a more readable Haversine formula
      * 
      * @see https://en.wikipedia.org/wiki/Haversine_formula
+     * @see https://www.movable-type.co.uk/scripts/latlong.html for further reading
      * 
      * @param float $lat1  Latitude  of Point A (φ1)
      * @param float $long1 Longitude of Point B (λ1)
