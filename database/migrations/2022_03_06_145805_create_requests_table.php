@@ -9,7 +9,8 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * 
+     * @deprecated 
      * @return void
      */
     public function up()
