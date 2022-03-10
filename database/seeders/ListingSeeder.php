@@ -14,6 +14,6 @@ class ListingSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Listing::factory(36)->create();
     }
 }
