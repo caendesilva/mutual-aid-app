@@ -140,6 +140,9 @@ class DistanceController extends Controller
      * 
      * Note that the coordinate trigonometric arguments are in degrees, but the arccosine result
      * in the formula returns radians which we multiply with the Earth radius to get the distance.
+     * 
+     * To learn more about geo-coordinates, see
+     * https://enlear.academy/working-with-geo-coordinates-in-mysql-5451e54cddec
      */
     public function calculate(): float
     {
