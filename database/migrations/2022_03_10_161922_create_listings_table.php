@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('contacts', 128)->nullable();
             $table->string('body', 2048)->nullable();
 
-            $table->enum('type', ['request', 'offer']);
+            $table->enum('type', ['request', 'offer'])->nullable(false);
 
             $table->json('resources')->nullable();
             $table->json('metadata')->nullable();

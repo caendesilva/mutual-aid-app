@@ -20,6 +20,7 @@ class ListingFactory extends Factory
         $type = rand(1, 3) == 1 ? 'offer' : 'request';
 
         return [
+            'type' => $type,
             'user_id' => User::all()->random()->id,
             'subject' => substr($this->faker->sentence(), 0, 64),
             'body' => $this->faker->sentences(rand(1, rand(6, 8)), asText: true),
