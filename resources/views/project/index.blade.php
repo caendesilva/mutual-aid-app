@@ -16,10 +16,6 @@
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="">
                 <header class="flex mx-4">
-                    <form action="">
-                        <x-jet-input type="search" id="search" name="search" placeholder="Search" :value="(old('search') ?? request()->search)" title="Enter a search query" class="py-1"/>
-                        <x-jet-input type="submit" class="mx-1 px-1 shadow-none cursor-pointer"/>
-                    </form>
                     @if($modelName === 'offer')
                     <form class="flex ml-auto" action="" method="GET">
                         <x-jet-label for="religion">

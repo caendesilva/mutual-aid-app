@@ -36,14 +36,11 @@ class OfferController extends Controller
 
         // Handle the religious providers filter and form
         if (request()->has('includeReligiousProviders')) {
-            $offers = Offer::search($request->search)->paginate();
+            $offers = Offer::orderByDesc('created_at')->paginate();
             $includeReligiousProviders = true;
         } else {
-            $offers = Offer::search($request->search)->where('is_religious', '!=', true)->paginate();
+            $offers = Offer::where('is_religious', '!=', true)->orderByDesc('created_at')->paginate();
         }
-
-        // $offers = Offer::search($request->search)->paginate();
-
 
         // Return the view
         return view('project.index', [
