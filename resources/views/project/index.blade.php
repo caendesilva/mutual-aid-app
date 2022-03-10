@@ -13,8 +13,13 @@
     </x-slot>
     
     <div class="py-12">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-            <div class="">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+            @if($modelName === 'offer')
+            @livewire('smart-posts-index')
+            @endif
+
+            {{-- <div class="">
                 <header class="flex mx-4">
                     @if($modelName === 'offer')
                     <form class="flex ml-auto" action="" method="GET">
@@ -57,7 +62,7 @@
                 <footer class="m-4">
                     {{ $models->links() }}
                 </footer>
-            </div>
+            </div> --}}
         </div>
     </div>
 </x-app-layout>
