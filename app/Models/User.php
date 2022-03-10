@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Core\LocationService;
 use App\Core\Roles;
 use App\Jobs\UpdateUsersGeospatialIndexEntry;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -134,6 +135,18 @@ class User extends Authenticatable
     {
         return Attribute::make(
             get: fn ($value) => implode(', ', $this->roles()->pluck('name')->toArray()),
+        );
+    }
+
+    /**
+     * Get the user's position from the Geospatial index.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function position(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => LocationService::getUserPositionFromGeospatialIndex($this),
         );
     }
 }
