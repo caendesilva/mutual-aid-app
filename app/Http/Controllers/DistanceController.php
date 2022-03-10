@@ -162,6 +162,8 @@ class DistanceController extends Controller
      * @see https://en.wikipedia.org/wiki/Haversine_formula
      * @see https://www.movable-type.co.uk/scripts/latlong.html for further reading
      * 
+     * @example DistanceController::calculateHaversine(51.5, 0.1167, 40.66, 73.94);
+     * 
      * @param float $lat1  Latitude  of Point A (φ1)
      * @param float $long1 Longitude of Point B (λ1)
      * @param float $lat2  Latitude  of Point B (φ2)
