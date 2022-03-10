@@ -68,8 +68,7 @@ class ListingFactory extends Factory
      */
     public function getMetadata(string $type)
     {
-        // @todo implement getMetadata()
-        if (chance(10)) {
+        if ($type === "offer" && chance(10)) {
             return (object) ['is_religious' => true];
         }
         return null;
