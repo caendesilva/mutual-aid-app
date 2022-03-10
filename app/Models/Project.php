@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Scout\Searchable;
 
 /**
  * Base class for Requests and Offers
@@ -12,6 +13,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Project extends Model
 {
     use HasFactory;
+    use Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -49,7 +51,7 @@ class Project extends Model
         return $this->belongsTo(User::class);
     }
 
-    
+
     /**
      * Get the created_at date in a more human friendly form.
      *
@@ -63,5 +65,21 @@ class Project extends Model
                 : ($this->created_at->isYesterday() ? 'Yesterday at ' . $this->created_at->format('g:ia')
                 : $this->created_at->format('Y-m-d H:i'))),
         );
+    }
+
+     
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        return [
+            'subject' => $this->subject,
+            'location' => $this->location,
+            'resources' => explode(' ', $this->resources),
+            'body' => $this->body,
+        ];
     }
 }

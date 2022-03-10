@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Core\LocationService;
 use App\Core\Roles;
+use App\Jobs\UpdateUsersGeospatialIndexEntry;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,6 +23,24 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
     use Roles;
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        // Update the user's position when their location is updated.
+        // We still need to implement a way to run this automatically when
+        // a user is created, without it affecting factory users as that slows
+        // down the seeding. It's better to use FakerPHP to get the coordinates.
+        static::updated(function ($user) {
+            if ($user->isDirty('area') || $user->isDirty('location')) {
+                UpdateUsersGeospatialIndexEntry::dispatch($user);
+            }
+        });
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -115,6 +135,18 @@ class User extends Authenticatable
     {
         return Attribute::make(
             get: fn ($value) => implode(', ', $this->roles()->pluck('name')->toArray()),
+        );
+    }
+
+    /**
+     * Get the user's position from the Geospatial index.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function position(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => LocationService::getUserPositionFromGeospatialIndex($this),
         );
     }
 }

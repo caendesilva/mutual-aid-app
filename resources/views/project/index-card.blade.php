@@ -11,7 +11,7 @@
 	</header>
 	<div>
 		@if($model->resources)
-		<strong>Needs:</strong>
+		<strong>{{ $modelName === 'offer' ? 'Provides' : 'Needs' }}:</strong>
 		{{ ucwords(implode(', ', $model->resources)) }}
 		@endif
 	</div>

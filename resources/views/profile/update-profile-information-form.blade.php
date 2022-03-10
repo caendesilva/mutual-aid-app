@@ -77,6 +77,7 @@
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="area" value="{{ __('Area/ZIP Code') }}" />
             <x-jet-input id="area" type="text" class="mt-1 block w-full" wire:model.defer="state.area" />
+            <small>Your area code will be used to show results near you.</small>
             <x-jet-input-error for="area" class="mt-2" />
         </div>
 
@@ -84,7 +85,7 @@
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="location" value="{{ __('Location') }}" />
             <x-jet-input id="location" type="text" class="mt-1 block w-full" wire:model.defer="state.location" />
-            <small>If you'd like, you can enter your address here.</small>
+            <small>If you'd like, you can enter your address here for more accurate distance results.</small>
             <x-jet-input-error for="location" class="mt-2" />
         </div>
     </x-slot>
