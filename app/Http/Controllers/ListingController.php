@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
+use App\Http\Livewire\ListingIndex;
+use Illuminate\Support\Facades\App;
 
 class ListingController extends Controller
 {
@@ -15,7 +17,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        //
+        return App::call([new ListingIndex(), '__invoke']);
     }
 
     /**

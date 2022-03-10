@@ -6,6 +6,9 @@ use App\Models\Offer;
 use Livewire\Component;
 use Livewire\WithPagination;
 
+/**
+ * @deprecated 
+ */
 class SmartPostsIndex extends Component
 {
     use WithPagination;
