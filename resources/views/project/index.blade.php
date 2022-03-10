@@ -17,9 +17,8 @@
 
             @if($modelName === 'offer')
             @livewire('smart-posts-index')
-            @endif
-
-            {{-- <div class="">
+            @else
+            <div class="">
                 <header class="flex mx-4">
                     @if($modelName === 'offer')
                     <form class="flex ml-auto" action="" method="GET">
@@ -62,7 +61,9 @@
                 <footer class="m-4">
                     {{ $models->links() }}
                 </footer>
-            </div> --}}
+            </div>
+            @endif
+
         </div>
     </div>
 </x-app-layout>

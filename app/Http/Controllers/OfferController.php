@@ -45,8 +45,6 @@ class OfferController extends Controller
         // Return the view
         return view('project.index', [
             'modelName' => 'offer',
-            'models' => $offers,
-            'includeReligiousProviders' => $includeReligiousProviders ?? false,
         ]);
     }
 
