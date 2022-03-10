@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Cookie;
 
+/**
+ * @deprecated
+ */
 class OfferController extends Controller
 {
     /**

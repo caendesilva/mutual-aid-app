@@ -6,6 +6,7 @@ use App\Models\User;
 
 /**
  * Reusable Policy Rules
+ * @deprecated
  */
 class BasePolicy
 {

@@ -7,6 +7,8 @@ use App\Models\Request;
 use Illuminate\View\Component;
 
 /**
+ * @deprecated
+ * 
  * This component bridges the gap between Request and Offer forms as they are very similar.
  * For this reason, Requests and Offers are semantically considered "Projects".
  * The same form component can be used for both creating new, and updating

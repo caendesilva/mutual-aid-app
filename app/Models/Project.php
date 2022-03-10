@@ -9,6 +9,8 @@ use Laravel\Scout\Searchable;
 
 /**
  * Base class for Requests and Offers
+ * @deprecated as it will be merged into Listings
+ * 
  */
 class Project extends Model
 {

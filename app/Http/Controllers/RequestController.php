@@ -7,6 +7,9 @@ use App\Http\Requests\StoreRequestRequest;
 use App\Http\Requests\UpdateRequestRequest;
 use Illuminate\Support\Facades\Redirect;
 
+/**
+ * @deprecated
+ */
 class RequestController extends Controller
 {
     /**

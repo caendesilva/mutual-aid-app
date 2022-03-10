@@ -6,6 +6,9 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
+/**
+ * @deprecated
+ */
 class ProjectController extends Controller
 {
 

@@ -6,6 +6,9 @@ use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
+/**
+ * @deprecated
+ */
 class OfferPolicy extends BasePolicy
 {
     use HandlesAuthorization;

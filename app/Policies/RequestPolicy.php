@@ -6,6 +6,9 @@ use App\Models\Request;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
+/**
+ * @deprecated
+ */
 class RequestPolicy extends BasePolicy
 {
     use HandlesAuthorization;
