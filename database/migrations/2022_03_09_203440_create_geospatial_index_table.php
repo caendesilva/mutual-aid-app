@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('latitude', 8, 5);
             $table->decimal('longitude', 8, 5);
 
-            $table->enum('for', ['user', 'request', 'offer']);
+            $table->enum('for', ['user', 'listing']);
             $table->unsignedBigInteger('model_id');
         });
     }
