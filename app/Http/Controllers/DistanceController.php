@@ -155,4 +155,37 @@ class DistanceController extends Controller
         // Return the result of the formula in meters
         return acos(sin($lat1)*sin($lat2)+cos($lat1)*cos($lat2)*cos($long2-$long1))*self::EARTH_RADIUS * 1000;
     }
+
+    /**
+     * Calculate the distance using a more readable Haversine formula
+     * 
+     * @see https://en.wikipedia.org/wiki/Haversine_formula
+     * 
+     * @param float $lat1  Latitude  of Point A (φ1)
+     * @param float $long1 Longitude of Point B (λ1)
+     * @param float $lat2  Latitude  of Point B (φ2)
+     * @param float $long2 Longitude of Point B (λ2)
+     * 
+     * @return float $distance in meters
+     */
+    public static function calculateHaversine(float $lat1, float $long1, float $lat2, float $long2): float
+    {
+        $phi1 = deg2rad($lat1);
+        $phi2 = deg2rad($lat2);
+        $lambda1 = deg2rad($long1);
+        $lambda2 = deg2rad($long2);
+
+        $phiDelta = $phi2 - $phi1;
+        $lambdaDelta = $lambda2 - $lambda1;
+        
+        $phiHaversine = pow((sin($phiDelta / 2)), 2);
+        $lambdaHaversine = pow((sin($lambdaDelta / 2)), 2);
+
+        $angle = (2 * asin(sqrt($phiHaversine + cos($phi1) * cos($phi2) * $lambdaHaversine)));
+        
+        $distance = $angle * (self::EARTH_RADIUS * 1000);
+
+        return $distance;
+    }
+
 }
