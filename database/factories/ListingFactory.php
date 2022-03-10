@@ -28,7 +28,7 @@ class ListingFactory extends Factory
             'location' => $this->selectLocation(),
             'resources' => $this->selectResources(),
             'created_at' => $this->faker->dateTimeBetween('-1month', 'now'),
-            'metadata' => $this->getMetadata(),
+            'metadata' => $this->getMetadata($type),
         ];
     }
 
@@ -66,9 +66,12 @@ class ListingFactory extends Factory
      * 
      * @return object
      */
-    public function getMetadata()
+    public function getMetadata(string $type)
     {
         // @todo implement getMetadata()
+        if (chance(10)) {
+            return (object) ['is_religious' => true];
+        }
         return null;
     }
 
