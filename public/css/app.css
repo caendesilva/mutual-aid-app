@@ -1191,6 +1191,9 @@ select {
 .-ml-1 {
   margin-left: -0.25rem;
 }
+.mr-auto {
+  margin-right: auto;
+}
 .mt-auto {
   margin-top: auto;
 }
@@ -1319,11 +1322,6 @@ select {
 }
 .w-3 {
   width: 0.75rem;
-}
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .min-w-0 {
   min-width: 0px;
@@ -2121,6 +2119,9 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 [x-cloak] { display: none; }
+.modal {
+	margin-top: 180px;
+}
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
