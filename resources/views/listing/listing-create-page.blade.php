@@ -4,7 +4,7 @@
             @if ($type)
                 {{ __("Submit $Type") }}
             @else
-            Please select type to continue
+            Please select listing type to continue
             @endif
         </h2>
     </x-slot>
@@ -17,7 +17,7 @@
                 @else
                     <div class="text-center">
                         <h3 class="font-semibold text-2xl text-gray-800 leading-tight mb-3">
-                            Please select what kind of listing this is
+                            {{ __('What kind of listing would you like to post?') }}
                         </h3>
                         <div>
                             <x-button-link :to="(route('listings.create', ['type' => 'offer']))" class="mt-3 mx-2">
