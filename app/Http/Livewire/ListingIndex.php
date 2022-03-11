@@ -52,7 +52,23 @@ class ListingIndex extends Component
             $query->whereNull('metadata->is_religious');
         }
 
-         
+        if (isset($this->filters['types'])) {
+            switch ($this->filters['types']) {
+                case 'offers':
+                    # Show only offers
+                    $query->where('type', 'offer');
+                    break;
+
+                case 'requests':
+                    # Show only requests
+                    $query->where('type', 'request');
+                    break;
+
+                default:
+                    # Do nothing
+                    break;
+            }
+        }
             
 
         $listings = $query->paginate(12);
