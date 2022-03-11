@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Listing;
+use Illuminate\Support\Facades\App;
 use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Http\Livewire\ListingIndex;
-use Illuminate\Support\Facades\App;
+use App\Http\Livewire\ListingForm;
+use App\Models\Listing;
 
 class ListingController extends Controller
 {
@@ -38,7 +39,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return App::call([new ListingForm(), '__invoke']);
     }
 
     /**
