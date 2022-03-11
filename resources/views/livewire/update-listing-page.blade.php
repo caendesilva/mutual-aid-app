@@ -4,6 +4,7 @@
             {{ __("Update Listing") }}
         </h2>
         <x-slot name="headerActions">
+            {{-- @todo implement header actions --}}
             <a href="{{ route('listings.show', $listing) }}">
                 <x-jet-secondary-button>
                     Cancel
