@@ -22,17 +22,39 @@
                             <h4 class="text-lg font-bold mr-2">Filters</h4>
                         </header>
                         <div>
-                            <x-jet-input type="search" wire:model="search" placeholder="Search" title="Enter a search query" class="w-full"/>
+                            <noscript class="rounded-lg mb-4 bg-gray-100 text-sm" role="alert">
+                                <!-- Component by Flowbite (MIT) -->
+                                <div class="p-4 bg-yellow-300  text-yellow-900">
+                                    <strong>Heads up!</strong> Your browser does not seem to have JavaScript enabled.
+                                </div>
+                                <div class="p-4">
+                                    <p>JavaScript is required for the interactive search to work.</p>
+                                    <p class="mt-2">
+                                        You can learn how to enable JavaScript on this web page
+                                        <a href="https://www.enable-javascript.com/" class="text-indigo-500"
+                                            rel="nofollow noopener noreferrer">https://www.enable-javascript.com/</a>
+                                    </p>
+                                </div>
+                            </noscript>
+                        </div>
+                        <div>
+                            <x-jet-input type="search" wire:model="search"
+                                placeholder="Free text search" aria-label="Free text search"
+                                title="Enter a search query" class="w-full"/>
                         </div>
                         <hr class="my-4 mr-8">
                         <div>
                             <div class="m-1 flex items-center">
-                                <x-jet-checkbox wire:model="filters.exclude_religious_providers" id="exclude_religious_providers" />
-                                <label for="exclude_religious_providers" class="ml-2 cursor-pointer">
-                                    Exclude Religious Providers
-                                </label>
+                                <fieldset>
+                                    <x-jet-checkbox wire:model="filters.exclude_religious_providers" id="exclude_religious_providers" />
+                                    <label for="exclude_religious_providers" class="ml-2 cursor-pointer">
+                                        Exclude Religious Providers
+                                    </label>
+                                </fieldset>
                             </div>
                         </div>
+                        <hr class="my-4 mr-8">
+
                     </div>
                 </aside>
                 <section class="py-3 px-4 lg:ml-8 w-full max-w-xl">
