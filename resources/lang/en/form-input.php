@@ -64,6 +64,8 @@ return [
 	'offer.create.resource.money.description' => 'Please specify in the Request Details',
 	'offer.create.resource.shelter.description' => 'Please specify in the Request Details',
 	'offer.create.resource.other.description' => 'Please specify in the Request Details',
+	'offer.create.contacts' => 'Contact Information',
+	'offer.create.contacts.placeholder' => 'e.g. Please contact us on 123-123-123 or hello@example.com.',
 	'offer.create.body' => 'Request Details - Remember to specify your contact information here',
 	'offer.create.body.placeholder' => 'e.g. We can supply food and shelter. Please contact us on 123-123-123 or hello@example.com.',
 	'offer.create.expires_at' => 'Request Expiration - Do you need to give aid before a certain date?',
