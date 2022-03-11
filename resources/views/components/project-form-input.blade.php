@@ -1,3 +1,4 @@
+<!-- @deprecated -->
 @props(['property', 'type' => 'text', 'focusHint' => null])
 
 <div class="mt-4">
