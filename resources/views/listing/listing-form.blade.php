@@ -3,9 +3,10 @@
     <form action="{{ route('listings.store') }}" method="POST" class="px-3 py-2">
         @php(View::share('langKey', "form-input.$type.create"))
         @csrf
+        <input type="hidden" id="type" name="type" value="{{ $type }}">
 
         <x-forms.fieldset legend="Required Fields">
-            <x-forms.form-input property="subject"  maxlength="128" required />
+            <x-forms.form-input property="subject"  maxlength="64" required />
             <x-forms.form-input property="location" maxlength="255" required
                 hint="It's okay to just put a postal code. Though being specific makes the map more accurate." />
         </x-forms.fieldset>

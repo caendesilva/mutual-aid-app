@@ -3,17 +3,17 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreListingRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
+     * Set the user ID to the request user ID
+     * @return void
      */
-    public function authorize()
+    protected function prepareForValidation()
     {
-        return true; // We handle authorization in the controller
+        $this->request->add(['user_id'=> Auth::id()]);
     }
 
     /**
@@ -24,7 +24,14 @@ class StoreListingRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'exists:App\Models\User,id',
+            'subject' => 'required|string|max:64',
+            'location' => 'required|string|max:255',
+            'contacts' => 'nullable|string|max:128',
+            'body' => 'nullable|string|max:2048',
+            'expires_at' => 'nullable|date',
+            'resources' => 'nullable|array',
+            'type' => 'required|string|in:request,offer',
         ];
     }
 }
