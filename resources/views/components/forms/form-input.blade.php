@@ -11,7 +11,7 @@
 		id="{{ $property }}"
 		name="{{ $property }}"
 		type="{{ $type }}"
-		:value="old($property) ?? $value"
+		:value="$value ?? null"
 		placeholder='{{ __("$langKey.$property.placeholder") }}' 
 		class="block mt-1 w-full"
 		{{ $attributes }}

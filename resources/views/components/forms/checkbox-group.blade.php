@@ -10,6 +10,7 @@
     'legend' => 'Check all that apply',
     'property',
     'values',
+    'checkedValues' => false,
 ])
 
 <fieldset>
@@ -17,7 +18,7 @@
 
     <div class="ml-3">
         @foreach ($values as $value)
-            <x-forms.checkbox :property="$property" :value="$value" />
+            <x-forms.checkbox :property="$property" :value="$value" :checked="$checkedValues && in_array($value, $checkedValues)" />
         @endforeach
     </div>
 </fieldset>
