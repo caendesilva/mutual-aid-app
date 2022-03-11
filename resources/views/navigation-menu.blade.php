@@ -20,14 +20,8 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     @endcan
-                    {{-- <x-jet-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
-                        {{ __('Projects') }}
-                    </x-jet-nav-link> --}}
-                    <x-jet-nav-link href="{{ route('offers.index') }}" :active="request()->routeIs('offers.*')">
-                        {{ __('Offers') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('requests.index') }}" :active="request()->routeIs('requests.*')">
-                        {{ __('Requests') }}
+                    <x-jet-nav-link href="{{ route('listings.index') }}" :active="request()->routeIs('listings.*')">
+                        {{ __('Listings') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -168,14 +162,8 @@
                 {{ __('Home') }}
             </x-jet-responsive-nav-link>
 
-            {{-- <x-jet-responsive-nav-link href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">
-                {{ __('Projects') }}
-            </x-jet-responsive-nav-link> --}}
-            <x-jet-responsive-nav-link href="{{ route('offers.index') }}" :active="request()->routeIs('offers.*')">
-                {{ __('Offers') }}
-            </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('requests.index') }}" :active="request()->routeIs('requests.*')">
-                {{ __('Requests') }}
+            <x-jet-responsive-nav-link href="{{ route('listings.index') }}" :active="request()->routeIs('listings.*')">
+                {{ __('Listings') }}
             </x-jet-responsive-nav-link>
         </div>
         
