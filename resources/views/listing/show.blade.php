@@ -47,6 +47,31 @@
                             {{ __("The {$type}er did not specify any resources.") }}
                         </blockquote>
                         @endif
+
+
+                        @if($listing->contacts)
+                        <h3 class="text-base font-bold">Contact information</h3>
+                            @guest
+                            <blockquote>
+                                Please <x-link :to="route('login')">log in</x-link>
+                                or <x-link :to="route('register')">register for an account</x-link>
+                                to view contact information.
+                            </blockquote>
+                            @endguest
+                            @auth
+                                <div class="prose-p:my-1">
+                                    {!! str_replace(
+                                        '<a href="http',
+                                        '<a rel="external nofollow noopener" href="http',
+                                        Str::markdown(nl2br($listing->contacts)))
+                                    !!}
+                                </div>
+
+                                @if(str_contains($listing->contacts, 'http'))
+                                    <small>Be careful when visiting external links!</small>
+                                @endif
+                            @endauth
+                        @endif
                     </div>
                 </div>
                 <aside class="p-3 mx-auto">
