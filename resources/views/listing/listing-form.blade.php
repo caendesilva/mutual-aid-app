@@ -1,22 +1,14 @@
 <x-forms.form-card>
     <x-jet-validation-errors />
     @php
-        $routeName = str_replace('listings.', '', Request::route()->getName());
-        switch ($routeName) {
-            case 'edit':
-                $formActionVerb = 'edit';
-                $route = 'listings.update';
-                break;
-
-                case 'create':
-                $formActionVerb = 'create';
-                $route = 'listings.store';
-                break;
-            
-            default:
-                abort(400, 'Bad request');
-                break;
+        if (str_replace('listings.', '', Request::route()->getName()) === 'create') {
+            $formActionVerb = 'create';
+            $route = 'listings.store';
+        } else {
+            $formActionVerb = 'edit';
+            $route = 'listings.update';
         }
+        
     @endphp
     <form action="{{ route($route, $formActionVerb === 'edit' ? $listing : '') }}" method="POST" class="px-3 py-2">
         @php(View::share('langKey', "form-input.$type.$formActionVerb"))
@@ -52,6 +44,18 @@
             @includeWhen($type === 'offer', 'listing.is_religious')
         </x-forms.fieldset>
     
-        @include('components.forms.actions')
+        <x-forms.actions>
+            @if($formActionVerb === 'edit')
+                <x-slot name="auxiliaryButtons">
+                    <x-jet-danger-button type="button" class="m-2 mr-auto" wire:click="$toggle('confirmingModelDeletion')" wire:loading.attr="disabled">
+                        Delete
+                    </x-jet-danger-button>
+
+                    <x-jet-button type="button" class="m-2 mr-auto bg-green-500 hover:bg-green-600 " wire:click="$toggle('confirmingMarkedAsSolved')" wire:loading.attr="disabled">
+                        Mark as Solved
+                    </x-jet-button>
+                </x-slot>
+            @endif
+        </x-forms.actions>
     </form>
 </x-forms.form-card>

@@ -44,7 +44,7 @@
                             </x-jet-dropdown-link>
                             @endcan
 
-                            <x-jet-dropdown-link href="{{ route('listings.edit', $listing) }}">
+                            <x-jet-dropdown-link href="{{ route('listings.edit', ['listing' => $listing, 'confirmingMarkedAsSolved' => true]) }}">
                                 <div class="inline-flex">
                                     {{ __("Mark as Solved") }}
                                     <!-- Icons by Google Material Icons (License Apache 2.0) -->

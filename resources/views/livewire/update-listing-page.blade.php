@@ -43,4 +43,38 @@
             </form>
         </x-slot>
     </x-jet-confirmation-modal>
+
+    <x-jet-dialog-modal wire:model="confirmingMarkedAsSolved">
+        <x-slot name="title">
+            {{ __("Mark " . ucwords($listing->type) . " as solved" ) }}
+        </x-slot>
+    
+        <x-slot name="content">
+            @if($listing->type === 'offer')
+                If your offer is no longer applicable or available, 
+                please press the green button to mark the offer as solved!
+
+                This will archive the post and free up the listing page
+                for new offers. Please note that this action can't
+                be undone, though you can always post another one!
+            @else  
+                If you have recieved aid and/or don't need the listing anymore,
+                please press the green button to mark the request as solved!
+
+                This will archive the post and free up the listing page
+                for new requests. Please note that this action can't
+                be undone, though you can always post another one!
+            @endif
+        </x-slot>
+    
+        <x-slot name="footer">
+            <x-jet-secondary-button class="m-2" wire:click="$toggle('confirmingMarkedAsSolved')" wire:loading.attr="disabled">
+                Nevermind
+            </x-jet-secondary-button>
+        
+            <x-jet-button type="submit" class="m-2 bg-green-500 hover:bg-green-600" wire:click="markAsSolved" wire:loading.attr="disabled">
+                {{ __('Mark as Solved') }}
+            </x-jet-button>
+        </x-slot>
+    </x-jet-dialog-modal>
 </div>
