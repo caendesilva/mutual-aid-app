@@ -105,7 +105,7 @@
                         <br>
                         <h3 class="text-center text-lg lg:text-xl py-3">Could not find any results! Try broadening your
                             search?</h3>
-                        <button wire:click="$set('search', null)" title="Refresh the page without any filters">Clear
+                        <button wire:click="clearFilters()" title="Refresh the page without any filters">Clear
                             Search Filters</button>
                     </div>
                     @endif

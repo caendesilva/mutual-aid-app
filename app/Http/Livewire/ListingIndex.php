@@ -65,6 +65,16 @@ class ListingIndex extends Component
         $this->resetPage();
     }
 
+    /**
+     * Clear the current search filters
+     */
+    public function clearFilters()
+    {
+        $this->search = '';
+        $this->filters = [];
+        $this->resetPage();
+    }
+
 
     /**
      * Return the view with the filtered models.
