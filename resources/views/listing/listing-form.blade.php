@@ -1,7 +1,24 @@
 <x-forms.form-card>
     <x-jet-validation-errors />
     <form action="{{ route('listings.store') }}" method="POST" class="px-3 py-2">
-        @php(View::share('langKey', "form-input.$type.create"))
+        @php
+            $routeName = str_replace('listings.', '', Request::route()->getName());
+            switch ($routeName) {
+                case 'edit':
+                    $formActionVerb = 'edit';
+                    break;
+
+                   case 'create':
+                    $formActionVerb = 'create';
+                    break;
+                
+                default:
+                    abort(400, 'Bad request');
+                    break;
+            }
+        @endphp
+        @php(View::share('formActionVerb', $formActionVerb))
+        @php(View::share('langKey', "form-input.$type.$formActionVerb"))
         @csrf
         <input type="hidden" id="type" name="type" value="{{ $type }}">
 
@@ -13,7 +30,7 @@
                 hint="It's okay to just put a postal code. Though being specific makes the map more accurate." />
         </x-forms.fieldset>
 
-        <x-forms.fieldset :legend='__("form-input.$type.create.resources")'>
+        <x-forms.fieldset :legend='__("form-input.$type.$formActionVerb.resources")'>
             <x-forms.checkbox-group legend="Check all that apply and specify quantity in the Request Details"
                 property="resources" :values="['water', 'food', 'money', 'shelter', 'other']"
                 :checkedValues="$listing->resources ?? false" />
