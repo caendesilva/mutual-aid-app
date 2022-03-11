@@ -11,6 +11,17 @@ use Illuminate\Support\Facades\App;
 class ListingController extends Controller
 {
     /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+        // $this->authorizeResource(Listing::class, 'listing'); @todo implement policy
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -49,7 +60,11 @@ class ListingController extends Controller
      */
     public function show(Listing $listing)
     {
-        //
+        return view('listing.show', [
+            'listing' => $listing,
+            'type' => $listing->type,
+            'Type' => ucfirst($listing->type),
+        ]);
     }
 
     /**
