@@ -47,7 +47,7 @@
                 :value="$listing->body ?? old('body')"/>
 
             <x-forms.form-input type="date" property="expires_at" min="{{ date('Y-m-d') }}"
-                :value="isset($listing) ? $listing->expires_at->format('Y-m-d') : old('expires_at')"/>
+                :value="(isset($listing) && isset($listing->expires_at)) ? $listing->expires_at->format('Y-m-d') : old('expires_at')"/>
 
             @includeWhen($type === 'offer', 'listing.is_religious')
         </x-forms.fieldset>
