@@ -22,6 +22,7 @@ class StoreListingRequest extends FormRequest
             'expires_at' => 'nullable|date',
             'resources' => 'nullable|array',
             'type' => 'required|string|in:request,offer',
+            'is_religious' => 'nullable|boolean',
         ];
     }
 }

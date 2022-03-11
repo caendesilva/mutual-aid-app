@@ -19,6 +19,8 @@
         <x-forms.fieldset legend="Optional Fields">
             <x-forms.form-input property="contacts" maxlength="128" />
             <x-forms.form-input-textarea property="body" maxlength="2048" rows="3"/>
+
+            @includeWhen($type === 'offer', 'listing.is_religious')
         </x-forms.fieldset>
     
         @include('components.forms.actions')

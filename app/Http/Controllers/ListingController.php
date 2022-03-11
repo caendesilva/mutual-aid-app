@@ -71,7 +71,14 @@ class ListingController extends Controller
     {
         $validated = $request->validated();
 
+        
+
         $listing = Auth::user()->listings()->create($validated);
+
+        if ($validated['is_religious']) {
+            $listing->metadata = (object) ['is_religious' => true];
+            $listing->save();
+        }
 
         return Redirect::to(route('listings.show', $listing));
     }
