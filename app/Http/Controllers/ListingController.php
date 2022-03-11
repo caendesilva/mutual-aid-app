@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateListingRequest;
 use App\Http\Livewire\ListingIndex;
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class ListingController extends Controller
 {
@@ -67,7 +69,11 @@ class ListingController extends Controller
      */
     public function store(StoreListingRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $listing = Auth::user()->listings()->create($validated);
+
+        return Redirect::to(route('listings.show', $listing));
     }
 
     /**

@@ -87,6 +87,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get all of the listings for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function listings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Listing::class);
+    }
+
+    /**
      * Get all of the projects for the User
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
