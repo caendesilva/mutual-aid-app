@@ -20,6 +20,8 @@
             <x-forms.form-input property="contacts" maxlength="128" />
             <x-forms.form-input-textarea property="body" maxlength="2048" rows="3"/>
 
+            <x-forms.form-input type="date" property="expires_at" min="{{ date('Y-m-d') }}" />
+
             @includeWhen($type === 'offer', 'listing.is_religious')
         </x-forms.fieldset>
     

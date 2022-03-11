@@ -75,7 +75,7 @@ class ListingController extends Controller
 
         $listing = Auth::user()->listings()->create($validated);
 
-        if ($validated['is_religious']) {
+        if ($validated['is_religious'] ?? false) {
             $listing->metadata = (object) ['is_religious' => true];
             $listing->save();
         }

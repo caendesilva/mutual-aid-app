@@ -28,6 +28,8 @@ class Listing extends Model
         'body',
         'type',
         'resources',
+        'expires_at',
+        'closed_at',
     ];
 
     /**
@@ -38,8 +40,15 @@ class Listing extends Model
     protected $casts = [
         'resources' => 'array',
         'metadata' => 'object',
+        'expires_at' => 'datetime',
+        'closed_at' => 'datetime',
     ];
 
+    /**
+     * =================
+     * | Relationships |   
+     * =================
+     */
 
     /**
      * Get the user that created the Listing.
@@ -51,6 +60,12 @@ class Listing extends Model
         return $this->belongsTo(User::class);
     }
 
+    
+    /**
+     * ==============
+     * | Attributes |   
+     * ==============
+     */
 
     /**
      * Get the created_at date in a more human friendly form.
@@ -67,7 +82,12 @@ class Listing extends Model
         );
     }
 
-     
+    /**
+     * =========
+     * | Other |   
+     * =========
+     */
+
     /**
      * Get the indexable data array for the model.
      *
