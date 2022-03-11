@@ -1,4 +1,4 @@
-<div class="flex flex-row -mx-1 mt-5 justify-end">
+<div class="flex flex-row -mx-2 mt-5 justify-end">
     @if($hasDeleteButton ?? false)
     <x-jet-danger-button type="button" class="m-2 mr-auto" wire:click="$toggle('confirmingModelDeletion')" wire:loading.attr="disabled">
         Delete
