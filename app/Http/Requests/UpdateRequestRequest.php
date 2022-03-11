@@ -6,6 +6,7 @@ use App\Actions\ProjectValidationRules;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
+/** @deprecated */
 class UpdateRequestRequest extends FormRequest
 {
     use ProjectValidationRules;

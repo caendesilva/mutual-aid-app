@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+/** @deprecated */
 trait ProjectValidationRules
 {
     /**
