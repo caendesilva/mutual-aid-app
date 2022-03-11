@@ -83,7 +83,7 @@ class ListingIndex extends Component
      */
     public function render()
     {
-        $query = Listing::where('subject', 'like', "%$this->search%");
+        $query = Listing::where('subject', 'like', "%$this->search%")->orderByDesc('created_at');
 
         if ($this->filters['exclude_religious_providers'] ?? false) {
             $query->whereNull('metadata->is_religious');
