@@ -13,7 +13,7 @@ class UpdateListingRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true; // We handle authorization in the controller
     }
 
     /**

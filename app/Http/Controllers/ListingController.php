@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\App;
 use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Http\Livewire\ListingIndex;
-use App\Http\Livewire\ListingForm;
 use App\Models\Listing;
+use Illuminate\Http\Request;
 
 class ListingController extends Controller
 {
@@ -37,9 +37,26 @@ class ListingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return App::call([new ListingForm(), '__invoke']);
+        switch ($request->get('type') ?? null) {
+            case 'offer':
+                $type = 'offer';
+                $Type = 'Offer';
+                break;
+            case 'request':
+                $type = 'request';
+                $Type = 'Request';
+                break;
+            default:
+                $type = false;
+                break;
+        }
+
+        return view('listing.listing-create-page', [
+            'type' => $type,
+            'Type' => $Type ?? null,
+        ]);
     }
 
     /**

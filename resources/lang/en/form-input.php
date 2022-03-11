@@ -32,8 +32,10 @@ return [
 	'request.create.resource.money.description' => 'Please specify in the Request Details',
 	'request.create.resource.shelter.description' => 'Please specify in the Request Details',
 	'request.create.resource.other.description' => 'Please specify in the Request Details',
-	'request.create.body' => 'Request Details - Remember to specify your contact information here',
-	'request.create.body.placeholder' => 'e.g. We need food and shelter. Please contact us on 123-123-123 or hello@example.com.',
+	'request.create.contacts' => 'Contact Information',
+	'request.create.contacts.placeholder' => 'e.g. Please contact us on 123-123-123 or hello@example.com.',
+	'request.create.body' => 'Request Details - Include information such as quantities here.',
+	'request.create.body.placeholder' => 'e.g. We need food and shelter for 10 people for 3 nights and about 4 gallons of fresh water.',
 	'request.create.expires_at' => 'Request Expiration - Do you need aid before a certain date?',
 	'request.create.resources' => 'Resources in Request',
 
