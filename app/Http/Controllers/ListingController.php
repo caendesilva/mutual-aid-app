@@ -21,7 +21,7 @@ class ListingController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index', 'show']);
-        // $this->authorizeResource(Listing::class, 'listing'); @todo implement policy
+        $this->authorizeResource(Listing::class, 'listing');
     }
 
     /**
@@ -70,8 +70,6 @@ class ListingController extends Controller
     public function store(StoreListingRequest $request)
     {
         $validated = $request->validated();
-
-        
 
         $listing = Auth::user()->listings()->create($validated);
 

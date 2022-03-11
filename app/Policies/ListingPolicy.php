@@ -16,21 +16,25 @@ class ListingPolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(User $user)
+    public function viewAny(?User $user)
     {
-        //
+        return true;
     }
 
     /**
      * Determine whether the user can view the model.
+     * If you want to handle this on a per model basis,
+     * such as if we implement moderating tools to hide
+     * posts from anyone who is not a moderator, you will
+     * need to override this method, and supply the model as
+     * a parameter in the model policy class.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Listing  $listing
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Listing $listing)
+    public function view(?User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +45,7 @@ class ListingPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +57,7 @@ class ListingPolicy
      */
     public function update(User $user, Listing $listing)
     {
-        //
+        return $user->isAdmin || $user->id === $listing->user->id;
     }
 
     /**
@@ -65,7 +69,7 @@ class ListingPolicy
      */
     public function delete(User $user, Listing $listing)
     {
-        //
+        return $user->isAdmin || $user->id === $listing->user->id;
     }
 
     /**
@@ -77,7 +81,7 @@ class ListingPolicy
      */
     public function restore(User $user, Listing $listing)
     {
-        //
+        return $user->isAdmin;
     }
 
     /**
@@ -89,6 +93,6 @@ class ListingPolicy
      */
     public function forceDelete(User $user, Listing $listing)
     {
-        //
+        return $user->isAdmin;
     }
 }
