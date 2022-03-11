@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </aside>
-                <section class="py-3 px-4 lg:ml-8 w-full max-w-xl">
+                <section class="py-3 px-4 lg:ml-8 w-full max-w-2xl">
                     @if($listings && $listings->count())
                     <div class="pt-3">
                         {{ $listings->onEachSide(1)->links() }}
@@ -93,7 +93,7 @@
 
                     <div>
                         @foreach ($listings as $listing)
-                        @include('listing.single-listing-preview-card')
+                        @include('listing.listing-card')
                         @endforeach
                     </div>
 
