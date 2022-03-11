@@ -1320,6 +1320,11 @@ select {
 .w-3 {
   width: 0.75rem;
 }
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -1696,6 +1701,15 @@ select {
 }
 .fill-current {
   fill: currentColor;
+}
+.fill-indigo-500 {
+  fill: #6366f1;
+}
+.fill-red-500 {
+  fill: #ef4444;
+}
+.fill-green-500 {
+  fill: #22c55e;
 }
 .object-cover {
   -o-object-fit: cover;
