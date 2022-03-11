@@ -4,12 +4,30 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Listings
             </h2>
-            <a href="{{ route('listings.create') }}">
-                {{-- Buttons that show depends on the role --}}
-                <x-jet-button>
-                    {{ __('Submit a Listing') }}
-                </x-jet-button>
-            </a>
+           
+            <div class="sm:hidden">
+                <a href="{{ route('listings.create') }}" class="mx-1">
+                    <x-jet-button>
+                        {{ __('Submit a Listing') }}
+                    </x-jet-button>
+                </a>
+            </div>
+            <div class="hidden sm:block">
+                @if(in_array('offer', $buttons))
+                <a href="{{ route('listings.create', ['type' => 'offer']) }}" class="mx-1">
+                    <x-jet-button>
+                        {{ __('Submit an Offer') }}
+                    </x-jet-button>
+                </a>
+                @endif
+                @if(in_array('request', $buttons))
+                <a href="{{ route('listings.create', ['type' => 'request']) }}" class="mx-1">
+                    <x-jet-button>
+                        {{ __('Submit a Request') }}
+                    </x-jet-button>
+                </a>
+                @endif
+            </div>
         </div>
     </x-slot>
 

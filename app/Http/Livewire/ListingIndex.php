@@ -3,12 +3,19 @@
 namespace App\Http\Livewire;
 
 use App\Models\Listing;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class ListingIndex extends Component
 {
     use WithPagination;
+
+    /**
+     * The buttons to show in the header
+     * @var array
+     */
+    public array $buttons = ['offer', 'request'];
 
     /**
      * The search query
@@ -22,6 +29,26 @@ class ListingIndex extends Component
      */
     public array $filters = [];
 
+    /**
+     * Prepare the component
+     */
+    public function mount()
+    {
+        // Set the buttons to show in the header
+        if (Auth::check()) {
+            $user = Auth::user();
+            $pin = $user->hasRole('pin');
+            $map = $user->hasRole('map');
+            if ($pin && !$map) {
+                $this->buttons = ['request'];
+            } else if (!$pin && $map) {
+                $this->buttons = ['offer'];
+            } else {
+                # do nothing (keep default of both buttons)
+            }
+        }
+    }
+    
     /**
      * Reset the pagination position when search is updated
      */
