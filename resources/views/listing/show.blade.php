@@ -59,7 +59,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <article class="p-4 bg-white overflow-hidden shadow-xl sm:rounded-lg flex">
+            <article class="p-4 bg-white overflow-hidden shadow-xl sm:rounded-lg flex flex-col sm:flex-row">
                 <div class="max-w-5xl">
                     <header class="p-3">
                         <h1 class="text-2xl">
@@ -117,7 +117,7 @@
                         @endif
                     </div>
                 </div>
-                <aside class="p-3 mx-auto">
+                <aside class="p-3 sm:mx-auto">
                     <h3 class="text-lg font-bold">Location:</h3>
                     <address>{{ $listing->location }}</address>
                     <x-open-street-map :search="$listing->location" />
