@@ -1,25 +1,29 @@
 <x-forms.form-card>
     <x-jet-validation-errors />
-    <form action="{{ route('listings.store') }}" method="POST" class="px-3 py-2">
-        @php
-            $routeName = str_replace('listings.', '', Request::route()->getName());
-            switch ($routeName) {
-                case 'edit':
-                    $formActionVerb = 'edit';
-                    break;
+    @php
+        $routeName = str_replace('listings.', '', Request::route()->getName());
+        switch ($routeName) {
+            case 'edit':
+                $formActionVerb = 'edit';
+                $route = 'listings.update';
+                break;
 
-                   case 'create':
-                    $formActionVerb = 'create';
-                    break;
-                
-                default:
-                    abort(400, 'Bad request');
-                    break;
-            }
-        @endphp
-        @php(View::share('formActionVerb', $formActionVerb))
+                case 'create':
+                $formActionVerb = 'create';
+                $route = 'listings.store';
+                break;
+            
+            default:
+                abort(400, 'Bad request');
+                break;
+        }
+    @endphp
+    <form action="{{ route($route, $formActionVerb === 'edit' ? $listing : '') }}" method="POST" class="px-3 py-2">
         @php(View::share('langKey', "form-input.$type.$formActionVerb"))
         @csrf
+        @if($formActionVerb === 'edit')
+        @method("PATCH")
+        @endif
         <input type="hidden" id="type" name="type" value="{{ $type }}">
 
         <x-forms.fieldset legend="Required Fields">

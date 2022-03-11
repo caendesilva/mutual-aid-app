@@ -121,7 +121,9 @@ class ListingController extends Controller
      */
     public function update(UpdateListingRequest $request, Listing $listing)
     {
-        //
+        $validated = $request->validated();
+        $listing->update($validated);
+        return Redirect::to(route('listings.show', $listing));
     }
 
     /**
