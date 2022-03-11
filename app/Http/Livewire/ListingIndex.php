@@ -89,6 +89,10 @@ class ListingIndex extends Component
             $query->whereNull('metadata->is_religious');
         }
 
+        if (($this->filters['include_closed_listings'] ?? false) !== true) {
+            $query->whereNull('closed_at');
+        }
+
         if (isset($this->filters['types'])) {
             switch ($this->filters['types']) {
                 case 'offers':

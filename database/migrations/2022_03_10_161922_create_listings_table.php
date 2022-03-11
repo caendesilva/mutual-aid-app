@@ -28,9 +28,7 @@ return new class extends Migration
             $table->json('resources')->nullable(); // Array of the resources offered/needed
             $table->json('metadata')->nullable(); // Metadata object, for example, to filter religious posts
 
-            $table->dateTime('expires_at')->nullable(); // Does the offer expire within a date?
             $table->dateTime('closed_at')->nullable(); // When was the request/offer fulfilled?
-            
             $table->timestamps();
         });
     }

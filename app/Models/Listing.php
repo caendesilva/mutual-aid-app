@@ -28,7 +28,6 @@ class Listing extends Model
         'body',
         'type',
         'resources',
-        'expires_at',
         'closed_at',
     ];
 
@@ -40,7 +39,6 @@ class Listing extends Model
     protected $casts = [
         'resources' => 'array',
         'metadata' => 'object',
-        'expires_at' => 'datetime',
         'closed_at' => 'datetime',
     ];
 
