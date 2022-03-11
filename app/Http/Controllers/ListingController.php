@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\App;
 use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Http\Livewire\ListingIndex;
+use App\Http\Livewire\UpdateListingPage;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -102,9 +103,13 @@ class ListingController extends Controller
      * @param  \App\Models\Listing  $listing
      * @return \Illuminate\Http\Response
      */
-    public function edit(Listing $listing)
+    public function edit(Request $request, Listing $listing)
     {
-        //
+        $component = new UpdateListingPage();
+        if ($request->has('confirmingModelDeletion')) {
+            $component->confirmingListingDeletion = true;
+        }
+        return App::call([$component, '__invoke']);
     }
 
     /**
@@ -127,6 +132,8 @@ class ListingController extends Controller
      */
     public function destroy(Listing $listing)
     {
-        //
+        $listing->delete();
+
+        return redirect()->route('listings.index')->banner('Listing deleted successfully.');
     }
 }
