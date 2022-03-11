@@ -37,7 +37,7 @@ return [
 	'request.create.body' => 'Request Details - Include information such as quantities here.',
 	'request.create.body.placeholder' => 'e.g. We need food and shelter for 10 people for 3 nights and about 4 gallons of fresh water.',
 	'request.create.expires_at' => 'Request Expiration - Do you need aid before a certain date?',
-	'request.create.resources' => 'Resources in Request',
+	'request.create.resources' => 'Resources Needed',
 
 	// Request Edit Values
 	'offer.edit.subject' => 'PleaseReplaceMe',
@@ -67,7 +67,7 @@ return [
 	'offer.create.body' => 'Request Details - Remember to specify your contact information here',
 	'offer.create.body.placeholder' => 'e.g. We can supply food and shelter. Please contact us on 123-123-123 or hello@example.com.',
 	'offer.create.expires_at' => 'Request Expiration - Do you need to give aid before a certain date?',
-	'offer.create.resources' => 'Resources in Request',
+	'offer.create.resources' => 'Resources Available',
 
 	// Offer Edit Values
 	'offer.edit.subject' => 'PleaseReplaceMe',
