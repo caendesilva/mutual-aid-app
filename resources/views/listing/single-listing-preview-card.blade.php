@@ -1,8 +1,14 @@
 <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
 	<header>
+		<div class="flex flex-row items-center justify-between">
+		@includeWhen($listing->type === 'offer', 'components.badges.listing-type-offer')
+		@includeWhen($listing->type === 'request', 'components.badges.listing-type-request')
+
 		@if($listing->type === 'offer' && optional($listing->metadata)->is_religious)
 		<x-badges-religious-provider class="float-right" />
 		@endif
+		</div>
+		
 		<h3 class="text-lg font-bold">
 			<a href="{{ route('listings.show', $listing) }}">{{ $listing->subject }}</a>
 		</h3>

@@ -79,8 +79,8 @@
                                 class="border-gray-400 focus:border-indigo-600 focus:ring focus:ring-indigo-500 focus:ring-opacity-75 rounded-md shadow-sm block mt-1 w-full"
                                 type="select" name="types">
                                 <option value="both">Show Both</option>
-                                <option value="offers">Offers Only</option>
-                                <option value="requests">Requests Only</option>
+                                <option value="offers">Offers Only ⛑️</option>
+                                <option value="requests">Requests Only 🙋</option>
                             </select>
                         </div>
                     </div>
