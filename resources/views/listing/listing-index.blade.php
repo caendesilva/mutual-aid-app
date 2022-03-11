@@ -14,19 +14,28 @@
     </x-slot>
     
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-4">
             <div class="flex flex-col md:flex-row overflow-hidden">
-                <aside class="p-4 py-6">
+                <aside class="p-4 py-6 w-full max-w-xs">
                     <div class="p-4 bg-white shadow-lg rounded-lg">
                         <header class="flex items-center mb-3">
                             <h4 class="text-lg font-bold mr-2">Filters</h4>
                         </header>
                         <div>
-                            <x-jet-input type="search"  wire:model="search" placeholder="Search" title="Enter a search query"/>
+                            <x-jet-input type="search" wire:model="search" placeholder="Search" title="Enter a search query" class="w-full"/>
+                        </div>
+                        <hr class="my-4 mr-8">
+                        <div>
+                            <div class="m-1 flex items-center">
+                                <x-jet-checkbox wire:model="filters.exclude_religious_providers" id="exclude_religious_providers" />
+                                <label for="exclude_religious_providers" class="ml-2 cursor-pointer">
+                                    Exclude Religious Providers
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </aside>
-                <section class="py-3 px-4 lg:ml-8">
+                <section class="py-3 px-4 lg:ml-8 w-full max-w-xl">
                     @if($listings && $listings->count())
                     <div class="pt-3">
                         {{ $listings->onEachSide(1)->links() }}
