@@ -18,16 +18,22 @@ class ListingIndex extends Component
     public array $buttons = ['offer', 'request'];
 
     /**
+     * The filter options
+     */
+    public bool $filterExcludeReligiousProviders = false;
+    public bool $filterIncludeClosedListings = false;
+
+    protected $queryString = [
+        'filterExcludeReligiousProviders' => ['except' => false],
+        'filterIncludeClosedListings' => ['except' => false],
+    ];
+
+    /**
      * The search query
      * @var string
      */
     public string $search = '';
-    
-    /**
-     * The active filters
-     * @var array
-     */
-    public array $filters = [];
+
 
     /**
      * Prepare the component
@@ -60,7 +66,15 @@ class ListingIndex extends Component
     /**
      * Reset the pagination position when filters are updated
      */
-    public function updatingFilters()
+    public function updatingFilterExcludeReligiousProviders()
+    {
+        $this->resetPage();
+    }
+
+    /**
+     * Reset the pagination position when filters are updated
+     */
+    public function updatingFilterIncludeClosedListings()
     {
         $this->resetPage();
     }
@@ -71,7 +85,9 @@ class ListingIndex extends Component
     public function clearFilters()
     {
         $this->search = '';
-        $this->filters = [];
+        $this->filterExcludeReligiousProviders = false;
+        $this->filterIncludeClosedListings = false;
+        
         $this->resetPage();
     }
 
@@ -85,11 +101,11 @@ class ListingIndex extends Component
     {
         $query = Listing::where('subject', 'like', "%$this->search%")->orderByDesc('created_at');
 
-        if ($this->filters['exclude_religious_providers'] ?? false) {
+        if ($this->filterExcludeReligiousProviders) {
             $query->whereNull('metadata->is_religious');
         }
 
-        if (($this->filters['include_closed_listings'] ?? false) !== true) {
+        if (!$this->filterIncludeClosedListings) {
             $query->whereNull('closed_at');
         }
 

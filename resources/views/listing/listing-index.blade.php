@@ -64,7 +64,7 @@
                             <div class="m-1 flex items-center">
                                 <fieldset>
                                     <div>
-                                        <x-jet-checkbox wire:model="filters.exclude_religious_providers"
+                                        <x-jet-checkbox wire:model="filterExcludeReligiousProviders"
                                             id="exclude_religious_providers" />
                                         <label for="exclude_religious_providers" class="ml-2 cursor-pointer">
                                             Exclude Religious Providers
@@ -72,7 +72,7 @@
                                     </div>
 
                                     <div>
-                                        <x-jet-checkbox wire:model="filters.include_closed_listings"
+                                        <x-jet-checkbox wire:model="filterIncludeClosedListings"
                                             id="include_closed_listings" />
                                         <label for="include_closed_listings" class="ml-2 cursor-pointer">
                                             Include Closed Listings
