@@ -26,12 +26,12 @@
                 </div>
             </div>
 
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden space-x-6 sm:-my-px sm:flex sm:ml-6  sm:items-center">
                 @guest
-                <x-jet-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                <x-jet-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')" class="h-full">
                     {{ __('Login') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')" class="h-full">
                     {{ __('Register') }}
                 </x-jet-nav-link>
                 @endguest
