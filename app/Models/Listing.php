@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Project to Listing Migration Notes:
@@ -42,6 +43,7 @@ class Listing extends Model
         'closed_at' => 'datetime',
     ];
 
+
     /**
      * =================
      * | Relationships |
@@ -77,6 +79,30 @@ class Listing extends Model
                 ? 'Today at ' . $this->created_at->format('g:ia')
                 : ($this->created_at->isYesterday() ? 'Yesterday at ' . $this->created_at->format('g:ia')
                 : $this->created_at->format('Y-m-d H:i'))),
+        );
+    }
+
+    /**
+     * Get the is_religious boolean status.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function isReligious(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => (bool) ($this->type == 'offer' && optional($this->metadata)->is_religious == true),
+        );
+    }
+
+    /**
+     * Get the is_closed boolean status.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function isClosed(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => (bool) ($this->closed_at != null),
         );
     }
 
