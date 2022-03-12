@@ -34,6 +34,11 @@ class ListingIndex extends Component
      */
     public string $search = '';
 
+    /**
+     * The amount of listings to show per page
+     * @var int
+     */
+    public int $perPage = 12;
 
     /**
      * Prepare the component
@@ -93,6 +98,14 @@ class ListingIndex extends Component
 
 
     /**
+     * Load more posts by increasing the $perPage property
+     */
+    public function loadMore()
+    {
+        $this->perPage += 12;
+    }
+
+    /**
      * Return the view with the filtered models.
      *
      * @return \Illuminate\View\View
@@ -126,9 +139,8 @@ class ListingIndex extends Component
                     break;
             }
         }
-            
 
-        $listings = $query->paginate(12);
+        $listings = $query->paginate($this->perPage);
             
         return view('listing.listing-index', [
             'listings' => $listings

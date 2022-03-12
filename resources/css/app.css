@@ -4,6 +4,6 @@
 
 [x-cloak] { display: none; }
 
-.modal {
-	margin-top: 180px;
-}
+.modal { margin-top: 180px; }
+
+html, body { scroll-behavior: smooth }

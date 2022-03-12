@@ -108,7 +108,14 @@
                     </div>
 
                     <div class="pb-3 text-center pt-3">
-                        <x-jet-button>Load More</x-jet-button>
+                        @if($perPage < $listings->total())
+                        <x-jet-button wire:click="loadMore" wire:loading.attr="disabled">Load More</x-jet-button>
+                        @else
+                            <p class="mb-3">
+                                You've reched the end!
+                            </p>
+                            <a href="#top"><x-jet-secondary-button>Scroll to top</x-jet-secondary-button></a>
+                        @endif
                     </div>
                     @else
                     <div class="text-center">
