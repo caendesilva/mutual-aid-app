@@ -107,6 +107,18 @@ class Listing extends Model
     }
 
     /**
+     * Get the is_solved boolean status.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function isSolved(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => (bool) (optional($this->metadata)->is_resolved == true),
+        );
+    }
+
+    /**
      * =========
      * | Other |
      * =========

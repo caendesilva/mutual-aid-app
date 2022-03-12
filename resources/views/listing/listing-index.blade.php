@@ -63,11 +63,21 @@
                         <div>
                             <div class="m-1 flex items-center">
                                 <fieldset>
-                                    <x-jet-checkbox wire:model="filters.exclude_religious_providers"
-                                        id="exclude_religious_providers" />
-                                    <label for="exclude_religious_providers" class="ml-2 cursor-pointer">
-                                        Exclude Religious Providers
-                                    </label>
+                                    <div>
+                                        <x-jet-checkbox wire:model="filters.exclude_religious_providers"
+                                            id="exclude_religious_providers" />
+                                        <label for="exclude_religious_providers" class="ml-2 cursor-pointer">
+                                            Exclude Religious Providers
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <x-jet-checkbox wire:model="filters.include_closed_listings"
+                                            id="include_closed_listings" />
+                                        <label for="include_closed_listings" class="ml-2 cursor-pointer">
+                                            Include Closed Listings
+                                        </label>
+                                    </div>
                                 </fieldset>
                             </div>
                         </div>
