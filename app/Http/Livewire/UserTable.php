@@ -44,5 +44,4 @@ class UserTable extends DataTableComponent
     {
         return User::with('roles');
     }
-
 }

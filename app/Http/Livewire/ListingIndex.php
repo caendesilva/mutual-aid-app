@@ -41,7 +41,7 @@ class ListingIndex extends Component
             $map = $user->hasRole('map');
             if ($pin && !$map) {
                 $this->buttons = ['request'];
-            } else if (!$pin && $map) {
+            } elseif (!$pin && $map) {
                 $this->buttons = ['offer'];
             } else {
                 # do nothing (keep default of both buttons)
@@ -78,7 +78,7 @@ class ListingIndex extends Component
 
     /**
      * Return the view with the filtered models.
-     * 
+     *
      * @return \Illuminate\View\View
      */
     public function render()

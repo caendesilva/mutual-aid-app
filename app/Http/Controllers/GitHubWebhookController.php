@@ -10,7 +10,7 @@ class GitHubWebhookController extends Controller
 {
     /**
      * Handle the incoming request.
-     * 
+     *
      * Signature validation code based on https://github.com/amezmo/github-webhook-validation
      *
      * @param  \Illuminate\Http\Request  $request

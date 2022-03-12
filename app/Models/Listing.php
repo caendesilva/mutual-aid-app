@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Project to Listing Migration Notes:
- * 
+ *
  * The expires_at column and religion filters have been removed.
  * Instead, these attributes are reccomended to be added in the guarded
  * metadata property. The User id is now also a guarded property.
@@ -44,7 +44,7 @@ class Listing extends Model
 
     /**
      * =================
-     * | Relationships |   
+     * | Relationships |
      * =================
      */
 
@@ -61,7 +61,7 @@ class Listing extends Model
     
     /**
      * ==============
-     * | Attributes |   
+     * | Attributes |
      * ==============
      */
 
@@ -73,7 +73,7 @@ class Listing extends Model
     protected function niceDate(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => ($this->created_at->isToday() 
+            get: fn ($value) => ($this->created_at->isToday()
                 ? 'Today at ' . $this->created_at->format('g:ia')
                 : ($this->created_at->isYesterday() ? 'Yesterday at ' . $this->created_at->format('g:ia')
                 : $this->created_at->format('Y-m-d H:i'))),
@@ -82,7 +82,7 @@ class Listing extends Model
 
     /**
      * =========
-     * | Other |   
+     * | Other |
      * =========
      */
 

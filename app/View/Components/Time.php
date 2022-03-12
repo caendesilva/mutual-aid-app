@@ -50,7 +50,7 @@ class Time extends Component
         if ($niceDate) {
             if ($carbon->isToday()) {
                 $this->date = 'Today at ' . $carbon->format('g:ia');
-            } else if ($carbon->isYesterday()) {
+            } elseif ($carbon->isYesterday()) {
                 $this->date = 'Yesterday at ' . $carbon->format('g:ia');
             }
         }

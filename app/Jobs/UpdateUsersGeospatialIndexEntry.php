@@ -50,7 +50,6 @@ class UpdateUsersGeospatialIndexEntry
             ->updateOrInsert(['for' => 'user', 'model_id' => $this->user->id], [
                     'latitude' => round($coordinates['latitude'], 5),
                     'longitude' => round($coordinates['longitude'], 5)
-                ]
-            );
+                ]);
     }
 }

@@ -38,7 +38,7 @@ class LocationService
 
     /**
      * Retrieves the user's position from the geospatial index.
-     * If it is not set, but the user 
+     * If it is not set, but the user
      * @return [type]
      */
     public static function getUserPositionFromGeospatialIndex(User $user): array
@@ -64,17 +64,17 @@ class LocationService
 
     /**
      * Get a collection of models sorted by their relative distance
-     * 
+     *
      * @param string $for The model to base results on (the search origin)
      *                  Currently only the User model is supported as the location
      *                  attribute is not yet set up.
      * @param string $find Class constant of the model type to search for
      * @param int $limitResults maximum amount of results to return
      * @param int $limitDistance the maximum distance in kilometers
-     * 
+     *
      * @return [type]
      */
-    public static function getGeospatialRecordCollection(User|Listing $for, string $find = Listing::class, int $limitResults  = 36, int $limitDistance = 10000)
+    public static function getGeospatialRecordCollection(User|Listing $for, string $find = Listing::class, int $limitResults = 36, int $limitDistance = 10000)
     {
         if (!$for instanceof \App\Models\User) {
             throw new \Exception('Currently only User origins are supported.', 1);

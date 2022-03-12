@@ -55,7 +55,6 @@ class Footer extends Component
             return "";
         }
         return "";
-
     }
 
     /**
