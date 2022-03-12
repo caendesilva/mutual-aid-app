@@ -2,10 +2,9 @@
 
 namespace App\Core;
 
-use App\Models\Offer;
-use App\Models\Request;
-use App\Models\User;
 use DB;
+use App\Models\User;
+use App\Models\Listing;
 use Kolirt\Openstreetmap\Facade\Openstreetmap as OSM;
 
 /**
@@ -75,7 +74,7 @@ class LocationService
      * 
      * @return [type]
      */
-    public static function getGeospatialRecordCollection(User|Offer|Request $for, string $find = Offer::class, int $limitResults  = 36, int $limitDistance = 10000)
+    public static function getGeospatialRecordCollection(User|Listing $for, string $find = Listing::class, int $limitResults  = 36, int $limitDistance = 10000)
     {
         if (!$for instanceof \App\Models\User) {
             throw new \Exception('Currently only User origins are supported.', 1);

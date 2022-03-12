@@ -5,7 +5,9 @@ This mutual aid app is designed for people living in the United States to offer 
 > We are working on adding support for SMS registration and verification.
 
 ## Contributing
-Right now we need help getting all the text in order. For example, lang keys need to be filled in in lang/en/form-input.php
+Please fill this todo-list with what needs to be done, and if you have time, why not try your hand at fixing one of the issues?
+- [ ] Write more todos
+- [ ] Add more information to the Readme
 
 ## Getting started with the app
 

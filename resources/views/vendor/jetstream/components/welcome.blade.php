@@ -34,7 +34,7 @@
             </a>
             @endguest
             @auth
-            <a href="{{ route('requests.create') }}">
+            <a href="{{ route('listings.create', ['type' => 'request']) }}">
                 <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
                     <div>Post a Request</div>
 
@@ -70,7 +70,7 @@
             </a>
             @endguest
             @auth
-            <a href="{{ route('offers.create') }}">
+            <a href="{{ route('listings.create', ['type' => 'create']) }}">
                 <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
                     <div>Post an Offer</div>
 
