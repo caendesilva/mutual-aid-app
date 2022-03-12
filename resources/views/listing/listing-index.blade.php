@@ -85,7 +85,7 @@
 
                         <div>
                             <x-jet-label for="types" value="{{ __('Filter listing type') }}" />
-                            <select wire:model="filters.types" id="types"
+                            <select wire:model="typeSelector" id="types"
                                 class="border-gray-400 focus:border-indigo-600 focus:ring focus:ring-indigo-500 focus:ring-opacity-75 rounded-md shadow-sm block mt-1 w-full"
                                 type="select" name="types">
                                 <option value="both">Show Both</option>

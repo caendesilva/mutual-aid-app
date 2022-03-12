@@ -22,10 +22,20 @@ class ListingIndex extends Component
      */
     public bool $filterExcludeReligiousProviders = false;
     public bool $filterIncludeClosedListings = false;
+    public bool $filterRequestsOnly = false;
+    public bool $filterOffersOnly = false;
+
+    /**
+     * The property model for the type filter selector input element
+     * @var string
+     */
+    public string $typeSelector = '';
 
     protected $queryString = [
         'filterExcludeReligiousProviders' => ['except' => false],
         'filterIncludeClosedListings' => ['except' => false],
+        'filterRequestsOnly' => ['except' => false],
+        'filterOffersOnly' => ['except' => false],
     ];
 
     /**
@@ -61,6 +71,25 @@ class ListingIndex extends Component
     }
     
     /**
+     * Set the filters depending on the selected value
+     */
+    public function updatedTypeSelector()
+    {
+        if ($this->typeSelector == 'requests') {
+            $this->filterRequestsOnly = true;
+            $this->filterOffersOnly = false;
+        } elseif ($this->typeSelector == 'offers') {
+            $this->filterRequestsOnly = false;
+            $this->filterOffersOnly = true;
+        } else {
+            $this->filterRequestsOnly = false;
+            $this->filterOffersOnly = false;
+        }
+
+        $this->resetPage();
+    }
+
+    /**
      * Reset the pagination position when search is updated
      */
     public function updatingSearch()
@@ -71,17 +100,11 @@ class ListingIndex extends Component
     /**
      * Reset the pagination position when filters are updated
      */
-    public function updatingFilterExcludeReligiousProviders()
+    public function updated($name)
     {
-        $this->resetPage();
-    }
-
-    /**
-     * Reset the pagination position when filters are updated
-     */
-    public function updatingFilterIncludeClosedListings()
-    {
-        $this->resetPage();
+        if (substr($name,0 , 6) === 'filter') {
+            $this->resetPage();
+        }
     }
 
     /**
@@ -92,6 +115,8 @@ class ListingIndex extends Component
         $this->search = '';
         $this->filterExcludeReligiousProviders = false;
         $this->filterIncludeClosedListings = false;
+        $this->filterRequestsOnly = false;
+        $this->filterOffersOnly = false;
         
         $this->resetPage();
     }
@@ -121,23 +146,13 @@ class ListingIndex extends Component
         if (!$this->filterIncludeClosedListings) {
             $query->whereNull('closed_at');
         }
+        
+        if ($this->filterRequestsOnly) {
+            $query->where('type', 'request');
+        }
 
-        if (isset($this->filters['types'])) {
-            switch ($this->filters['types']) {
-                case 'offers':
-                    # Show only offers
-                    $query->where('type', 'offer');
-                    break;
-
-                case 'requests':
-                    # Show only requests
-                    $query->where('type', 'request');
-                    break;
-
-                default:
-                    # Do nothing
-                    break;
-            }
+        if ($this->filterOffersOnly) {
+            $query->where('type', 'offer');
         }
 
         $listings = $query->paginate($this->perPage);
