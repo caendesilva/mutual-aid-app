@@ -17,8 +17,7 @@ class DemoSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             UserSeeder::class,
-            OfferSeeder::class,
-            RequestSeeder::class,
+            ListingSeeder::class,
         ]);
     }
 }

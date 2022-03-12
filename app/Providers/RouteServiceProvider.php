@@ -15,11 +15,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * This is used by Laravel authentication to redirect users after login.
      * 
-     * @todo redirect dynamically to the offer/request index depending on their role.
-     *
      * @var string
      */
-    public const HOME = '/user/profile';
+    public const HOME = '/listings';
 
     /**
      * Define your route model bindings, pattern filters, etc.

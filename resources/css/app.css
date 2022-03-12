@@ -3,3 +3,7 @@
 @import 'tailwindcss/utilities';
 
 [x-cloak] { display: none; }
+
+.modal {
+	margin-top: 180px;
+}
