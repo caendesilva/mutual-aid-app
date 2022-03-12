@@ -2,7 +2,9 @@
 
 namespace App\View\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Throwable;
 
 class Footer extends Component
 {
@@ -22,13 +24,15 @@ class Footer extends Component
      * Get the branch status
      * @return string
      */
-    function getGitStatus(): string
+    private function getGitStatus(): string
     {
+        $anchorStartTag = '<a href="https://github.com/caendesilva/mutual-aid-app" class="text-indigo-700">';
         try {
             $status = shell_exec('git status -bs --porcelain');
 
             if (!str_contains($status, '[')) {
-                return "Up to date with <a href=\"https://github.com/caendesilva/mutual-aid-app\" class=\"text-indigo-700\">Origin/Master</a>.";
+                // @todo add branch check as it returns Master for all branches
+                return "Up to date with {$anchorStartTag}Origin/Master</a>.";
             }
 
             $status = substr($status, 0, strpos($status, ']') + 1);
@@ -50,19 +54,18 @@ class Footer extends Component
 
             $commits = $diffCount <= 1 ? 'commit' : 'commits';
 
-            return "On branch $branch. $diffCount $commits $diffVerb <a href=\"https://github.com/caendesilva/mutual-aid-app\" class=\"text-indigo-700\">$originBranch</a>.";
-        } catch (\Throwable $th) {
+            return "On branch $branch. $diffCount $commits $diffVerb $anchorStartTag $originBranch</a>.";
+        } catch (Throwable) {
             return "";
         }
-        return "";
     }
 
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View
      */
-    public function render()
+    public function render(): View
     {
         return view('components.footer');
     }

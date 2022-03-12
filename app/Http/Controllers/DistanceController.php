@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Kolirt\Openstreetmap\Facade\Openstreetmap as OSM;
 
 /**
@@ -137,8 +136,8 @@ class DistanceController extends Controller
      * The base formula is from Amy (user v-xicai) at Microsoft BI and is as follows
      * =acos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371 (where 6371 is Earth radius in km.)
      *
-     * And thanks to https://stackoverflow.com/a/49212829/5700388 (with the great quote "education never seems like a waste of time")
-     * we know that distance = earth radius * radians.
+     * And thanks to https://stackoverflow.com/a/49212829/5700388 (with the great quote "education
+     * never seems like a waste of time") we know that distance = earth radius * radians.
      *
      * Note that the coordinate trigonometric arguments are in degrees, but the arccosine result
      * in the formula returns radians which we multiply with the Earth radius to get the distance.
@@ -182,12 +181,12 @@ class DistanceController extends Controller
 
         $phiDelta = $phi2 - $phi1;
         $lambdaDelta = $lambda2 - $lambda1;
-        
+
         $phiHaversine = pow((sin($phiDelta / 2)), 2);
         $lambdaHaversine = pow((sin($lambdaDelta / 2)), 2);
 
         $angle = (2 * asin(sqrt($phiHaversine + cos($phi1) * cos($phi2) * $lambdaHaversine)));
-        
+
         $distance = $angle * (self::EARTH_RADIUS * 1000);
 
         return $distance;

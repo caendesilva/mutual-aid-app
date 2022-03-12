@@ -37,11 +37,15 @@ class GitHubWebhookController extends Controller
         $knownSignature = hash_hmac('sha1', $request->getContent(), $knownToken);
 
         if (!hash_equals($knownSignature, $signatureParts[1])) {
-            file_put_contents(base_path('webhook.log'), PHP_EOL . 'Could not verify request signature ' . $signatureParts[1], FILE_APPEND);
-    
+            file_put_contents(
+                base_path('webhook.log'),
+                PHP_EOL . 'Could not verify request signature ' . $signatureParts[1],
+                FILE_APPEND
+            );
+
             throw new UnauthorizedHttpException('Could not verify request signature ' . $signatureParts[1]);
         }
-        
+
         file_put_contents(base_path('webhook.log'), "\n ". now() .
         ": Signature valid. Proceeding.\n", FILE_APPEND);
 

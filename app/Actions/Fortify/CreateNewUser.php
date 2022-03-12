@@ -69,9 +69,10 @@ class CreateNewUser implements CreatesNewUsers
             }
         } catch (\Throwable $th) {
             // We want to handle failures with roles gracefully as it is not critical for registration.
-            // Otherwise, if roles fail, the user is created but not logged in which can be jarring
-            // for the user.
-            request()->session()->flash('flash.banner', __('Something wen\'t wrong when setting your roles. You can update them on your account page.'));
+            request()->session()->flash(
+                'flash.banner',
+                __('Something wen\'t wrong when setting your roles. You can update them on your account page.')
+            );
         }
 
         return $user;

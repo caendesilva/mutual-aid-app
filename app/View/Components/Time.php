@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Carbon\Carbon;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 /**
@@ -19,7 +20,8 @@ class Time extends Component
 
     /**
      * The RFC 2822 date.
-     * Note that we are not following the RFC completely as we remove the seconds and change the Timezone format from O to e
+     * Note that we are not following the RFC completely as we remove
+     * the seconds and change the Timezone format from 'O' to 'e'
      * @see https://datatracker.ietf.org/doc/html/rfc2822
      * @var string
      */
@@ -46,7 +48,7 @@ class Time extends Component
         $this->rfc = $carbon->format('D, d M Y H:i e'); // Equivalent to 'r' up until the seconds
 
         $this->date = $carbon->format('Y-m-d H:i');
-        
+
         if ($niceDate) {
             if ($carbon->isToday()) {
                 $this->date = 'Today at ' . $carbon->format('g:ia');
@@ -59,9 +61,9 @@ class Time extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return View
      */
-    public function render()
+    public function render(): View
     {
         return view('components.time');
     }

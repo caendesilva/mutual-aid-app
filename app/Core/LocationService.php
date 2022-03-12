@@ -5,6 +5,8 @@ namespace App\Core;
 use DB;
 use App\Models\User;
 use App\Models\Listing;
+use Exception;
+use Illuminate\Support\Collection;
 use Kolirt\Openstreetmap\Facade\Openstreetmap as OSM;
 
 /**
@@ -39,7 +41,8 @@ class LocationService
     /**
      * Retrieves the user's position from the geospatial index.
      * If it is not set, but the user
-     * @return [type]
+     * @param User $user
+     * @return array [type]
      */
     public static function getUserPositionFromGeospatialIndex(User $user): array
     {
@@ -65,19 +68,26 @@ class LocationService
     /**
      * Get a collection of models sorted by their relative distance
      *
-     * @param string $for The model to base results on (the search origin)
-     *                  Currently only the User model is supported as the location
+     * @todo Implement the $find parameter filter
+     *
+     * @param User|Listing $for The model to base results on (the search origin)
+     *                  Currently, only the User model is supported as the location
      *                  attribute is not yet set up.
      * @param string $find Class constant of the model type to search for
      * @param int $limitResults maximum amount of results to return
      * @param int $limitDistance the maximum distance in kilometers
      *
-     * @return [type]
+     * @return Collection [type]
+     * @throws Exception
      */
-    public static function getGeospatialRecordCollection(User|Listing $for, string $find = Listing::class, int $limitResults = 36, int $limitDistance = 10000)
-    {
-        if (!$for instanceof \App\Models\User) {
-            throw new \Exception('Currently only User origins are supported.', 1);
+    public static function getGeospatialRecordCollection(
+        User|Listing $for,
+        string $find = Listing::class,
+        int $limitResults = 36,
+        int $limitDistance = 10000
+    ): Collection {
+        if (!$for instanceof User) {
+            throw new Exception('Currently only User origins are supported.', 1);
         }
 
         $latitude = (float) $for->position['latitude'];
@@ -86,7 +96,7 @@ class LocationService
         return DB::table('geospatial_index')
             ->selectRaw(
                 '
-                *, 
+                *,
                     (
                     6371 * acos(
                         cos(
