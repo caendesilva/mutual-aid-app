@@ -15,16 +15,23 @@
                     <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-jet-nav-link>
+                    
                     @can('accessDashboard')
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     @endcan
+
                     <x-jet-nav-link href="{{ route('listings.index') }}" :active="request()->routeIs('listings.*')">
                         {{ __('Listings') }}
                     </x-jet-nav-link>
+
                     <x-jet-nav-link href="{{ route('map') }}" :active="request()->routeIs('map')">
                         {{ __('Map') }}
+                    </x-jet-nav-link>
+                    
+                    <x-jet-nav-link href="{{ route('faq') }}" :active="request()->routeIs('faq')">
+                        {{ __('Faq') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -171,6 +178,10 @@
 
             <x-jet-responsive-nav-link href="{{ route('map') }}" :active="request()->routeIs('map')">
                 {{ __('Map') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('faq') }}" :active="request()->routeIs('faq')">
+                {{ __('Faq') }}
             </x-jet-responsive-nav-link>
         </div>
         
