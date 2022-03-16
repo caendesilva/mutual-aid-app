@@ -39,7 +39,7 @@ class MapController extends Controller
             $markers[] = [
                 'lat' => $index->latitude,
                 'lon' => $index->longitude,
-                'label' => '<span class=\'map-listing-label\'>'. ($listing->type == "offer" ? '⛑️' : '🙋') . e($listing->subject).'</span> <a href=\''.route('listings.show', $listing).'\'>View Listing</a>',
+                'label' => '<span class=\'map-listing-label\'>'. ($listing->type == "offer" ? '⛑️ ' : '🙋 ') . e($listing->subject).'</span> <a href=\''.route('listings.show', $listing).'\'>View Listing</a>',
                 'type' => $listing->type,
             ];
         }
