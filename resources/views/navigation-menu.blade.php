@@ -23,6 +23,9 @@
                     <x-jet-nav-link href="{{ route('listings.index') }}" :active="request()->routeIs('listings.*')">
                         {{ __('Listings') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('map') }}" :active="request()->routeIs('map')">
+                        {{ __('Map') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -164,6 +167,10 @@
 
             <x-jet-responsive-nav-link href="{{ route('listings.index') }}" :active="request()->routeIs('listings.*')">
                 {{ __('Listings') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('map') }}" :active="request()->routeIs('map')">
+                {{ __('Map') }}
             </x-jet-responsive-nav-link>
         </div>
         

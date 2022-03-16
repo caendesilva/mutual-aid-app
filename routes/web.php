@@ -22,7 +22,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('listings', ListingController::class);
-Route::get('map', MapController::class);
+Route::get('map', MapController::class)->name('map');
 
 Route::middleware(['auth:sanctum', 'verified', 'can:accessDashboard'])->get('/dashboard', function () {
     return view('dashboard');

@@ -3,9 +3,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="p-6 bg-white overflow-hidden shadow-xl sm:rounded-lg">
 				<section>
-					<header class="flex items-center justify-between">
+					<header class="sm:flex items-center justify-between">
 						<h1 class="text-3xl font-bold mb-3">Interactive Map</h1>
-						<p>Showing {{ sizeof($markers) }} results</p>
+						<p class="mb-3 sm:mb-0">Showing {{ sizeof($markers) }} results</p>
 					</header>
 					<div>
 						<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
