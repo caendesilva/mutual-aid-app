@@ -15,6 +15,8 @@ class OpenStreetMap extends Component
     public string|null $mapSource = null;
 
     /**
+     * @todo use data from the geospatial index instead
+     * 
      * Create a new component instance.
      *
      * @return void

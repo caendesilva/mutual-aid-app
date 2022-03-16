@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MapController extends Controller
 {
@@ -26,11 +28,21 @@ class MapController extends Controller
     {
         $markers = [];
 
-        $markers[] = [
-            'lat' => 40.7128,
-            'lon' => -74.0060,
-            'label' => 'New York',
-        ];
+        $listings = DB::table('geospatial_index')->where('for', 'listing')->get();
+
+        foreach ($listings as $index) {
+            if ($index->latitude == 0 && $index->longitude == 0) {
+                // If the coordinates are invalid we do not add them to the array.
+                continue;
+            }
+            $listing = Listing::findOrFail($index->model_id);
+            $markers[] = [
+                'lat' => $index->latitude,
+                'lon' => $index->longitude,
+                'label' => '<span class=\'map-listing-label\'>'. ($listing->type == "offer" ? '⛑️' : '🙋') . e($listing->subject).'</span> <a href=\''.route('listings.show', $listing).'\'>View Listing</a>',
+                'type' => $listing->type,
+            ];
+        }
 
         return $markers;
     }
