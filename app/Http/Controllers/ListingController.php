@@ -7,6 +7,7 @@ use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Http\Livewire\ListingIndex;
 use App\Http\Livewire\UpdateListingPage;
+use App\Jobs\UpdateListingsGeospatialIndexEntry;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -79,6 +80,7 @@ class ListingController extends Controller
             $listing->save();
         }
 
+        UpdateListingsGeospatialIndexEntry::dispatch($listing);
         return Redirect::to(route('listings.show', $listing));
     }
 
@@ -123,6 +125,8 @@ class ListingController extends Controller
     {
         $validated = $request->validated();
         $listing->update($validated);
+        
+        UpdateListingsGeospatialIndexEntry::dispatch($listing);
         return Redirect::to(route('listings.show', $listing));
     }
 

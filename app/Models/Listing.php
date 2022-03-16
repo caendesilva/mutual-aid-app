@@ -18,24 +18,6 @@ class Listing extends Model
     use HasFactory;
 
     /**
-     * The "booted" method of the model.
-     *
-     * @return void
-     */
-    protected static function booted()
-    {
-        // Update the user's position when their location is updated.
-        // We still need to implement a way to run this automatically when
-        // a user is created, without it affecting factory users as that slows
-        // down the seeding. It's better to use FakerPHP to get the coordinates.
-        static::updated(function ($listing) {
-            if ($listing->isDirty('location')) {
-                UpdateListingsGeospatialIndexEntry::dispatch($listing);
-            }
-        });
-    }
-
-    /**
      * The attributes that are mass assignable.
      *
      * @var array
