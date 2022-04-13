@@ -9,6 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: canary
 
     steps:
       # - uses: actions/checkout@v3
@@ -19,6 +20,7 @@ jobs:
           host: ${{ secrets.CANARY_HOST }}
           username: ${{ secrets.CANARY_USERNAME }}
           password: ${{ secrets.CANARY_PASSWORD }}
+          port: ${{ secrets.CANARY_PORT }}
           script: | 
             echo "[deploy.sh `date`]: Deploying Laravel Application."
             cd ${{ secrets.CANARY_PROJECT_PATH }}
