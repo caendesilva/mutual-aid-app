@@ -34,9 +34,12 @@ class AppDebugCommand extends Command
         $this->line('Deployment name: ' . config('app.deployment_name', 'not set'));
         $this->line('');
 
+        $this->line('Cached version: ' . cache('version', 'not set'));
+        $this->line('');
+
         $this->line('Git Branch: ' . \App\Core\Services\VersionService::gitBranch() . '/' . app('git.branch'));
         $this->line('Git Version: ' . \App\Core\Services\VersionService::gitVersion() . '/' . app('git.version'));
         $this->line('Git Commit: ' . \App\Core\Services\VersionService::gitCommit());
-        $this->line('Git Diff: ' . \App\Core\Services\VersionService::gitDiff());
+        $this->line('Git Status: ' . \App\Core\Services\VersionService::gitDiff());
     }
 }

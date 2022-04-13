@@ -4,6 +4,11 @@ namespace App\Core\Services;
 
 class VersionService
 {
+    public static function cachedVersion(): string|null
+    {
+        return Cache::get('version', null);
+    }
+
     public static function gitBranch()
     {
         try {
