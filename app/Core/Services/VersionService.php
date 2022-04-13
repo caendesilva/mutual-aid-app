@@ -16,9 +16,9 @@ class VersionService
     public static function gitVersion(): string
     {
         try {
-            return trim(shell_exec('git describe --tags --abbrev=0')) ?: 'unreleased';
+            return trim(shell_exec('git describe --tags --abbrev=0')) ?: '';
         } catch (\Throwable $th) {
-            return 'unreleased';
+            return '';
         }
     }
 
