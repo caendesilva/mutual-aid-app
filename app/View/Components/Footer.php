@@ -28,6 +28,7 @@ class Footer extends Component
             $this->name = 'United States Mutual Aid App - ' . ucwords($this->deployment_name) . ' Deployment';
             $this->version = $this->git_info['version'] . '-' . $this->git_info['commit'] . ' - ' . $this->git_info['diff'];
         } else {
+            $this->name = 'United States Mutual Aid App';
             $version = app('git.version');
             if (empty($version)) {
                 $version = cache('version', '');
