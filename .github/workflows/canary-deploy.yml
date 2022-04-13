@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
 
       - name: Connect to server
         uses: appleboy/ssh-action@master
@@ -19,7 +19,6 @@ jobs:
           host: ${{ secrets.CANARY_HOST }}
           username: ${{ secrets.CANARY_USERNAME }}
           password: ${{ secrets.CANARY_PASSWORD }}
-          port: ${{ secrets.CANARY_PORT }}
           script: | 
             echo "[deploy.sh `date`]: Deploying Laravel Application."
             cd ${{ secrets.CANARY_PROJECT_PATH }}
