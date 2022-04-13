@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
  * A simple component to aid in beta testing by showing system notices,
  * such as information about database resets or todo-lists.
  *
- * @deprecated as it will be removed in production
+ * @deprecated 1.0.0
  */
 class NoticeController extends Controller
 {
