@@ -59,6 +59,10 @@ class VersionService
             $diffVerb = $diff[0];
             $diffCount = $diff[1];
 
+            if ($diffVerb === 'ahead') {
+                $diffVerb = 'ahead of';
+            }
+
             $commits = $diffCount <= 1 ? 'commit' : 'commits';
 
             return "On branch $branch. $diffCount $commits $diffVerb $originBranch.";

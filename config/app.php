@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => 'Mutual Aid USA',
+    'name' => env('APP_NAME', 'Mutual Aid USA'),
 
     /*
     |--------------------------------------------------------------------------
@@ -198,5 +198,11 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // ...
     ])->toArray(),
+
+    // Extra configuration for the application
+
+    // The server name for the application deployment
+    // Supported values: 'local', 'canary', 'production'
+    'deployment_name' => env('DEPLOYMENT_NAME', 'production'),
 
 ];

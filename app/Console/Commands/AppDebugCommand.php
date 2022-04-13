@@ -31,6 +31,7 @@ class AppDebugCommand extends Command
         $this->line('');
 
         $this->line('App env: ' . env('APP_ENV'));
+        $this->line('Deployment name: ' . config('app.deployment_name', 'not set'));
         $this->line('');
 
         $this->line('Git Branch: ' . \App\Core\Services\VersionService::gitBranch() . '/' . app('git.branch'));

@@ -1,6 +1,8 @@
 <footer class="mt-auto text-center py-3">
-    <p>United States Mutual Aid App Dev Server</p>
+    <p>
+        {{ $name }}
+    </p>
     <small>
-        {!! $gitStatus !!}
+    {{ $version }}        
     </small>
 </footer>
