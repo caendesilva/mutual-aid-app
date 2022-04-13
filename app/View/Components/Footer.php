@@ -29,7 +29,7 @@ class Footer extends Component
             $this->version = $this->git_info['version'] . '-' . $this->git_info['commit'] . ' - ' . $this->git_info['diff'];
         } else {
             $this->name = 'United States Mutual Aid App';
-            $this->version = $this->git_info['version'];
+            $this->version = app('git.version');
         }
     }
 
