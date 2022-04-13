@@ -52,12 +52,11 @@ phpcs --standard=ruleset.xml
 ```
 
 **Please add tests!**
-<!-- - **Add tests!** - Your patch won't be accepted if it doesn't have tests. -->
+- **Add tests!** - Your patch might not be accepted if it doesn't have tests.
 
 - **Document any change in behavior** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
 
-<!-- Will be enabled once we enter GA 
-- **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org/). Randomly breaking public APIs is not an option. -->
+- **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org/). Randomly breaking public APIs is not an option.
 
 - **One pull request per feature** - If you want to do more than one thing, send multiple pull requests as that makes it easier to maintain.
 
@@ -80,6 +79,17 @@ If you have CodeSniffer, use the following command to ensure your code follows t
 ```bash
 phpcs --standard=ruleset.xml
 ```
+
+## Which branch?
+Development on upcoming features is done on the `master` branch. The `master` branch is hooked up to the staging environment and is not production ready and may be unstable its API may change at any time without prior notice.
+
+The `release` branch is used to track the current stable release and is hooked up to the production environment. The `release` branch must be stable and follow [SemVer v2.0.0](https://semver.org/).
+
+So, which branch should you use?
+
+You should almost always use the `master` branch for development.  The maintainer will review your pull request and determine if it is a feature request or a bug fix.
+
+If you are submitting a compatible bug fix or patch, then you may submit it to both branches, or to `master` and make a note that you are submitting a patch intended to be merged into `release`.
 
 ### Building Assets
 > This section is based on the [Official Laravel Contribution Guide](https://laravel.com/docs/9.x/contributions#compiled-assets)
