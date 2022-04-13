@@ -33,10 +33,8 @@ If you want to help, an easy way to contribute is to checkout the [Markdown Cont
 - [ ] Add more information to the Readme
 
 
-<!--
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
--->
 
 ## Security
 
