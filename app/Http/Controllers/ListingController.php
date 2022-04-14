@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ListingCreated;
 use Illuminate\Support\Facades\App;
 use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
@@ -80,6 +81,7 @@ class ListingController extends Controller
             $listing->save();
         }
 
+        ListingCreated::dispatch($listing);
         UpdateListingsGeospatialIndexEntry::dispatch($listing);
         return Redirect::to(route('listings.show', $listing));
     }

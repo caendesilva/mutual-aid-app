@@ -15,4 +15,5 @@ return [
 
     'user.registered' => ':tada: A new user has signed up!',
 
+    'listing.created' => ':memo: A new listing has been created!',
 ];
