@@ -10,6 +10,6 @@ class DiscordController extends Controller
 {
     public function ping()
     {
-        return (new DiscordEvent)->notify(new DiscordNotification);
+        return (new DiscordEvent)->notify(new DiscordNotification('beep'));
     }
 }

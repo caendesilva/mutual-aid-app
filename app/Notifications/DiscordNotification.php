@@ -14,13 +14,21 @@ class DiscordNotification extends Notification
     use Queueable;
 
     /**
+     * The Discord message to send.
+     * 
+     * Should be a language key defined in the lang file.
+     * @see lang/en/discord-messages.php
+     */
+    protected string $message;
+
+    /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $message)
     {
-        //
+        $this->message = $message;
     }
 
     /**
@@ -36,6 +44,6 @@ class DiscordNotification extends Notification
 
     public function toDiscord($notifiable)
     {
-        return DiscordMessage::create("Beep Boop I'm a bot! 🤖");
+        return DiscordMessage::create(__('discord-messages.' . $this->message));
     }
 }
