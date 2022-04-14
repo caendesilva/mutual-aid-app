@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DiscordController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GitHubWebhookController;
@@ -20,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/webhooks/github/fetch', GitHubWebhookController::class);
+
+Route::get('/discord/ping', [DiscordController::class, 'ping']);
