@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 
 class DiscordController extends Controller
 {
-    public function ping()
+    public function ping(Request $request)
     {
+        abort_unless($request->user()->hasRole('admin'), 403);
+
         return (new DiscordEvent)->notify(new DiscordNotification('beep'));
     }
 }
