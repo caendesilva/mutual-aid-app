@@ -15,20 +15,22 @@ class DiscordNotification extends Notification
 
     /**
      * The Discord message to send.
-     * 
-     * Should be a language key defined in the lang file.
-     * @see lang/en/discord-messages.php
      */
     protected string $message;
 
     /**
      * Create a new notification instance.
-     *
+     * 
+     * @param string $message The Discord message to send.
+     *                        Should be a language key defined in the lang file.
+     *                        @see lang/en/discord-messages.php
+     * @param bool $withoutLangKey If true, the message will be sent without the lang key.
+     *                             While discouraged, it allows for on-demand messages.
      * @return void
      */
-    public function __construct(string $message)
+    public function __construct(string $message, bool $withoutLangKey = false)
     {
-        $this->message = $message;
+        $this->message = $withoutLangKey ? $message : __('discord-messages.' . $message);
     }
 
     /**
@@ -44,6 +46,6 @@ class DiscordNotification extends Notification
 
     public function toDiscord($notifiable)
     {
-        return DiscordMessage::create(__('discord-messages.' . $this->message));
+        return DiscordMessage::create($this->message);
     }
 }
