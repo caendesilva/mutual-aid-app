@@ -32,4 +32,10 @@ return [
 
     'github_webhook_secret' => env('GITHUB_WEBHOOK_ENDPOINT_SECRET'),
 
+    'discord' => [
+        // The Bot API Token
+        'token' => env('DISCORD_TOKEN', ''),
+        // The Discord Channel ID
+        'route' => env('DISCORD_ROUTE', ''),
+    ],
 ];

@@ -32,3 +32,5 @@ Route::middleware(['auth:sanctum', 'verified', 'can:accessDashboard'])->get('/da
 
 
 Route::get('notices.txt', NoticeController::class);
+
+Route::get('/api/discord/ping', [App\Http\Controllers\DiscordController::class, 'ping'])->middleware('auth:sanctum');
