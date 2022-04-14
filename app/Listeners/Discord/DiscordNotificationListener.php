@@ -29,6 +29,10 @@ abstract class DiscordNotificationListener
      */
     public function handle()
     {
+        if (! DiscordEvent::canSendNotification()) {
+            return;
+        }
+        
         return (new DiscordEvent())->notify(new DiscordNotification($this->message));
     }
 }

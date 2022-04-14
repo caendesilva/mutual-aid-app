@@ -13,4 +13,11 @@ class DiscordEvent extends Model
     {
         return config('services.discord.route');
     }
+
+    public static function canSendNotification()
+    {
+        return config('services.discord.token') != ''
+                && config('services.discord.route') != ''
+                && app()->environment() !== 'testing';
+    }
 }

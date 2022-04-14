@@ -34,8 +34,8 @@ return [
 
     'discord' => [
         // The Bot API Token
-        'token' => env('DISCORD_TOKEN'),
+        'token' => env('DISCORD_TOKEN', ''),
         // The Discord Channel ID
-        'route' => env('DISCORD_ROUTE'),
+        'route' => env('DISCORD_ROUTE', ''),
     ],
 ];
