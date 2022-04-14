@@ -35,7 +35,10 @@ class MapController extends Controller
                 // If the coordinates are invalid we do not add them to the array.
                 continue;
             }
-            $listing = Listing::findOrFail($index->model_id);
+            $listing = Listing::find($index->model_id);
+            if (!$listing) {
+                continue;
+            }
             $markers[] = [
                 'lat' => $index->latitude,
                 'lon' => $index->longitude,
