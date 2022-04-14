@@ -13,6 +13,6 @@ return [
 
     'beep' => 'Beep Boop I\'m a bot! 🤖',
 
-    'user.registered' => 'A new has signed up!',
+    'user.registered' => ':tada: A new user has signed up!',
 
 ];
