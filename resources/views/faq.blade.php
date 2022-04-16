@@ -40,6 +40,23 @@
 					</p>
 				</article>
 
+
+				<article class="prose max-w-5xl prose-h2:mb-2 prose-h2:mt-8">
+					<h2>I found a bug!</h2>
+
+					<p>
+						As the Mutual Aid App is still in Public Beta there may be bugs. 
+						<br>
+
+						The source code for the app is hosted on GitHub where there is a tab called “Issues”. Please create a ticket there describing the bug. Creating an account is easy and free. Here is a direct link: <a href="https://github.com/caendesilva/mutual-aid-app/issues">https://github.com/caendesilva/mutual-aid-app/issues.</a>
+						<br>
+
+						<b>You can also submit feature requests and ideas.</b>
+						<br>
+
+						<strong>Important: If you are reporting a security vulnerability, do not use the GitHub issue tracker. Instead follow the instructions in the <a href="https://github.com/caendesilva/mutual-aid-app/blob/master/SECURITY.md">Security.md document</a> </strong>
+
+				</article>
 			</div>
 		</div>
     </div>
