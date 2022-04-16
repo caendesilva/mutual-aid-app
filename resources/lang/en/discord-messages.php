@@ -16,4 +16,7 @@ return [
     'user.registered' => ':tada: A new user has signed up!',
 
     'listing.created' => ':memo: A new listing has been created!',
+
+    'error.HttpException500' => ':boom: An internal server error has occurred!',
+    'error.HttpException503' => ':warning: The server is currently unavailable!',
 ];

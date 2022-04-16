@@ -34,7 +34,6 @@ If you want to help, an easy way to contribute is to checkout the [Markdown Cont
 - [ ] Write more todos
 - [ ] Add more information to the Readme
 
-
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
@@ -44,6 +43,13 @@ If you discover any security-related issues, please email caen@desilva.se instea
 All vulnerabilities will be promptly addressed.
 
 Please see [SECURITY](SECURITY.md) for details.
+
+## Warranty
+This repository is made public for the sake of collaboration and transparency as we value open source. However, the project at this stage is not intended to be be reproduced or self hosted. 
+
+We will not provide any support for those who host mirrors or clones of our app. Know that there may be breaking changes in the internal codebase without advance notice. There are no warranties.
+
+If you want to help improve the app, please send a PR or open a discussion!
 
 ## Credits
 

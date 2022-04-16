@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use App\Http\Controllers\DiscordController;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -14,6 +16,24 @@ class Handler extends ExceptionHandler
      */
     protected $dontReport = [
         //
+    ];
+
+    /**
+     * A list of the internal exception types that should not be reported.
+     *
+     * @var string[]
+     */
+    protected $internalDontReport = [
+        AuthenticationException::class,
+        AuthorizationException::class,
+        BackedEnumCaseNotFoundException::class,
+        HttpResponseException::class,
+        ModelNotFoundException::class,
+        MultipleRecordsFoundException::class,
+        RecordsNotFoundException::class,
+        SuspiciousOperationException::class,
+        TokenMismatchException::class,
+        ValidationException::class,
     ];
 
     /**
@@ -35,7 +55,11 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            //
+            
+        });
+
+        $this->reportable(function (HttpException $e) {
+            return DiscordController::httpExceptionNotifier($e);
         });
     }
 }
