@@ -1,21 +1,11 @@
 # Security Policy
 
 ## Supported Versions
-The app is still in the development stage, there are no released versions yet. One the app is stable we will adhere to SemVer.
+Please note that the Mutual Aid App is not intended to be hosted by other parties and that no support will be provided to those who do.
 
-<!-- 
 | Version | Supported          | Notes         |
 | ------- | ------------------ | ----          |
-| 1.0.0-Pre    | :warning:     | Pre-release   |
-| 0.1.0        | :x:           | Alpha-release |
-
-:warning: Pre-releases are not suited for production.
-
-<!-- 
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                | -->
+| 1.x     | ☑️                 | ---  |
 
 
 
