@@ -38,7 +38,7 @@ We will not provide any support for those who host mirrors or clones of our app.
 If you want to help improve the app, please send a PR or open a discussion!
 
 ## Credits
-
+> Do you belong on this list? Let me know and I'll add your desired profile link.
 -   [Caen De Silva](https://github.com/caendesilva)
 -   [All Contributors](../../contributors)
 
