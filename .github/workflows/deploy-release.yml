@@ -1,0 +1,21 @@
+name: Deploy Release 🚀
+
+on:
+  release:
+    types: [published]
+
+  workflow_dispatch:
+
+jobs:
+  deploy-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Merge into Release
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: master
+          target_branch: release
+          github_token: ${{ github.token }}
