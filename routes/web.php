@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ListingController;
@@ -26,10 +25,9 @@ Route::resource('listings', ListingController::class);
 Route::get('map', MapController::class)->name('map');
 Route::get('faq', FaqController::class)->name('faq');
 
-Route::middleware(['auth:sanctum', 'verified', 'can:accessDashboard'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'can:accessDashboard', 'verified', '2fa'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
 
 Route::get('notices.txt', NoticeController::class);
 

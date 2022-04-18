@@ -40,4 +40,14 @@ trait Roles
     {
         return (bool) array_intersect($this->roles->pluck('key')->toArray(), $this->staffRoles);
     }
+
+    /**
+     * Does the user belong to a Staff Role and fulfill 
+     * the requirements to perform staff actions?
+     * @return bool
+     */
+    public function isAuthorizedStaff(): bool
+    {
+        return $this->isStaff() && $this->hasVerifiedEmail() && $this->hasEnabledTwoFactorAuthentication();
+    }
 }

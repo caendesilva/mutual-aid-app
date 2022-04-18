@@ -25,6 +25,18 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('isStaff', function (\App\Models\User $user) {
+            return $user->isStaff();
+        });
+
+        Gate::define('isMod', function (\App\Models\User $user) {
+            return $user->hasRole('mod');
+        });
+
+        Gate::define('isAdmin', function (\App\Models\User $user) {
+            return $user->hasRole('admin');
+        });
+
         // Define the dashboard gate
         Gate::define('accessDashboard', function (\App\Models\User $user) {
             return $user->isStaff();
