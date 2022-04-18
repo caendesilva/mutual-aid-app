@@ -7,21 +7,7 @@ This mutual aid app is designed for people living in the United States to offer 
 > We are working on adding support for SMS registration and verification.
 
 ## Getting started with the app
-
-### People In Need Requirements
-
-1.  Register for an account using email and add your location.
-2.  You will receive an email asking you to verify your account. Open the message and follow the instructions.  
-    
-3.  Once your account is verified, you can request resources directly from providers listed in your area.  
-
-Note: Some Mutual Aid Providers may require you to contact them directly and verify who you are.  
-
-### Mutual Aid Provider Requirements
-
-1. Register for an account here using email and add your location.
-2.  Open the text message/email verification message and follow the instructions.
-3.  Post the resources you are willing to offer. If you do not see a category that matches, please select Other and provide more details.
+See the homepage for information: https://aidus.us/
 
 ## Contributing
 ### For Developers:
@@ -52,7 +38,7 @@ We will not provide any support for those who host mirrors or clones of our app.
 If you want to help improve the app, please send a PR or open a discussion!
 
 ## Credits
-
+> Do you belong on this list? Let me know and I'll add your desired profile link.
 -   [Caen De Silva](https://github.com/caendesilva)
 -   [All Contributors](../../contributors)
 
