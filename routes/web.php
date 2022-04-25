@@ -3,7 +3,6 @@
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ListingController;
-use App\Http\Controllers\NoticeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +27,5 @@ Route::get('faq', FaqController::class)->name('faq');
 Route::middleware(['auth:sanctum', 'can:accessDashboard', 'verified', '2fa'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-Route::get('notices.txt', NoticeController::class);
 
 Route::get('/api/discord/ping', [App\Http\Controllers\DiscordController::class, 'ping'])->middleware('auth:sanctum');
