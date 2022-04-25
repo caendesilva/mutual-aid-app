@@ -13,6 +13,9 @@ See the homepage for information: https://aidus.us/
 ### For Developers:
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
+We are always looking for new features and improvements. If you have any suggestions, please let us know!
+We could use your help! We especially would love to get some more tests in place.
+
 ### For Volunteers:
 If you want to help, an easy way to contribute is to checkout the [Markdown Content Directory](https://github.com/caendesilva/mutual-aid-app/tree/master/resources/markdown/content) which contains the source for larger text sections. Feel free to update and improve these as you see fit!
 #### Roadmap
