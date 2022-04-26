@@ -34,7 +34,7 @@ class CoreServiceProvider extends ServiceProvider
         });
 
         if (! file_exists(storage_path('framework/booted'))) {
-            DeploymentController::notify();
+            DeploymentController::run();
         }
     }
 }
