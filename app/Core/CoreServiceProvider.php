@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use App\Http\Controllers\DeploymentController;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 
@@ -31,5 +32,9 @@ class CoreServiceProvider extends ServiceProvider
         Blade::directive('markdownSection', function ($arguments) {
             return "<?php echo(\App\Core\MarkdownSection::parse({$arguments})); ?>";
         });
+
+        if (! file_exists(storage_path('framework/booted'))) {
+            DeploymentController::notify();
+        }
     }
 }
