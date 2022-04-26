@@ -6,7 +6,7 @@ use App\Models\DiscordEvent;
 
 class DeploymentController
 {
-    public static function notify()
+    public static function run()
     {
         if (file_exists(storage_path('framework/cache/booted'))
             || app()->environment() !== 'production') {
