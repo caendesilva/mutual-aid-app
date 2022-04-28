@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
+/**
+* @deprecated v1.3.7
+*/
 class GitHubWebhookController extends Controller
 {
     /**
