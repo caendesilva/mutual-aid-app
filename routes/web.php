@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ListingController;
@@ -29,3 +30,6 @@ Route::middleware(['auth:sanctum', 'can:accessDashboard', 'verified', '2fa'])->g
 })->name('dashboard');
 
 Route::get('/api/discord/ping', [App\Http\Controllers\DiscordController::class, 'ping'])->middleware('auth:sanctum');
+Route::get('/community-guidelines', [PolicyController::class, 'guidelines'])->name('guidelines.show');
+Route::get('/terms-of-service', [PolicyController::class, 'terms'])->name('terms.show');
+Route::get('/privacy-policy', [PolicyController::class, 'privacy'])->name('policy.show');
