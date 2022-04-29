@@ -20,6 +20,7 @@
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
+        <x-canary-banner />
 
         <div class="min-h-screen bg-gray-100 flex flex-col">
             @livewire('navigation-menu')
