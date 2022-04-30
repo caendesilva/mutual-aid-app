@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- DISALLOW ROBOTS TO INDEX STAGING SITE -->
+        <meta name="robots" content="noindex">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="hRL6dg5iXZrBV9ekOezwoIk5CXgZL1P4dNzEDMrr">
+
+        <title>AidUS Dev Server</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="./policy_files/css2">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="./policy_files/app.css">
+
+        <!-- Livewire Styles -->
+<style>
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {
+        display: none;
+    }
+
+    [wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {
+        display:none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+
+        <!-- Scripts -->
+        <script src="./policy_files/app.js" defer=""></script>
+    </head>
+    <body class="font-sans antialiased">
+        <div x-data="{&quot;show&quot;:true,&quot;style&quot;:&quot;success&quot;,&quot;message&quot;:null}" :class="{ &#39;bg-indigo-500&#39;: style == &#39;success&#39;, &#39;bg-red-700&#39;: style == &#39;danger&#39;, &#39;bg-gray-500&#39;: style != &#39;success&#39; &amp;&amp; style != &#39;danger&#39; }" style="display: none;" x-show="show &amp;&amp; message" x-init="
+                document.addEventListener(&#39;banner-message&#39;, event =&gt; {
+                    style = event.detail.style;
+                    message = event.detail.message;
+                    show = true;
+                });
+            " class="bg-indigo-500">
+    <div class="max-w-screen-xl mx-auto py-2 px-3 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between flex-wrap">
+            <div class="w-0 flex-1 flex items-center min-w-0">
+                <span class="flex p-2 rounded-lg bg-indigo-600" :class="{ &#39;bg-indigo-600&#39;: style == &#39;success&#39;, &#39;bg-red-600&#39;: style == &#39;danger&#39; }">
+                    <svg x-show="style == &#39;success&#39;" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <svg x-show="style == &#39;danger&#39;" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <svg x-show="style != &#39;success&#39; &amp;&amp; style != &#39;danger&#39;" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </span>
+
+                <p class="ml-3 font-medium text-sm text-white truncate" x-text="message"></p>
+            </div>
+
+            <div class="shrink-0 sm:ml-3">
+                <button type="button" class="-mr-1 flex p-2 rounded-md focus:outline-none sm:-mr-2 transition hover:bg-indigo-600 focus:bg-indigo-600" :class="{ &#39;hover:bg-indigo-600 focus:bg-indigo-600&#39;: style == &#39;success&#39;, &#39;hover:bg-red-600 focus:bg-red-600&#39;: style == &#39;danger&#39; }" aria-label="Dismiss" x-on:click="show = false">
+                    <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div class="min-h-screen bg-gray-100 flex flex-col">
+            <nav wire:id="dgrWaLxE7DbZKWQ77M1u" x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="#">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="block h-9 w-auto">
+  <path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5"></path>
+  <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"></path>
+</svg>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="#">
+    Home
+</a>
+                    
+                    
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="#listings">
+    Listings
+</a>
+
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="#map">
+    Map
+</a>
+                    
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="#faq">
+    Faq
+</a>
+                </div>
+            </div>
+
+            <div class="hidden space-x-6 sm:-my-px sm:flex sm:ml-6  sm:items-center">
+                                <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition h-full" href="#login">
+    Login
+</a>
+                <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition h-full" href="#register">
+    Register
+</a>
+                                            </div>
+
+            <!-- Hamburger -->
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{&#39;hidden&#39;: open, &#39;inline-flex&#39;: ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path :class="{&#39;hidden&#39;: ! open, &#39;inline-flex&#39;: open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{&#39;block&#39;: open, &#39;hidden&#39;: ! open}" class="hidden sm:hidden">
+        
+
+   
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="#">
+    Home
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="#listings">
+    Listings
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="#map">
+    Map
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="#faq">
+    Faq
+</a>
+        </div>
+        
+        
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="#login">
+    Login
+</a>
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="#register">
+    Register
+</a>
+        </div>
+        
+            </div>
+</nav>
+
+<!-- Livewire Component wire-end:dgrWaLxE7DbZKWQ77M1u -->
+            <!-- Page Heading -->
+            
+            <!-- Page Content -->
+            <main>
+                <div class="pt-4 bg-gray-100">
+        <div class="flex flex-col items-center pt-6 sm:pt-0">
+            <section class="w-full sm:max-w-3xl mt-6 mb-10 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                <nav class="w-full bg-slate-200 p-4">
+                    <ul class="flex justify-center">
+                        <li class="px-2 mx-2 md:px-3">
+                            <a class="text-gray-700" href="community-guidelines.html">Community Guidelines
+                            </a>
+                        </li>
+                        <li class="px-4 mx-2 md:px-6 md:border-l md:border-r border-gray-400">
+                            <a class="text-gray-700" href="terms-of-service.html">Terms of Service</a>
+                        </li>
+                        <li class="px-2 mx-2 md:px-3">
+                            <a class="text-gray-900 underline" aria-current="true" href="privacy-policy.html">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </nav>
+                <article class="prose w-full sm:max-w-3xl px-8 py-8">
+                    <h1>Privacy Policy</h1>
+<h2>About this Document</h2>
+<p class="lead">
+	This document describes how we collect, use, and share information from and about our users, as well the choices you have and what measures we take to protect your data.
+</p>
+<h2>About your privacy</h2>
+<p><strong>We take privacy seriously and as a rule, never store any more information than we need to.</strong></p>
+<p>All you need to sign up is a name and email. If you are privacy-conscious you can use pseudonyms and an alternate email (as long as it can receive mail to verify your account). All other profile information is optional and only serves to improve your experience with the app. For example, if you add your zipcode or location we can show you listings that are close to you.</p>
+<p><strong>We never sell or share any of your data.</strong> Only a limited number of trusted staff have access to account information, and there are some things (like your password) that none of us can see.</p>
+<h2>Data storage</h2>
+<p>We store user data in a secure managed database that is backed up daily. In the event of a failover, data handling is automatically switched over to standby nodes to minimize downtime. Database access is restricted to the server's private network. All data is encrypted in transit and at rest.</p>
+<p>You can request a copy of your data at any time, within reason. You can also delete your account at any time if you would like to remove all of your data. <em>Note that we may be required to keep some limited data for legal reasons.</em></p>
+<h2>Cookies</h2>
+<p>We use "Cookies" (small text files stored in your browser) to provide a better user experience for you.
+We do not use cookies to track you or sell data or serve ads. Examples of how we use Cookies include keeping you logged in (if you check "remember me"), and remembering your user preferences. You can opt out of cookies by disabling them in your browser.</p>
+
+                </article>
+                <footer class="px-8 py-4">
+                    <i>
+                        This document was last updated <time datetime="2022-04-30T07:55:31+00:00" title="Sat, 30 Apr 2022 07:55 UTC">
+    Today at 7:55am
+</time>                    </i>
+                </footer>
+            </section>
+        </div>
+    </div>
+            </main>
+
+            <footer class="mt-auto text-center py-3">
+    <p>
+        United States Mutual Aid App - Local Deployment
+    </p>
+    <small>
+    v1.3.6-4a8c731 - On branch Master. 2 commits ahead of Origin/Master.        
+    </small>
+    <div>
+        <ul class="flex flex-wrap mx-auto justify-center text-center text-sm mt-3 mb-2">
+            <li>
+                <a href="community-guidelines.html" class="text-gray-500 hover:text-gray-900 m-2">Community Guidelines</a>
+            </li>
+            <li>
+                <a href="terms-of-service.html" class="text-gray-500 hover:text-gray-900 m-2">Terms of Service</a>
+            </li>
+            <li>
+                <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-900 m-2">Privacy Policy</a>
+            </li>
+        </ul>
+    </div>
+</footer>        </div>
+
+        
+        <!-- Livewire Scripts -->
+
+<script src="./policy_files/livewire.js" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false">
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'hRL6dg5iXZrBV9ekOezwoIk5CXgZL1P4dNzEDMrr';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    let started = false;
+
+    window.addEventListener('alpine:initializing', function () {
+        if (! started) {
+            window.livewire.start();
+
+            started = true;
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (! started) {
+            window.livewire.start();
+
+            started = true;
+        }
+    });
+</script>
+    
+
+</body></html>
