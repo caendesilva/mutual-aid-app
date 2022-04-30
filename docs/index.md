@@ -1,0 +1,1 @@
+Static staging site
