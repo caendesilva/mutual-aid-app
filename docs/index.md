@@ -9,8 +9,8 @@ All contents of this site is intended for internal use, and content here may or 
 ### Policy Documents
 As the steering group is currently drafting policy documents, I'm working on the frontend.
 I compiled the progress to static pages that can be accessed using the following links:
-- https://static-staging.aidus.us/policy-drafts/community-guidelines.html
-- https://static-staging.aidus.us/policy-drafts/terms-of-service.html
-- https://static-staging.aidus.us/policy-drafts/privacy-policy
+- [https://static-staging.aidus.us/policy-drafts/community-guidelines.html](https://static-staging.aidus.us/policy-drafts/community-guidelines.html)
+- [https://static-staging.aidus.us/policy-drafts/terms-of-service.html](https://static-staging.aidus.us/policy-drafts/terms-of-service.html)
+- [https://static-staging.aidus.us/policy-drafts/privacy-policy](https://static-staging.aidus.us/policy-drafts/privacy-policy)
 
 Signed, CDS.
