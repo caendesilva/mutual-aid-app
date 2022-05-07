@@ -3,11 +3,6 @@
 ## Supported Versions
 Please note that the Mutual Aid App is not intended to be hosted by other parties and that no support will be provided to those who do.
 
-| Version | Supported          | Notes         |
-| ------- | ------------------ | ----          |
-| 1.x     | ☑️                 | ---  |
-
-
 
 ## Reporting a Vulnerability
 
