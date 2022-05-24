@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\User;
 
@@ -33,6 +34,7 @@ class UserTable extends DataTableComponent
                 ->sortable(),
             Column::make("Email", "email")
                 ->sortable(),
+            BooleanColumn::make('Verified', 'email_verified_at'),
             Column::make("Phone", "phone")
                 ->sortable(),
             Column::make("Area", "area")
@@ -43,7 +45,7 @@ class UserTable extends DataTableComponent
                 // ->sortable(),
             // Column::make("Updated at", "updated_at")
                 // ->sortable(),
-            // Column::make('Roles', 'roleList'),
+            Column::make('Roles', 'roleList'),
         ];
     }
 
