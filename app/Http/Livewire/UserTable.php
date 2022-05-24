@@ -12,6 +12,13 @@ class UserTable extends DataTableComponent
 {
     use AuthorizesRequests;
 
+    protected $model = User::class;
+
+    public function configure(): void
+    {
+        $this->setPrimaryKey('id');
+    }
+
     public function mount()
     {
         $this->authorize('manageUsers');
@@ -36,7 +43,7 @@ class UserTable extends DataTableComponent
                 // ->sortable(),
             // Column::make("Updated at", "updated_at")
                 // ->sortable(),
-            Column::make('Roles', 'roleList'),
+            // Column::make('Roles', 'roleList'),
         ];
     }
 
