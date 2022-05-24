@@ -55,6 +55,10 @@
                     </x-slot>
                 </x-jet-dropdown>
             </div>
+            @else
+            <div class="ml-3 relative">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Check out this listing on the Mutual Aid App!" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
             @endcan
         </div>
     </x-slot>
