@@ -45,7 +45,6 @@ class UserTable extends DataTableComponent
                 // ->sortable(),
             // Column::make("Updated at", "updated_at")
                 // ->sortable(),
-            Column::make('Roles', 'roleList'),
         ];
     }
 
