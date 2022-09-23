@@ -81,7 +81,7 @@
 
                         {!! Str::markdown($listing->body ?? __("The {$type}er did not provide any further details.")) !!}
 
-                        <h3 class="text-base">What the {{ __("{$type}er") }} can provide</h3>
+                        <h3 class="text-base">What the {{ __("{$type}er") }} {{ $type === 'offer' ? 'can provide' : 'needs' }}</h3>
 
                         @if($listing->resources)
                         <ul>
