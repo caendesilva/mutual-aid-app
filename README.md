@@ -1,1 +1,1 @@
-# Static website previews for internal use
+# Static website archive before project shutdown
