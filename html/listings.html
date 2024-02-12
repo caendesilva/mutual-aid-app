@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="WQvAO9EU6Cg9Mb9OaJq2ZREGIieKeBnJEJNXF4lJ">
+
+        <title>Mutual Aid USA</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="/css/app.css?id=6b8761110b9dd8d2c8cd7b1fc57eb671">
+
+        <style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+
+        <!-- Scripts -->
+        <script src="/js/app.js?id=a57a1ded99bc153ce08aec70dc871d23" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        <div x-data="{&quot;show&quot;:true,&quot;style&quot;:&quot;success&quot;,&quot;message&quot;:null}"
+            :class="{ 'bg-indigo-500': style == 'success', 'bg-red-700': style == 'danger', 'bg-gray-500': style != 'success' && style != 'danger' }"
+            style="display: none;"
+            x-show="show && message"
+            x-init="
+                document.addEventListener('banner-message', event => {
+                    style = event.detail.style;
+                    message = event.detail.message;
+                    show = true;
+                });
+            ">
+    <div class="max-w-screen-xl mx-auto py-2 px-3 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between flex-wrap">
+            <div class="w-0 flex-1 flex items-center min-w-0">
+                <span class="flex p-2 rounded-lg" :class="{ 'bg-indigo-600': style == 'success', 'bg-red-600': style == 'danger' }">
+                    <svg x-show="style == 'success'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <svg x-show="style == 'danger'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <svg x-show="style != 'success' && style != 'danger'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+
+                <p class="ml-3 font-medium text-sm text-white truncate" x-text="message"></p>
+            </div>
+
+            <div class="shrink-0 sm:ml-3">
+                <button
+                    type="button"
+                    class="-mr-1 flex p-2 rounded-md focus:outline-none sm:-mr-2 transition"
+                    :class="{ 'hover:bg-indigo-600 focus:bg-indigo-600': style == 'success', 'hover:bg-red-600 focus:bg-red-600': style == 'danger' }"
+                    aria-label="Dismiss"
+                    x-on:click="show = false">
+                    <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div class="min-h-screen bg-gray-100 flex flex-col">
+            <nav wire:id="dP54wc28phhjqKdilasV" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;dP54wc28phhjqKdilasV&quot;,&quot;name&quot;:&quot;navigation-menu&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;listings&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;refresh-navigation-menu&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;65961c9e&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;fc9d1a9134659dd1cfd42ce66d5bd48f30672329079dd52b1f48af1cf1b35f6f&quot;}}" x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="/">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="block h-9 w-auto">
+  <path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5"/>
+  <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
+</svg>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev">
+    Home
+</a>
+                    
+                    
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition" href="https://aidus.fly.dev/listings">
+    Listings
+</a>
+
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev/map">
+    Map
+</a>
+                    
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev/faq">
+    Faq
+</a>
+                </div>
+            </div>
+
+            <div class="hidden space-x-6 sm:-my-px sm:flex sm:ml-6  sm:items-center">
+                                <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition h-full" href="https://aidus.fly.dev/login">
+    Login
+</a>
+                <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition h-full" href="https://aidus.fly.dev/register">
+    Register
+</a>
+                                            </div>
+
+            <!-- Hamburger -->
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        
+
+   
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev">
+    Home
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-indigo-400 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition" href="https://aidus.fly.dev/listings">
+    Listings
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/map">
+    Map
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/faq">
+    Faq
+</a>
+        </div>
+        
+        
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/login">
+    Login
+</a>
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/register">
+    Register
+</a>
+        </div>
+        
+            </div>
+</nav>
+
+<!-- Livewire Component wire-end:dP54wc28phhjqKdilasV -->
+            <!-- Page Heading -->
+                            <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <div class="flex row items-center justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Listings
+            </h2>
+           
+            <div class="sm:hidden">
+                <a href="https://aidus.fly.dev/listings/create" class="mx-1">
+                    <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+    Submit a Listing
+</button>
+                </a>
+            </div>
+            <div class="hidden sm:block">
+                                <a href="https://aidus.fly.dev/listings/create?type=offer" class="mx-1">
+                    <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+    Submit an Offer
+</button>
+                </a>
+                                                <a href="https://aidus.fly.dev/listings/create?type=request" class="mx-1">
+                    <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+    Submit a Request
+</button>
+                </a>
+                            </div>
+        </div>
+                    </div>
+                </header>
+            
+            <!-- Page Content -->
+            <main>
+                <div wire:id="Pww12tM2vCk4TIDYJmMi" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;Pww12tM2vCk4TIDYJmMi&quot;,&quot;name&quot;:&quot;listing-index&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;listings&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[],&quot;path&quot;:&quot;https:\/\/aidus.fly.dev\/listings&quot;},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;968f8b10&quot;,&quot;data&quot;:{&quot;buttons&quot;:[&quot;offer&quot;,&quot;request&quot;],&quot;filterExcludeReligiousProviders&quot;:false,&quot;filterIncludeClosedListings&quot;:false,&quot;filterRequestsOnly&quot;:false,&quot;filterOffersOnly&quot;:false,&quot;typeSelector&quot;:&quot;&quot;,&quot;search&quot;:&quot;&quot;,&quot;perPage&quot;:12,&quot;page&quot;:1,&quot;paginators&quot;:{&quot;page&quot;:1}},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;69c6b7cf0fc0875d8089169dd970311890e0e0fdebbe83f34d2ed4e00084b5c7&quot;}}">
+     
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-4">
+            <div class="flex flex-col md:flex-row overflow-hidden">
+                <aside class="p-4 py-6 w-full max-w-xs">
+                    <div class="p-4 bg-white shadow-lg rounded-lg">
+                        <header class="flex items-center mb-3">
+                            <h4 class="text-lg font-bold mr-2">Filters</h4>
+                        </header>
+                        <div>
+                            <noscript class="rounded-lg mb-4 bg-gray-100 text-sm" role="alert">
+                                <!-- Component by Flowbite (MIT) -->
+                                <div class="p-4 bg-yellow-300  text-yellow-900">
+                                    <strong>Heads up!</strong> Your browser does not seem to have JavaScript enabled.
+                                </div>
+                                <div class="p-4">
+                                    <p>JavaScript is required for the interactive search to work.</p>
+                                    <p class="mt-2">
+                                        You can learn how to enable JavaScript on this web page
+                                        <a href="https://www.enable-javascript.com/" class="text-indigo-500"
+                                            rel="nofollow noopener noreferrer">https://www.enable-javascript.com/</a>
+                                    </p>
+                                </div>
+                            </noscript>
+                        </div>
+                        <div>
+                            <input  class="border-gray-400 focus:border-indigo-600 focus:ring focus:ring-indigo-500 focus:ring-opacity-75 rounded-md shadow-sm w-full" type="search" wire:model="search" placeholder="Free text search" aria-label="Free text search" title="Enter a search query">
+                        </div>
+                        <hr class="my-4 mr-8">
+                        <div>
+                            <div class="m-1 flex items-center">
+                                <fieldset>
+                                    <div>
+                                        <input type="checkbox" class="rounded border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-600 focus:ring focus:ring-indigo-500 focus:ring-opacity-75 cursor-pointer" wire:model="filterExcludeReligiousProviders" id="exclude_religious_providers">
+                                        <label for="exclude_religious_providers" class="ml-2 cursor-pointer">
+                                            Exclude Religious Providers
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" class="rounded border-gray-600 text-indigo-600 shadow-sm focus:border-indigo-600 focus:ring focus:ring-indigo-500 focus:ring-opacity-75 cursor-pointer" wire:model="filterIncludeClosedListings" id="include_closed_listings">
+                                        <label for="include_closed_listings" class="ml-2 cursor-pointer">
+                                            Include Closed Listings
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <hr class="my-4 mr-8">
+
+                        <div>
+                            <label class="block font-medium text-sm text-gray-700" for="types">
+    Filter listing type</label>
+                            <select wire:model="typeSelector" id="types"
+                                class="border-gray-400 focus:border-indigo-600 focus:ring focus:ring-indigo-500 focus:ring-opacity-75 rounded-md shadow-sm block mt-1 w-full"
+                                type="select" name="types">
+                                <option value="both">Show Both</option>
+                                <option value="offers">Offers Only ⛑️</option>
+                                <option value="requests">Requests Only 🙋</option>
+                            </select>
+                        </div>
+                    </div>
+                </aside>
+                <section class="py-3 px-4 lg:ml-8 w-full max-w-2xl">
+                                        <div class="pt-3">
+                        <div>
+        
+    <nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">
+        <div class="flex justify-between flex-1 sm:hidden">
+            <span>
+                                    <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 rounded-md select-none">
+                        &laquo; Previous
+                    </span>
+                            </span>
+
+            <span>
+                                    <button wire:click="nextPage('page')" wire:loading.attr="disabled" dusk="nextPage.before" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+                        Next &raquo;
+                    </button>
+                            </span>
+        </div>
+
+        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+            <div class="pr-4">
+                <p class="text-sm text-gray-700 leading-5">
+                    <span>Showing</span>
+                    <span class="font-medium">1</span>
+                    <span>to</span>
+                    <span class="font-medium">12</span>
+                    <span>of</span>
+                    <span class="font-medium">13</span>
+                    <span>results</span>
+                </p>
+            </div>
+
+            <div>
+                <span class="relative z-0 inline-flex rounded-md shadow-sm">
+                    <span>
+                        
+                                                    <span aria-disabled="true" aria-label="&amp;laquo; Previous">
+                                <span class="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default rounded-l-md leading-5" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </span>
+                                            </span>
+
+                    
+                                            
+                        
+                        
+                                                                                    <span wire:key="paginator-page-1-page1">
+                                                                            <span aria-current="page">
+                                            <span class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 select-none">1</span>
+                                        </span>
+                                                                    </span>
+                                                            <span wire:key="paginator-page-1-page2">
+                                                                            <button wire:click="gotoPage(2, 'page')" class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150" aria-label="Go to page 2">
+                                            2
+                                        </button>
+                                                                    </span>
+                                                                        
+                    <span>
+                        
+                                                    <button wire:click="nextPage('page')" dusk="nextPage.after" rel="next" class="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md leading-5 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150" aria-label="Next &amp;raquo;">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                                            </span>
+                </span>
+            </div>
+        </div>
+    </nav>
+</div>
+
+                    </div>
+
+                    <div>
+                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+		<span class="flex flex-row items-center rounded-lg bg-indigo-300 text-indigo-900 px-1 py-0.5" aria-label="This listing is an offer">
+    <span role="presentation" aria-hidden="true">⛑️</span>
+    <span class="ml-1">
+        Offer
+    </span>
+</span>		
+				
+
+				<div class="float-right" aria-label="This offer is from a religious organisation."> 
+    <span title="Religious Provider" role="presentation" aria-hidden="true">⛪</span>
+</div>				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/18">Do you need new glasses?</a>
+		</h3>
+		Offered <time datetime="2023-01-17T20:34:46+00:00" title="Tue, 17 Jan 2023 20:34 UTC">
+    2023-01-17 20:34
+</time>		by <address class="inline" rel="author" style="display: inline;">Liam</address>.
+	</header>
+	<div>
+				<strong>Provides:</strong>
+		Other
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/18">View Offer</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+				<span class="flex flex-row items-center" aria-label="This listing is an request">
+    <span role="presentation" aria-hidden="true">🙋</span>
+    <span class="rounded-lg bg-teal-100 text-teal-900 px-1 py-0.5 ml-1">
+        Request
+    </span>
+</span>
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/17">I need help financially</a>
+		</h3>
+		Requested <time datetime="2023-01-11T17:27:07+00:00" title="Wed, 11 Jan 2023 17:27 UTC">
+    2023-01-11 17:27
+</time>		by <address class="inline" rel="author" style="display: inline;">Irimi Yinepu</address>.
+	</header>
+	<div>
+				<strong>Needs:</strong>
+		Money
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/17">View Request</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+				<span class="flex flex-row items-center" aria-label="This listing is an request">
+    <span role="presentation" aria-hidden="true">🙋</span>
+    <span class="rounded-lg bg-teal-100 text-teal-900 px-1 py-0.5 ml-1">
+        Request
+    </span>
+</span>
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/16">I need help with getting a place to live</a>
+		</h3>
+		Requested <time datetime="2022-12-28T13:51:05+00:00" title="Wed, 28 Dec 2022 13:51 UTC">
+    2022-12-28 13:51
+</time>		by <address class="inline" rel="author" style="display: inline;">Alexandria Prudence</address>.
+	</header>
+	<div>
+				<strong>Needs:</strong>
+		Food, Money, Shelter
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/16">View Request</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+				<span class="flex flex-row items-center" aria-label="This listing is an request">
+    <span role="presentation" aria-hidden="true">🙋</span>
+    <span class="rounded-lg bg-teal-100 text-teal-900 px-1 py-0.5 ml-1">
+        Request
+    </span>
+</span>
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/14">Help me beat cancer! (Metastatic Breast Cancer / Brain Tumor)</a>
+		</h3>
+		Requested <time datetime="2022-09-08T01:22:02+00:00" title="Thu, 08 Sep 2022 01:22 UTC">
+    2022-09-08 01:22
+</time>		by <address class="inline" rel="author" style="display: inline;">Cathelene Munyiri</address>.
+	</header>
+	<div>
+				<strong>Needs:</strong>
+		Food, Money
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/14">View Request</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+				<span class="flex flex-row items-center" aria-label="This listing is an request">
+    <span role="presentation" aria-hidden="true">🙋</span>
+    <span class="rounded-lg bg-teal-100 text-teal-900 px-1 py-0.5 ml-1">
+        Request
+    </span>
+</span>
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/13">I need help meeting expenses this month</a>
+		</h3>
+		Requested <time datetime="2022-08-31T14:41:12+00:00" title="Wed, 31 Aug 2022 14:41 UTC">
+    2022-08-31 14:41
+</time>		by <address class="inline" rel="author" style="display: inline;">J Gaines</address>.
+	</header>
+	<div>
+				<strong>Needs:</strong>
+		Money
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/13">View Request</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+		<span class="flex flex-row items-center rounded-lg bg-indigo-300 text-indigo-900 px-1 py-0.5" aria-label="This listing is an offer">
+    <span role="presentation" aria-hidden="true">⛑️</span>
+    <span class="ml-1">
+        Offer
+    </span>
+</span>		
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/12">Food, water</a>
+		</h3>
+		Offered <time datetime="2022-07-16T01:49:26+00:00" title="Sat, 16 Jul 2022 01:49 UTC">
+    2022-07-16 01:49
+</time>		by <address class="inline" rel="author" style="display: inline;">Nick</address>.
+	</header>
+	<div>
+				<strong>Provides:</strong>
+		Water, Food, Other
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/12">View Offer</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+		<span class="flex flex-row items-center rounded-lg bg-indigo-300 text-indigo-900 px-1 py-0.5" aria-label="This listing is an offer">
+    <span role="presentation" aria-hidden="true">⛑️</span>
+    <span class="ml-1">
+        Offer
+    </span>
+</span>		
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/11">let’s build community OKC</a>
+		</h3>
+		Offered <time datetime="2022-07-01T13:10:59+00:00" title="Fri, 01 Jul 2022 13:10 UTC">
+    2022-07-01 13:10
+</time>		by <address class="inline" rel="author" style="display: inline;">bailey</address>.
+	</header>
+	<div>
+				<strong>Provides:</strong>
+		Water, Food, Money, Shelter
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/11">View Offer</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+		<span class="flex flex-row items-center rounded-lg bg-indigo-300 text-indigo-900 px-1 py-0.5" aria-label="This listing is an offer">
+    <span role="presentation" aria-hidden="true">⛑️</span>
+    <span class="ml-1">
+        Offer
+    </span>
+</span>		
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/10">Happy to help with pretty much anything.</a>
+		</h3>
+		Offered <time datetime="2022-06-14T20:56:52+00:00" title="Tue, 14 Jun 2022 20:56 UTC">
+    2022-06-14 20:56
+</time>		by <address class="inline" rel="author" style="display: inline;">Zoya</address>.
+	</header>
+	<div>
+				<strong>Provides:</strong>
+		Water, Food, Shelter, Other
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/10">View Offer</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+		<span class="flex flex-row items-center rounded-lg bg-indigo-300 text-indigo-900 px-1 py-0.5" aria-label="This listing is an offer">
+    <span role="presentation" aria-hidden="true">⛑️</span>
+    <span class="ml-1">
+        Offer
+    </span>
+</span>		
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/9">Let me know if you need help</a>
+		</h3>
+		Offered <time datetime="2022-06-14T20:27:24+00:00" title="Tue, 14 Jun 2022 20:27 UTC">
+    2022-06-14 20:27
+</time>		by <address class="inline" rel="author" style="display: inline;">Kara</address>.
+	</header>
+	<div>
+				<strong>Provides:</strong>
+		Water, Food, Other
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/9">View Offer</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+		<span class="flex flex-row items-center rounded-lg bg-indigo-300 text-indigo-900 px-1 py-0.5" aria-label="This listing is an offer">
+    <span role="presentation" aria-hidden="true">⛑️</span>
+    <span class="ml-1">
+        Offer
+    </span>
+</span>		
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/4">I can help with pretty much anything</a>
+		</h3>
+		Offered <time datetime="2022-03-16T16:21:49+00:00" title="Wed, 16 Mar 2022 16:21 UTC">
+    2022-03-16 16:21
+</time>		by <address class="inline" rel="author" style="display: inline;">vanilla</address>.
+	</header>
+	<div>
+				<strong>Provides:</strong>
+		Water, Food, Money, Other
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/4">View Offer</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+				<span class="flex flex-row items-center" aria-label="This listing is an request">
+    <span role="presentation" aria-hidden="true">🙋</span>
+    <span class="rounded-lg bg-teal-100 text-teal-900 px-1 py-0.5 ml-1">
+        Request
+    </span>
+</span>
+				
+
+				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/3">I&#039;m just testing</a>
+		</h3>
+		Requested <time datetime="2022-03-16T04:36:15+00:00" title="Wed, 16 Mar 2022 04:36 UTC">
+    2022-03-16 04:36
+</time>		by <address class="inline" rel="author" style="display: inline;">Revas</address>.
+	</header>
+	<div>
+				<strong>Needs:</strong>
+		Food, Money
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/3">View Request</a>
+			</footer>
+</article>                                                <article class="my-6 p-4 lg:px-6 bg-white overflow-hidden shadow-xl sm:rounded-lg w-full">
+	<header>
+		<div class="flex flex-row items-center justify-start gap-2">
+		<span class="flex flex-row items-center rounded-lg bg-indigo-300 text-indigo-900 px-1 py-0.5" aria-label="This listing is an offer">
+    <span role="presentation" aria-hidden="true">⛑️</span>
+    <span class="ml-1">
+        Offer
+    </span>
+</span>		
+				
+
+				<div class="float-right" aria-label="This offer is from a religious organisation."> 
+    <span title="Religious Provider" role="presentation" aria-hidden="true">⛪</span>
+</div>				</div>
+		
+		<h3 class="text-lg font-bold">
+			<a href="https://aidus.fly.dev/listings/2">(TEST) I can provide childcare services</a>
+		</h3>
+		Offered <time datetime="2022-03-15T20:59:48+00:00" title="Tue, 15 Mar 2022 20:59 UTC">
+    2022-03-15 20:59
+</time>		by <address class="inline" rel="author" style="display: inline;">PLC</address>.
+	</header>
+	<div>
+				<strong>Provides:</strong>
+		Shelter, Other
+			</div>
+	<footer class="mt-3">
+		<a class="text-indigo-700" href="https://aidus.fly.dev/listings/2">View Offer</a>
+			</footer>
+</article>                                            </div>
+
+                    <div class="pb-3 text-center pt-3">
+                                                <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" wire:click="loadMore" wire:loading.attr="disabled">
+    Load More
+</button>
+                                            </div>
+                                    </section>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Livewire Component wire-end:Pww12tM2vCk4TIDYJmMi -->
+            </main>
+
+            <footer class="mt-auto text-center py-3">
+    <p>
+        United States Mutual Aid App
+    </p>
+    <small>
+            
+    </small>
+    <div>
+        <ul class="flex flex-wrap mx-auto justify-center text-center text-sm mt-3 mb-2">
+            <li>
+                <a href="https://aidus.fly.dev/community-guidelines" class="text-gray-500 hover:text-gray-900 m-2">Community Guidelines</a>
+            </li>
+            <li>
+                <a href="https://aidus.fly.dev/terms-of-service" class="text-gray-500 hover:text-gray-900 m-2">Terms of Service</a>
+            </li>
+            <li>
+                <a href="https://aidus.fly.dev/privacy-policy" class="text-gray-500 hover:text-gray-900 m-2">Privacy Policy</a>
+            </li>
+        </ul>
+    </div>
+</footer>        </div>
+
+        
+        <script src="/livewire/livewire.js?id=c69d0f2801c01fcf8166" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'WQvAO9EU6Cg9Mb9OaJq2ZREGIieKeBnJEJNXF4lJ';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+    </body>
+</html>

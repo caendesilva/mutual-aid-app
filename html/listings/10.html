@@ -1,0 +1,4282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="wfQqKy0V4BnnLXxtm5eSpxALPsGCDTY4egqq2v5K">
+
+        <title>Mutual Aid USA</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="/css/app.css?id=6b8761110b9dd8d2c8cd7b1fc57eb671">
+
+        <style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+
+        <!-- Scripts -->
+        <script src="/js/app.js?id=a57a1ded99bc153ce08aec70dc871d23" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        <div x-data="{&quot;show&quot;:true,&quot;style&quot;:&quot;success&quot;,&quot;message&quot;:null}"
+            :class="{ 'bg-indigo-500': style == 'success', 'bg-red-700': style == 'danger', 'bg-gray-500': style != 'success' && style != 'danger' }"
+            style="display: none;"
+            x-show="show && message"
+            x-init="
+                document.addEventListener('banner-message', event => {
+                    style = event.detail.style;
+                    message = event.detail.message;
+                    show = true;
+                });
+            ">
+    <div class="max-w-screen-xl mx-auto py-2 px-3 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between flex-wrap">
+            <div class="w-0 flex-1 flex items-center min-w-0">
+                <span class="flex p-2 rounded-lg" :class="{ 'bg-indigo-600': style == 'success', 'bg-red-600': style == 'danger' }">
+                    <svg x-show="style == 'success'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <svg x-show="style == 'danger'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <svg x-show="style != 'success' && style != 'danger'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+
+                <p class="ml-3 font-medium text-sm text-white truncate" x-text="message"></p>
+            </div>
+
+            <div class="shrink-0 sm:ml-3">
+                <button
+                    type="button"
+                    class="-mr-1 flex p-2 rounded-md focus:outline-none sm:-mr-2 transition"
+                    :class="{ 'hover:bg-indigo-600 focus:bg-indigo-600': style == 'success', 'hover:bg-red-600 focus:bg-red-600': style == 'danger' }"
+                    aria-label="Dismiss"
+                    x-on:click="show = false">
+                    <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div class="min-h-screen bg-gray-100 flex flex-col">
+            <nav wire:id="A8pCF6OAAKWPAOHQyrLb" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;A8pCF6OAAKWPAOHQyrLb&quot;,&quot;name&quot;:&quot;navigation-menu&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;listings\/10&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;refresh-navigation-menu&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;65961c9e&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;79003482b9bfbcb7d7d9fe4d9d446164f56b0a4d035b4d37a44db6a10622bfeb&quot;}}" x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="/">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="block h-9 w-auto">
+  <path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5"/>
+  <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
+</svg>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev">
+    Home
+</a>
+                    
+                    
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition" href="https://aidus.fly.dev/listings">
+    Listings
+</a>
+
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev/map">
+    Map
+</a>
+                    
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev/faq">
+    Faq
+</a>
+                </div>
+            </div>
+
+            <div class="hidden space-x-6 sm:-my-px sm:flex sm:ml-6  sm:items-center">
+                                <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition h-full" href="https://aidus.fly.dev/login">
+    Login
+</a>
+                <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition h-full" href="https://aidus.fly.dev/register">
+    Register
+</a>
+                                            </div>
+
+            <!-- Hamburger -->
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        
+
+   
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev">
+    Home
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-indigo-400 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition" href="https://aidus.fly.dev/listings">
+    Listings
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/map">
+    Map
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/faq">
+    Faq
+</a>
+        </div>
+        
+        
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/login">
+    Login
+</a>
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/register">
+    Register
+</a>
+        </div>
+        
+            </div>
+</nav>
+
+<!-- Livewire Component wire-end:A8pCF6OAAKWPAOHQyrLb -->
+            <!-- Page Heading -->
+                            <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <div class="flex row items-center justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Offer Details
+            </h2>
+                        <div class="ml-3 relative">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Check out this listing on the Mutual Aid App!" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+                    </div>
+                    </div>
+                </header>
+            
+            <!-- Page Content -->
+            <main>
+                <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <article class="p-4 bg-white overflow-hidden shadow-xl sm:rounded-lg flex flex-col sm:flex-row">
+                <div class="max-w-5xl">
+                    <header class="p-3">
+                        <h1 class="text-2xl">
+                            Happy to help with pretty much anything.
+                        </h1>
+                        Offered <time datetime="2022-06-14 20:56:52">2022-06-14 20:56:52</time>
+                        by <address class="inline" rel="author">Zoya</address>.
+                                            </header>
+                    <hr class="mx-3">
+                    <div class="article-content prose p-3">
+                        <h2 class="text-lg mb-1">Offer Details</h2>
+
+                        <p>Able to provide food, water, temporary shelter (I have a one bedroom apartment but can share for a couple days), transportation, and anything else as needed. If you need help, I want to help!</p>
+
+
+                        <h3 class="text-base">What the offerer can provide</h3>
+
+                                                <ul>
+                                                        <li class="leading-4">
+                                Water
+                            </li>
+                                                        <li class="leading-4">
+                                Food
+                            </li>
+                                                        <li class="leading-4">
+                                Shelter
+                            </li>
+                                                        <li class="leading-4">
+                                Other
+                            </li>
+                                                    </ul>
+                        
+
+                                                <h3 class="text-base font-bold">Contact information</h3>
+                                                        <blockquote>
+                                Please <a class="text-indigo-500 hover:text-indigo-700" href="https://aidus.fly.dev/login" >log in</a>                                or <a class="text-indigo-500 hover:text-indigo-700" href="https://aidus.fly.dev/register" >register for an account</a>                                to view contact information.
+                            </blockquote>
+                                                                                                    </div>
+                </div>
+                <aside class="p-3 sm:mx-auto">
+                    <h3 class="text-lg font-bold">Location:</h3>
+                    <address>St. Louis, Missouri, USA</address>
+                    <iframe class="w-auto mt-3" width="425" height="256" frameborder="0" scrolling="no" marginheight="0"
+marginwidth="0"
+src="https://www.openstreetmap.org/export/embed.html?bbox=-90.1641941%2C38.5323215%2C-90.3206525%2C38.7743018&amp;amp;layer=mapnik"
+style="border: 1px solid black">
+</iframe>
+<small>
+<a href="https://www.openstreetmap.org/#map=11/38.6280278/-90.1910154"
+    title="Links to external site">Show bigger map</a>
+</small>
+<!--
+Map Data:
+Array
+(
+    [place_id] => 322983104
+    [licence] => Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright
+    [osm_type] => relation
+    [osm_id] => 1180533
+    [lat] => 38.6280278
+    [lon] => -90.1910154
+    [class] => boundary
+    [type] => administrative
+    [place_rank] => 12
+    [importance] => 0.64989575704626
+    [addresstype] => independent_city
+    [name] => St. Louis
+    [display_name] => St. Louis, Missouri, United States
+    [boundingbox] => Array
+        (
+            [0] => 38.5323215
+            [1] => 38.7743018
+            [2] => -90.3206525
+            [3] => -90.1641941
+        )
+
+    [geojson] => stdClass Object
+        (
+            [type] => Polygon
+            [coordinates] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [0] => -90.3206525
+                                    [1] => 38.594204
+                                )
+
+                            [1] => Array
+                                (
+                                    [0] => -90.3163571
+                                    [1] => 38.5848104
+                                )
+
+                            [2] => Array
+                                (
+                                    [0] => -90.3163022
+                                    [1] => 38.5846903
+                                )
+
+                            [3] => Array
+                                (
+                                    [0] => -90.31489
+                                    [1] => 38.5816028
+                                )
+
+                            [4] => Array
+                                (
+                                    [0] => -90.3141045
+                                    [1] => 38.5798816
+                                )
+
+                            [5] => Array
+                                (
+                                    [0] => -90.31358
+                                    [1] => 38.5787375
+                                )
+
+                            [6] => Array
+                                (
+                                    [0] => -90.3106838
+                                    [1] => 38.5757075
+                                )
+
+                            [7] => Array
+                                (
+                                    [0] => -90.3077316
+                                    [1] => 38.5726189
+                                )
+
+                            [8] => Array
+                                (
+                                    [0] => -90.2970355
+                                    [1] => 38.5623808
+                                )
+
+                            [9] => Array
+                                (
+                                    [0] => -90.2969448
+                                    [1] => 38.5622797
+                                )
+
+                            [10] => Array
+                                (
+                                    [0] => -90.2946062
+                                    [1] => 38.5605585
+                                )
+
+                            [11] => Array
+                                (
+                                    [0] => -90.2923988
+                                    [1] => 38.5589601
+                                )
+
+                            [12] => Array
+                                (
+                                    [0] => -90.2897743
+                                    [1] => 38.5570435
+                                )
+
+                            [13] => Array
+                                (
+                                    [0] => -90.287102
+                                    [1] => 38.5554708
+                                )
+
+                            [14] => Array
+                                (
+                                    [0] => -90.28374
+                                    [1] => 38.553919
+                                )
+
+                            [15] => Array
+                                (
+                                    [0] => -90.283586
+                                    [1] => 38.553829
+                                )
+
+                            [16] => Array
+                                (
+                                    [0] => -90.283128
+                                    [1] => 38.553562
+                                )
+
+                            [17] => Array
+                                (
+                                    [0] => -90.282977
+                                    [1] => 38.553475
+                                )
+
+                            [18] => Array
+                                (
+                                    [0] => -90.282701
+                                    [1] => 38.553329
+                                )
+
+                            [19] => Array
+                                (
+                                    [0] => -90.281876
+                                    [1] => 38.552891
+                                )
+
+                            [20] => Array
+                                (
+                                    [0] => -90.281601
+                                    [1] => 38.552746
+                                )
+
+                            [21] => Array
+                                (
+                                    [0] => -90.281385
+                                    [1] => 38.552633
+                                )
+
+                            [22] => Array
+                                (
+                                    [0] => -90.280799
+                                    [1] => 38.552325
+                                )
+
+                            [23] => Array
+                                (
+                                    [0] => -90.280742
+                                    [1] => 38.552292
+                                )
+
+                            [24] => Array
+                                (
+                                    [0] => -90.280563
+                                    [1] => 38.552187
+                                )
+
+                            [25] => Array
+                                (
+                                    [0] => -90.280533
+                                    [1] => 38.552169
+                                )
+
+                            [26] => Array
+                                (
+                                    [0] => -90.280477
+                                    [1] => 38.552135
+                                )
+
+                            [27] => Array
+                                (
+                                    [0] => -90.280311
+                                    [1] => 38.552034
+                                )
+
+                            [28] => Array
+                                (
+                                    [0] => -90.280257
+                                    [1] => 38.552002
+                                )
+
+                            [29] => Array
+                                (
+                                    [0] => -90.280203
+                                    [1] => 38.551972
+                                )
+
+                            [30] => Array
+                                (
+                                    [0] => -90.280166
+                                    [1] => 38.551952
+                                )
+
+                            [31] => Array
+                                (
+                                    [0] => -90.280041
+                                    [1] => 38.551888
+                                )
+
+                            [32] => Array
+                                (
+                                    [0] => -90.279987
+                                    [1] => 38.551861
+                                )
+
+                            [33] => Array
+                                (
+                                    [0] => -90.279957
+                                    [1] => 38.551845
+                                )
+
+                            [34] => Array
+                                (
+                                    [0] => -90.279897
+                                    [1] => 38.551809
+                                )
+
+                            [35] => Array
+                                (
+                                    [0] => -90.279632
+                                    [1] => 38.551657
+                                )
+
+                            [36] => Array
+                                (
+                                    [0] => -90.279545
+                                    [1] => 38.551606
+                                )
+
+                            [37] => Array
+                                (
+                                    [0] => -90.279486
+                                    [1] => 38.551572
+                                )
+
+                            [38] => Array
+                                (
+                                    [0] => -90.279469
+                                    [1] => 38.551562
+                                )
+
+                            [39] => Array
+                                (
+                                    [0] => -90.279342
+                                    [1] => 38.551473
+                                )
+
+                            [40] => Array
+                                (
+                                    [0] => -90.279321
+                                    [1] => 38.551457
+                                )
+
+                            [41] => Array
+                                (
+                                    [0] => -90.279269
+                                    [1] => 38.551416
+                                )
+
+                            [42] => Array
+                                (
+                                    [0] => -90.278752
+                                    [1] => 38.551067
+                                )
+
+                            [43] => Array
+                                (
+                                    [0] => -90.277997
+                                    [1] => 38.550557
+                                )
+
+                            [44] => Array
+                                (
+                                    [0] => -90.277081
+                                    [1] => 38.550269
+                                )
+
+                            [45] => Array
+                                (
+                                    [0] => -90.276487
+                                    [1] => 38.550083
+                                )
+
+                            [46] => Array
+                                (
+                                    [0] => -90.276306
+                                    [1] => 38.550031
+                                )
+
+                            [47] => Array
+                                (
+                                    [0] => -90.275808
+                                    [1] => 38.54989
+                                )
+
+                            [48] => Array
+                                (
+                                    [0] => -90.275765
+                                    [1] => 38.549875
+                                )
+
+                            [49] => Array
+                                (
+                                    [0] => -90.275587
+                                    [1] => 38.549814
+                                )
+
+                            [50] => Array
+                                (
+                                    [0] => -90.275499
+                                    [1] => 38.549783
+                                )
+
+                            [51] => Array
+                                (
+                                    [0] => -90.275236
+                                    [1] => 38.549691
+                                )
+
+                            [52] => Array
+                                (
+                                    [0] => -90.275149
+                                    [1] => 38.549662
+                                )
+
+                            [53] => Array
+                                (
+                                    [0] => -90.27485
+                                    [1] => 38.549568
+                                )
+
+                            [54] => Array
+                                (
+                                    [0] => -90.274147
+                                    [1] => 38.549347
+                                )
+
+                            [55] => Array
+                                (
+                                    [0] => -90.273966
+                                    [1] => 38.549256
+                                )
+
+                            [56] => Array
+                                (
+                                    [0] => -90.273686
+                                    [1] => 38.549116
+                                )
+
+                            [57] => Array
+                                (
+                                    [0] => -90.273627
+                                    [1] => 38.549092
+                                )
+
+                            [58] => Array
+                                (
+                                    [0] => -90.273461
+                                    [1] => 38.549024
+                                )
+
+                            [59] => Array
+                                (
+                                    [0] => -90.273455
+                                    [1] => 38.54902
+                                )
+
+                            [60] => Array
+                                (
+                                    [0] => -90.273401
+                                    [1] => 38.54899
+                                )
+
+                            [61] => Array
+                                (
+                                    [0] => -90.273348
+                                    [1] => 38.548959
+                                )
+
+                            [62] => Array
+                                (
+                                    [0] => -90.273343
+                                    [1] => 38.548956
+                                )
+
+                            [63] => Array
+                                (
+                                    [0] => -90.273266
+                                    [1] => 38.548922
+                                )
+
+                            [64] => Array
+                                (
+                                    [0] => -90.273179
+                                    [1] => 38.548902
+                                )
+
+                            [65] => Array
+                                (
+                                    [0] => -90.273155
+                                    [1] => 38.5489
+                                )
+
+                            [66] => Array
+                                (
+                                    [0] => -90.273089
+                                    [1] => 38.548894
+                                )
+
+                            [67] => Array
+                                (
+                                    [0] => -90.273068
+                                    [1] => 38.548865
+                                )
+
+                            [68] => Array
+                                (
+                                    [0] => -90.27305
+                                    [1] => 38.548828
+                                )
+
+                            [69] => Array
+                                (
+                                    [0] => -90.272956
+                                    [1] => 38.548634
+                                )
+
+                            [70] => Array
+                                (
+                                    [0] => -90.272926
+                                    [1] => 38.54857
+                                )
+
+                            [71] => Array
+                                (
+                                    [0] => -90.272856
+                                    [1] => 38.548467
+                                )
+
+                            [72] => Array
+                                (
+                                    [0] => -90.272652
+                                    [1] => 38.548163
+                                )
+
+                            [73] => Array
+                                (
+                                    [0] => -90.272616
+                                    [1] => 38.548107
+                                )
+
+                            [74] => Array
+                                (
+                                    [0] => -90.272588
+                                    [1] => 38.548064
+                                )
+
+                            [75] => Array
+                                (
+                                    [0] => -90.272513
+                                    [1] => 38.548037
+                                )
+
+                            [76] => Array
+                                (
+                                    [0] => -90.272398
+                                    [1] => 38.547998
+                                )
+
+                            [77] => Array
+                                (
+                                    [0] => -90.272297
+                                    [1] => 38.547964
+                                )
+
+                            [78] => Array
+                                (
+                                    [0] => -90.272229
+                                    [1] => 38.547941
+                                )
+
+                            [79] => Array
+                                (
+                                    [0] => -90.272218
+                                    [1] => 38.547695
+                                )
+
+                            [80] => Array
+                                (
+                                    [0] => -90.272202
+                                    [1] => 38.547328
+                                )
+
+                            [81] => Array
+                                (
+                                    [0] => -90.272207
+                                    [1] => 38.547067
+                                )
+
+                            [82] => Array
+                                (
+                                    [0] => -90.272193
+                                    [1] => 38.546964
+                                )
+
+                            [83] => Array
+                                (
+                                    [0] => -90.2721768
+                                    [1] => 38.5467217
+                                )
+
+                            [84] => Array
+                                (
+                                    [0] => -90.272105
+                                    [1] => 38.546579
+                                )
+
+                            [85] => Array
+                                (
+                                    [0] => -90.271937
+                                    [1] => 38.546141
+                                )
+
+                            [86] => Array
+                                (
+                                    [0] => -90.271881
+                                    [1] => 38.545995
+                                )
+
+                            [87] => Array
+                                (
+                                    [0] => -90.271867
+                                    [1] => 38.545953
+                                )
+
+                            [88] => Array
+                                (
+                                    [0] => -90.271828
+                                    [1] => 38.545827
+                                )
+
+                            [89] => Array
+                                (
+                                    [0] => -90.271815
+                                    [1] => 38.545785
+                                )
+
+                            [90] => Array
+                                (
+                                    [0] => -90.271752
+                                    [1] => 38.54559
+                                )
+
+                            [91] => Array
+                                (
+                                    [0] => -90.271567
+                                    [1] => 38.545011
+                                )
+
+                            [92] => Array
+                                (
+                                    [0] => -90.271508
+                                    [1] => 38.544819
+                                )
+
+                            [93] => Array
+                                (
+                                    [0] => -90.27146
+                                    [1] => 38.544584
+                                )
+
+                            [94] => Array
+                                (
+                                    [0] => -90.271431
+                                    [1] => 38.544498
+                                )
+
+                            [95] => Array
+                                (
+                                    [0] => -90.271117
+                                    [1] => 38.543563
+                                )
+
+                            [96] => Array
+                                (
+                                    [0] => -90.271014
+                                    [1] => 38.543252
+                                )
+
+                            [97] => Array
+                                (
+                                    [0] => -90.270974
+                                    [1] => 38.543192
+                                )
+
+                            [98] => Array
+                                (
+                                    [0] => -90.270854
+                                    [1] => 38.543012
+                                )
+
+                            [99] => Array
+                                (
+                                    [0] => -90.270814
+                                    [1] => 38.542952
+                                )
+
+                            [100] => Array
+                                (
+                                    [0] => -90.270806
+                                    [1] => 38.542922
+                                )
+
+                            [101] => Array
+                                (
+                                    [0] => -90.270784
+                                    [1] => 38.542833
+                                )
+
+                            [102] => Array
+                                (
+                                    [0] => -90.270777
+                                    [1] => 38.542804
+                                )
+
+                            [103] => Array
+                                (
+                                    [0] => -90.270714
+                                    [1] => 38.542552
+                                )
+
+                            [104] => Array
+                                (
+                                    [0] => -90.270711
+                                    [1] => 38.542536
+                                )
+
+                            [105] => Array
+                                (
+                                    [0] => -90.270563
+                                    [1] => 38.541723
+                                )
+
+                            [106] => Array
+                                (
+                                    [0] => -90.270514
+                                    [1] => 38.541452
+                                )
+
+                            [107] => Array
+                                (
+                                    [0] => -90.270634
+                                    [1] => 38.541292
+                                )
+
+                            [108] => Array
+                                (
+                                    [0] => -90.270994
+                                    [1] => 38.540812
+                                )
+
+                            [109] => Array
+                                (
+                                    [0] => -90.271114
+                                    [1] => 38.540652
+                                )
+
+                            [110] => Array
+                                (
+                                    [0] => -90.271196
+                                    [1] => 38.540446
+                                )
+
+                            [111] => Array
+                                (
+                                    [0] => -90.271197
+                                    [1] => 38.540443
+                                )
+
+                            [112] => Array
+                                (
+                                    [0] => -90.271447
+                                    [1] => 38.539817
+                                )
+
+                            [113] => Array
+                                (
+                                    [0] => -90.2714819
+                                    [1] => 38.5396879
+                                )
+
+                            [114] => Array
+                                (
+                                    [0] => -90.271486
+                                    [1] => 38.539615
+                                )
+
+                            [115] => Array
+                                (
+                                    [0] => -90.271366
+                                    [1] => 38.539466
+                                )
+
+                            [116] => Array
+                                (
+                                    [0] => -90.271009
+                                    [1] => 38.53902
+                                )
+
+                            [117] => Array
+                                (
+                                    [0] => -90.27089
+                                    [1] => 38.538872
+                                )
+
+                            [118] => Array
+                                (
+                                    [0] => -90.270714
+                                    [1] => 38.538652
+                                )
+
+                            [119] => Array
+                                (
+                                    [0] => -90.270639
+                                    [1] => 38.5386
+                                )
+
+                            [120] => Array
+                                (
+                                    [0] => -90.26972
+                                    [1] => 38.537964
+                                )
+
+                            [121] => Array
+                                (
+                                    [0] => -90.269414
+                                    [1] => 38.537752
+                                )
+
+                            [122] => Array
+                                (
+                                    [0] => -90.269364
+                                    [1] => 38.537709
+                                )
+
+                            [123] => Array
+                                (
+                                    [0] => -90.269215
+                                    [1] => 38.537583
+                                )
+
+                            [124] => Array
+                                (
+                                    [0] => -90.2689898
+                                    [1] => 38.5373864
+                                )
+
+                            [125] => Array
+                                (
+                                    [0] => -90.268238
+                                    [1] => 38.536359
+                                )
+
+                            [126] => Array
+                                (
+                                    [0] => -90.26806
+                                    [1] => 38.536062
+                                )
+
+                            [127] => Array
+                                (
+                                    [0] => -90.267666
+                                    [1] => 38.535405
+                                )
+
+                            [128] => Array
+                                (
+                                    [0] => -90.267437
+                                    [1] => 38.535024
+                                )
+
+                            [129] => Array
+                                (
+                                    [0] => -90.2672684
+                                    [1] => 38.5347427
+                                )
+
+                            [130] => Array
+                                (
+                                    [0] => -90.266966
+                                    [1] => 38.534238
+                                )
+
+                            [131] => Array
+                                (
+                                    [0] => -90.2669389
+                                    [1] => 38.5341932
+                                )
+
+                            [132] => Array
+                                (
+                                    [0] => -90.266914
+                                    [1] => 38.534152
+                                )
+
+                            [133] => Array
+                                (
+                                    [0] => -90.266894
+                                    [1] => 38.534151
+                                )
+
+                            [134] => Array
+                                (
+                                    [0] => -90.264931
+                                    [1] => 38.534038
+                                )
+
+                            [135] => Array
+                                (
+                                    [0] => -90.263958
+                                    [1] => 38.53398
+                                )
+
+                            [136] => Array
+                                (
+                                    [0] => -90.263773
+                                    [1] => 38.53397
+                                )
+
+                            [137] => Array
+                                (
+                                    [0] => -90.263688
+                                    [1] => 38.533965
+                                )
+
+                            [138] => Array
+                                (
+                                    [0] => -90.263414
+                                    [1] => 38.53395
+                                )
+
+                            [139] => Array
+                                (
+                                    [0] => -90.263258
+                                    [1] => 38.533935
+                                )
+
+                            [140] => Array
+                                (
+                                    [0] => -90.26294
+                                    [1] => 38.533909
+                                )
+
+                            [141] => Array
+                                (
+                                    [0] => -90.262791
+                                    [1] => 38.533895
+                                )
+
+                            [142] => Array
+                                (
+                                    [0] => -90.262636
+                                    [1] => 38.533882
+                                )
+
+                            [143] => Array
+                                (
+                                    [0] => -90.262594
+                                    [1] => 38.533878
+                                )
+
+                            [144] => Array
+                                (
+                                    [0] => -90.262467
+                                    [1] => 38.533866
+                                )
+
+                            [145] => Array
+                                (
+                                    [0] => -90.26243
+                                    [1] => 38.533864
+                                )
+
+                            [146] => Array
+                                (
+                                    [0] => -90.262427
+                                    [1] => 38.533862
+                                )
+
+                            [147] => Array
+                                (
+                                    [0] => -90.262314
+                                    [1] => 38.533852
+                                )
+
+                            [148] => Array
+                                (
+                                    [0] => -90.262086
+                                    [1] => 38.533758
+                                )
+
+                            [149] => Array
+                                (
+                                    [0] => -90.261396
+                                    [1] => 38.533476
+                                )
+
+                            [150] => Array
+                                (
+                                    [0] => -90.261126
+                                    [1] => 38.533364
+                                )
+
+                            [151] => Array
+                                (
+                                    [0] => -90.261092
+                                    [1] => 38.533343
+                                )
+
+                            [152] => Array
+                                (
+                                    [0] => -90.260853
+                                    [1] => 38.53325
+                                )
+
+                            [153] => Array
+                                (
+                                    [0] => -90.260766
+                                    [1] => 38.533182
+                                )
+
+                            [154] => Array
+                                (
+                                    [0] => -90.260587
+                                    [1] => 38.533074
+                                )
+
+                            [155] => Array
+                                (
+                                    [0] => -90.260406
+                                    [1] => 38.533007
+                                )
+
+                            [156] => Array
+                                (
+                                    [0] => -90.260102
+                                    [1] => 38.532906
+                                )
+
+                            [157] => Array
+                                (
+                                    [0] => -90.259315
+                                    [1] => 38.532646
+                                )
+
+                            [158] => Array
+                                (
+                                    [0] => -90.2584122
+                                    [1] => 38.5323215
+                                )
+
+                            [159] => Array
+                                (
+                                    [0] => -90.2515734
+                                    [1] => 38.5423334
+                                )
+
+                            [160] => Array
+                                (
+                                    [0] => -90.2484809
+                                    [1] => 38.5463405
+                                )
+
+                            [161] => Array
+                                (
+                                    [0] => -90.2441599
+                                    [1] => 38.5519392
+                                )
+
+                            [162] => Array
+                                (
+                                    [0] => -90.2417023
+                                    [1] => 38.5551233
+                                )
+
+                            [163] => Array
+                                (
+                                    [0] => -90.2400721
+                                    [1] => 38.5572353
+                                )
+
+                            [164] => Array
+                                (
+                                    [0] => -90.2358347
+                                    [1] => 38.5621923
+                                )
+
+                            [165] => Array
+                                (
+                                    [0] => -90.2283982
+                                    [1] => 38.5708911
+                                )
+
+                            [166] => Array
+                                (
+                                    [0] => -90.2258256
+                                    [1] => 38.5733886
+                                )
+
+                            [167] => Array
+                                (
+                                    [0] => -90.2227333
+                                    [1] => 38.5757793
+                                )
+
+                            [168] => Array
+                                (
+                                    [0] => -90.2160395
+                                    [1] => 38.5805887
+                                )
+
+                            [169] => Array
+                                (
+                                    [0] => -90.2080961
+                                    [1] => 38.5857167
+                                )
+
+                            [170] => Array
+                                (
+                                    [0] => -90.205183
+                                    [1] => 38.5875973
+                                )
+
+                            [171] => Array
+                                (
+                                    [0] => -90.2031649
+                                    [1] => 38.5889082
+                                )
+
+                            [172] => Array
+                                (
+                                    [0] => -90.1954401
+                                    [1] => 38.5958851
+                                )
+
+                            [173] => Array
+                                (
+                                    [0] => -90.189947
+                                    [1] => 38.6036662
+                                )
+
+                            [174] => Array
+                                (
+                                    [0] => -90.1878253
+                                    [1] => 38.6080858
+                                )
+
+                            [175] => Array
+                                (
+                                    [0] => -90.1858271
+                                    [1] => 38.6122513
+                                )
+
+                            [176] => Array
+                                (
+                                    [0] => -90.1851398
+                                    [1] => 38.6135141
+                                )
+
+                            [177] => Array
+                                (
+                                    [0] => -90.1827447
+                                    [1] => 38.6179147
+                                )
+
+                            [178] => Array
+                                (
+                                    [0] => -90.1826397
+                                    [1] => 38.6181029
+                                )
+
+                            [179] => Array
+                                (
+                                    [0] => -90.1813639
+                                    [1] => 38.620433
+                                )
+
+                            [180] => Array
+                                (
+                                    [0] => -90.1791323
+                                    [1] => 38.6272727
+                                )
+
+                            [181] => Array
+                                (
+                                    [0] => -90.1782986
+                                    [1] => 38.6309014
+                                )
+
+                            [182] => Array
+                                (
+                                    [0] => -90.1782828
+                                    [1] => 38.6309701
+                                )
+
+                            [183] => Array
+                                (
+                                    [0] => -90.1779307
+                                    [1] => 38.6325027
+                                )
+
+                            [184] => Array
+                                (
+                                    [0] => -90.1779175
+                                    [1] => 38.6334924
+                                )
+
+                            [185] => Array
+                                (
+                                    [0] => -90.1778712
+                                    [1] => 38.6369701
+                                )
+
+                            [186] => Array
+                                (
+                                    [0] => -90.1780019
+                                    [1] => 38.6379246
+                                )
+
+                            [187] => Array
+                                (
+                                    [0] => -90.178294
+                                    [1] => 38.6400584
+                                )
+
+                            [188] => Array
+                                (
+                                    [0] => -90.1785114
+                                    [1] => 38.6425561
+                                )
+
+                            [189] => Array
+                                (
+                                    [0] => -90.179054
+                                    [1] => 38.646026
+                                )
+
+                            [190] => Array
+                                (
+                                    [0] => -90.1794038
+                                    [1] => 38.6479189
+                                )
+
+                            [191] => Array
+                                (
+                                    [0] => -90.1800106
+                                    [1] => 38.6537522
+                                )
+
+                            [192] => Array
+                                (
+                                    [0] => -90.181129
+                                    [1] => 38.660442
+                                )
+
+                            [193] => Array
+                                (
+                                    [0] => -90.1815092
+                                    [1] => 38.6620583
+                                )
+
+                            [194] => Array
+                                (
+                                    [0] => -90.183128
+                                    [1] => 38.667591
+                                )
+
+                            [195] => Array
+                                (
+                                    [0] => -90.186188
+                                    [1] => 38.674885
+                                )
+
+                            [196] => Array
+                                (
+                                    [0] => -90.190338
+                                    [1] => 38.681782
+                                )
+
+                            [197] => Array
+                                (
+                                    [0] => -90.193962
+                                    [1] => 38.686626
+                                )
+
+                            [198] => Array
+                                (
+                                    [0] => -90.195311
+                                    [1] => 38.6879009
+                                )
+
+                            [199] => Array
+                                (
+                                    [0] => -90.19873
+                                    [1] => 38.691132
+                                )
+
+                            [200] => Array
+                                (
+                                    [0] => -90.202339
+                                    [1] => 38.694248
+                                )
+
+                            [201] => Array
+                                (
+                                    [0] => -90.205765
+                                    [1] => 38.697937
+                                )
+
+                            [202] => Array
+                                (
+                                    [0] => -90.208595
+                                    [1] => 38.701618
+                                )
+
+                            [203] => Array
+                                (
+                                    [0] => -90.211945
+                                    [1] => 38.707573
+                                )
+
+                            [204] => Array
+                                (
+                                    [0] => -90.212509
+                                    [1] => 38.712151
+                                )
+
+                            [205] => Array
+                                (
+                                    [0] => -90.212814
+                                    [1] => 38.717564
+                                )
+
+                            [206] => Array
+                                (
+                                    [0] => -90.2113895
+                                    [1] => 38.7213494
+                                )
+
+                            [207] => Array
+                                (
+                                    [0] => -90.2099111
+                                    [1] => 38.726077
+                                )
+
+                            [208] => Array
+                                (
+                                    [0] => -90.2052221
+                                    [1] => 38.7321309
+                                )
+
+                            [209] => Array
+                                (
+                                    [0] => -90.1913157
+                                    [1] => 38.7429483
+                                )
+
+                            [210] => Array
+                                (
+                                    [0] => -90.1834378
+                                    [1] => 38.7468248
+                                )
+
+                            [211] => Array
+                                (
+                                    [0] => -90.1763259
+                                    [1] => 38.7544582
+                                )
+
+                            [212] => Array
+                                (
+                                    [0] => -90.173142
+                                    [1] => 38.7585343
+                                )
+
+                            [213] => Array
+                                (
+                                    [0] => -90.1729488
+                                    [1] => 38.7589024
+                                )
+
+                            [214] => Array
+                                (
+                                    [0] => -90.1728308
+                                    [1] => 38.7592454
+                                )
+
+                            [215] => Array
+                                (
+                                    [0] => -90.1724982
+                                    [1] => 38.7596637
+                                )
+
+                            [216] => Array
+                                (
+                                    [0] => -90.1722622
+                                    [1] => 38.7599816
+                                )
+
+                            [217] => Array
+                                (
+                                    [0] => -90.1720262
+                                    [1] => 38.7602995
+                                )
+
+                            [218] => Array
+                                (
+                                    [0] => -90.1702948
+                                    [1] => 38.7635382
+                                )
+
+                            [219] => Array
+                                (
+                                    [0] => -90.1698415
+                                    [1] => 38.7645546
+                                )
+
+                            [220] => Array
+                                (
+                                    [0] => -90.1689363
+                                    [1] => 38.7662977
+                                )
+
+                            [221] => Array
+                                (
+                                    [0] => -90.1674235
+                                    [1] => 38.7684727
+                                )
+
+                            [222] => Array
+                                (
+                                    [0] => -90.1641941
+                                    [1] => 38.7720194
+                                )
+
+                            [223] => Array
+                                (
+                                    [0] => -90.1664329
+                                    [1] => 38.7727421
+                                )
+
+                            [224] => Array
+                                (
+                                    [0] => -90.1751203
+                                    [1] => 38.7733992
+                                )
+
+                            [225] => Array
+                                (
+                                    [0] => -90.1820525
+                                    [1] => 38.7741195
+                                )
+
+                            [226] => Array
+                                (
+                                    [0] => -90.1820827
+                                    [1] => 38.7741217
+                                )
+
+                            [227] => Array
+                                (
+                                    [0] => -90.1841676
+                                    [1] => 38.7743018
+                                )
+
+                            [228] => Array
+                                (
+                                    [0] => -90.1840256
+                                    [1] => 38.772402
+                                )
+
+                            [229] => Array
+                                (
+                                    [0] => -90.1838709
+                                    [1] => 38.7706231
+                                )
+
+                            [230] => Array
+                                (
+                                    [0] => -90.1844781
+                                    [1] => 38.7679229
+                                )
+
+                            [231] => Array
+                                (
+                                    [0] => -90.1850624
+                                    [1] => 38.7648293
+                                )
+
+                            [232] => Array
+                                (
+                                    [0] => -90.1862848
+                                    [1] => 38.7613698
+                                )
+
+                            [233] => Array
+                                (
+                                    [0] => -90.1883175
+                                    [1] => 38.7587351
+                                )
+
+                            [234] => Array
+                                (
+                                    [0] => -90.1892585
+                                    [1] => 38.7577938
+                                )
+
+                            [235] => Array
+                                (
+                                    [0] => -90.1919866
+                                    [1] => 38.754777
+                                )
+
+                            [236] => Array
+                                (
+                                    [0] => -90.1954613
+                                    [1] => 38.7515321
+                                )
+
+                            [237] => Array
+                                (
+                                    [0] => -90.1968733
+                                    [1] => 38.7498429
+                                )
+
+                            [238] => Array
+                                (
+                                    [0] => -90.1973231
+                                    [1] => 38.749292
+                                )
+
+                            [239] => Array
+                                (
+                                    [0] => -90.207928
+                                    [1] => 38.739736
+                                )
+
+                            [240] => Array
+                                (
+                                    [0] => -90.2126441
+                                    [1] => 38.736236
+                                )
+
+                            [241] => Array
+                                (
+                                    [0] => -90.2183432
+                                    [1] => 38.7333934
+                                )
+
+                            [242] => Array
+                                (
+                                    [0] => -90.2197693
+                                    [1] => 38.7322986
+                                )
+
+                            [243] => Array
+                                (
+                                    [0] => -90.2217677
+                                    [1] => 38.7301273
+                                )
+
+                            [244] => Array
+                                (
+                                    [0] => -90.2219894
+                                    [1] => 38.7300443
+                                )
+
+                            [245] => Array
+                                (
+                                    [0] => -90.2222111
+                                    [1] => 38.7299612
+                                )
+
+                            [246] => Array
+                                (
+                                    [0] => -90.2241009
+                                    [1] => 38.7292217
+                                )
+
+                            [247] => Array
+                                (
+                                    [0] => -90.224852
+                                    [1] => 38.7289866
+                                )
+
+                            [248] => Array
+                                (
+                                    [0] => -90.2280512
+                                    [1] => 38.7281563
+                                )
+
+                            [249] => Array
+                                (
+                                    [0] => -90.2393759
+                                    [1] => 38.7237131
+                                )
+
+                            [250] => Array
+                                (
+                                    [0] => -90.2398332
+                                    [1] => 38.7235338
+                                )
+
+                            [251] => Array
+                                (
+                                    [0] => -90.2405338
+                                    [1] => 38.723259
+                                )
+
+                            [252] => Array
+                                (
+                                    [0] => -90.2456019
+                                    [1] => 38.7212743
+                                )
+
+                            [253] => Array
+                                (
+                                    [0] => -90.246135
+                                    [1] => 38.721122
+                                )
+
+                            [254] => Array
+                                (
+                                    [0] => -90.246311
+                                    [1] => 38.72105
+                                )
+
+                            [255] => Array
+                                (
+                                    [0] => -90.246404
+                                    [1] => 38.721023
+                                )
+
+                            [256] => Array
+                                (
+                                    [0] => -90.246426
+                                    [1] => 38.721017
+                                )
+
+                            [257] => Array
+                                (
+                                    [0] => -90.246607
+                                    [1] => 38.720961
+                                )
+
+                            [258] => Array
+                                (
+                                    [0] => -90.247218
+                                    [1] => 38.720776
+                                )
+
+                            [259] => Array
+                                (
+                                    [0] => -90.247321
+                                    [1] => 38.720746
+                                )
+
+                            [260] => Array
+                                (
+                                    [0] => -90.247396
+                                    [1] => 38.720713
+                                )
+
+                            [261] => Array
+                                (
+                                    [0] => -90.247418
+                                    [1] => 38.720703
+                                )
+
+                            [262] => Array
+                                (
+                                    [0] => -90.247596
+                                    [1] => 38.720623
+                                )
+
+                            [263] => Array
+                                (
+                                    [0] => -90.24813
+                                    [1] => 38.720385
+                                )
+
+                            [264] => Array
+                                (
+                                    [0] => -90.248222
+                                    [1] => 38.720345
+                                )
+
+                            [265] => Array
+                                (
+                                    [0] => -90.248313
+                                    [1] => 38.720316
+                                )
+
+                            [266] => Array
+                                (
+                                    [0] => -90.248336
+                                    [1] => 38.720308
+                                )
+
+                            [267] => Array
+                                (
+                                    [0] => -90.248509
+                                    [1] => 38.72025
+                                )
+
+                            [268] => Array
+                                (
+                                    [0] => -90.249099
+                                    [1] => 38.720053
+                                )
+
+                            [269] => Array
+                                (
+                                    [0] => -90.249128
+                                    [1] => 38.720044
+                                )
+
+                            [270] => Array
+                                (
+                                    [0] => -90.249295
+                                    [1] => 38.719983
+                                )
+
+                            [271] => Array
+                                (
+                                    [0] => -90.249303
+                                    [1] => 38.71998
+                                )
+
+                            [272] => Array
+                                (
+                                    [0] => -90.249478
+                                    [1] => 38.719916
+                                )
+
+                            [273] => Array
+                                (
+                                    [0] => -90.250028
+                                    [1] => 38.719716
+                                )
+
+                            [274] => Array
+                                (
+                                    [0] => -90.250212
+                                    [1] => 38.71965
+                                )
+
+                            [275] => Array
+                                (
+                                    [0] => -90.250225
+                                    [1] => 38.719643
+                                )
+
+                            [276] => Array
+                                (
+                                    [0] => -90.250264
+                                    [1] => 38.719625
+                                )
+
+                            [277] => Array
+                                (
+                                    [0] => -90.250278
+                                    [1] => 38.719619
+                                )
+
+                            [278] => Array
+                                (
+                                    [0] => -90.250547
+                                    [1] => 38.719461
+                                )
+
+                            [279] => Array
+                                (
+                                    [0] => -90.25136
+                                    [1] => 38.718987
+                                )
+
+                            [280] => Array
+                                (
+                                    [0] => -90.251532
+                                    [1] => 38.718889
+                                )
+
+                            [281] => Array
+                                (
+                                    [0] => -90.2516
+                                    [1] => 38.718794
+                                )
+
+                            [282] => Array
+                                (
+                                    [0] => -90.25174
+                                    [1] => 38.718683
+                                )
+
+                            [283] => Array
+                                (
+                                    [0] => -90.252167
+                                    [1] => 38.718355
+                                )
+
+                            [284] => Array
+                                (
+                                    [0] => -90.25231
+                                    [1] => 38.718247
+                                )
+
+                            [285] => Array
+                                (
+                                    [0] => -90.252319
+                                    [1] => 38.718241
+                                )
+
+                            [286] => Array
+                                (
+                                    [0] => -90.252413
+                                    [1] => 38.718123
+                                )
+
+                            [287] => Array
+                                (
+                                    [0] => -90.252712
+                                    [1] => 38.71775
+                                )
+
+                            [288] => Array
+                                (
+                                    [0] => -90.252712
+                                    [1] => 38.717748
+                                )
+
+                            [289] => Array
+                                (
+                                    [0] => -90.2528
+                                    [1] => 38.717614
+                                )
+
+                            [290] => Array
+                                (
+                                    [0] => -90.252812
+                                    [1] => 38.717597
+                                )
+
+                            [291] => Array
+                                (
+                                    [0] => -90.253014
+                                    [1] => 38.717283
+                                )
+
+                            [292] => Array
+                                (
+                                    [0] => -90.253659
+                                    [1] => 38.716291
+                                )
+
+                            [293] => Array
+                                (
+                                    [0] => -90.253874
+                                    [1] => 38.715961
+                                )
+
+                            [294] => Array
+                                (
+                                    [0] => -90.253883
+                                    [1] => 38.715947
+                                )
+
+                            [295] => Array
+                                (
+                                    [0] => -90.254008
+                                    [1] => 38.715749
+                                )
+
+                            [296] => Array
+                                (
+                                    [0] => -90.254228
+                                    [1] => 38.715498
+                                )
+
+                            [297] => Array
+                                (
+                                    [0] => -90.255387
+                                    [1] => 38.714186
+                                )
+
+                            [298] => Array
+                                (
+                                    [0] => -90.255774
+                                    [1] => 38.71375
+                                )
+
+                            [299] => Array
+                                (
+                                    [0] => -90.255826
+                                    [1] => 38.713678
+                                )
+
+                            [300] => Array
+                                (
+                                    [0] => -90.255985
+                                    [1] => 38.713468
+                                )
+
+                            [301] => Array
+                                (
+                                    [0] => -90.25604
+                                    [1] => 38.713399
+                                )
+
+                            [302] => Array
+                                (
+                                    [0] => -90.256164
+                                    [1] => 38.713225
+                                )
+
+                            [303] => Array
+                                (
+                                    [0] => -90.256305
+                                    [1] => 38.713079
+                                )
+
+                            [304] => Array
+                                (
+                                    [0] => -90.256452
+                                    [1] => 38.712929
+                                )
+
+                            [305] => Array
+                                (
+                                    [0] => -90.257321
+                                    [1] => 38.712043
+                                )
+
+                            [306] => Array
+                                (
+                                    [0] => -90.257612
+                                    [1] => 38.71175
+                                )
+
+                            [307] => Array
+                                (
+                                    [0] => -90.257738
+                                    [1] => 38.71158
+                                )
+
+                            [308] => Array
+                                (
+                                    [0] => -90.258118
+                                    [1] => 38.711072
+                                )
+
+                            [309] => Array
+                                (
+                                    [0] => -90.258246
+                                    [1] => 38.710903
+                                )
+
+                            [310] => Array
+                                (
+                                    [0] => -90.258248
+                                    [1] => 38.710899
+                                )
+
+                            [311] => Array
+                                (
+                                    [0] => -90.25836
+                                    [1] => 38.710751
+                                )
+
+                            [312] => Array
+                                (
+                                    [0] => -90.258702
+                                    [1] => 38.710295
+                                )
+
+                            [313] => Array
+                                (
+                                    [0] => -90.258812
+                                    [1] => 38.71015
+                                )
+
+                            [314] => Array
+                                (
+                                    [0] => -90.258817
+                                    [1] => 38.710144
+                                )
+
+                            [315] => Array
+                                (
+                                    [0] => -90.258826
+                                    [1] => 38.710135
+                                )
+
+                            [316] => Array
+                                (
+                                    [0] => -90.258943
+                                    [1] => 38.709994
+                                )
+
+                            [317] => Array
+                                (
+                                    [0] => -90.259325
+                                    [1] => 38.70955
+                                )
+
+                            [318] => Array
+                                (
+                                    [0] => -90.259453
+                                    [1] => 38.709402
+                                )
+
+                            [319] => Array
+                                (
+                                    [0] => -90.259455
+                                    [1] => 38.709399
+                                )
+
+                            [320] => Array
+                                (
+                                    [0] => -90.259593
+                                    [1] => 38.709243
+                                )
+
+                            [321] => Array
+                                (
+                                    [0] => -90.260017
+                                    [1] => 38.708769
+                                )
+
+                            [322] => Array
+                                (
+                                    [0] => -90.260159
+                                    [1] => 38.708612
+                                )
+
+                            [323] => Array
+                                (
+                                    [0] => -90.260164
+                                    [1] => 38.708607
+                                )
+
+                            [324] => Array
+                                (
+                                    [0] => -90.260213
+                                    [1] => 38.708551
+                                )
+
+                            [325] => Array
+                                (
+                                    [0] => -90.260371
+                                    [1] => 38.708344
+                                )
+
+                            [326] => Array
+                                (
+                                    [0] => -90.260995
+                                    [1] => 38.707531
+                                )
+
+                            [327] => Array
+                                (
+                                    [0] => -90.261177
+                                    [1] => 38.707296
+                                )
+
+                            [328] => Array
+                                (
+                                    [0] => -90.261203
+                                    [1] => 38.70726
+                                )
+
+                            [329] => Array
+                                (
+                                    [0] => -90.261389
+                                    [1] => 38.707018
+                                )
+
+                            [330] => Array
+                                (
+                                    [0] => -90.261947
+                                    [1] => 38.706292
+                                )
+
+                            [331] => Array
+                                (
+                                    [0] => -90.262134
+                                    [1] => 38.706051
+                                )
+
+                            [332] => Array
+                                (
+                                    [0] => -90.262139
+                                    [1] => 38.706044
+                                )
+
+                            [333] => Array
+                                (
+                                    [0] => -90.262235
+                                    [1] => 38.705917
+                                )
+
+                            [334] => Array
+                                (
+                                    [0] => -90.262345
+                                    [1] => 38.705775
+                                )
+
+                            [335] => Array
+                                (
+                                    [0] => -90.262981
+                                    [1] => 38.704949
+                                )
+
+                            [336] => Array
+                                (
+                                    [0] => -90.263193
+                                    [1] => 38.704674
+                                )
+
+                            [337] => Array
+                                (
+                                    [0] => -90.263206
+                                    [1] => 38.704659
+                                )
+
+                            [338] => Array
+                                (
+                                    [0] => -90.263331
+                                    [1] => 38.704498
+                                )
+
+                            [339] => Array
+                                (
+                                    [0] => -90.263546
+                                    [1] => 38.70422
+                                )
+
+                            [340] => Array
+                                (
+                                    [0] => -90.263742
+                                    [1] => 38.703969
+                                )
+
+                            [341] => Array
+                                (
+                                    [0] => -90.263983
+                                    [1] => 38.703636
+                                )
+
+                            [342] => Array
+                                (
+                                    [0] => -90.264137
+                                    [1] => 38.703392
+                                )
+
+                            [343] => Array
+                                (
+                                    [0] => -90.264282
+                                    [1] => 38.703159
+                                )
+
+                            [344] => Array
+                                (
+                                    [0] => -90.264382
+                                    [1] => 38.703001
+                                )
+
+                            [345] => Array
+                                (
+                                    [0] => -90.264392
+                                    [1] => 38.702986
+                                )
+
+                            [346] => Array
+                                (
+                                    [0] => -90.264484
+                                    [1] => 38.702837
+                                )
+
+                            [347] => Array
+                                (
+                                    [0] => -90.264639
+                                    [1] => 38.702586
+                                )
+
+                            [348] => Array
+                                (
+                                    [0] => -90.264789
+                                    [1] => 38.702347
+                                )
+
+                            [349] => Array
+                                (
+                                    [0] => -90.264892
+                                    [1] => 38.702184
+                                )
+
+                            [350] => Array
+                                (
+                                    [0] => -90.264894
+                                    [1] => 38.702182
+                                )
+
+                            [351] => Array
+                                (
+                                    [0] => -90.264913
+                                    [1] => 38.70215
+                                )
+
+                            [352] => Array
+                                (
+                                    [0] => -90.264955
+                                    [1] => 38.702064
+                                )
+
+                            [353] => Array
+                                (
+                                    [0] => -90.265137
+                                    [1] => 38.701698
+                                )
+
+                            [354] => Array
+                                (
+                                    [0] => -90.265198
+                                    [1] => 38.701577
+                                )
+
+                            [355] => Array
+                                (
+                                    [0] => -90.26521
+                                    [1] => 38.701553
+                                )
+
+                            [356] => Array
+                                (
+                                    [0] => -90.265245
+                                    [1] => 38.701481
+                                )
+
+                            [357] => Array
+                                (
+                                    [0] => -90.265258
+                                    [1] => 38.701458
+                                )
+
+                            [358] => Array
+                                (
+                                    [0] => -90.265259
+                                    [1] => 38.701454
+                                )
+
+                            [359] => Array
+                                (
+                                    [0] => -90.265264
+                                    [1] => 38.701443
+                                )
+
+                            [360] => Array
+                                (
+                                    [0] => -90.265267
+                                    [1] => 38.70144
+                                )
+
+                            [361] => Array
+                                (
+                                    [0] => -90.265272
+                                    [1] => 38.701432
+                                )
+
+                            [362] => Array
+                                (
+                                    [0] => -90.265296
+                                    [1] => 38.701381
+                                )
+
+                            [363] => Array
+                                (
+                                    [0] => -90.265312
+                                    [1] => 38.70135
+                                )
+
+                            [364] => Array
+                                (
+                                    [0] => -90.265403
+                                    [1] => 38.701259
+                                )
+
+                            [365] => Array
+                                (
+                                    [0] => -90.265426
+                                    [1] => 38.701235
+                                )
+
+                            [366] => Array
+                                (
+                                    [0] => -90.265472
+                                    [1] => 38.70119
+                                )
+
+                            [367] => Array
+                                (
+                                    [0] => -90.265522
+                                    [1] => 38.701139
+                                )
+
+                            [368] => Array
+                                (
+                                    [0] => -90.265559
+                                    [1] => 38.701103
+                                )
+
+                            [369] => Array
+                                (
+                                    [0] => -90.265612
+                                    [1] => 38.70105
+                                )
+
+                            [370] => Array
+                                (
+                                    [0] => -90.26565
+                                    [1] => 38.700973
+                                )
+
+                            [371] => Array
+                                (
+                                    [0] => -90.265682
+                                    [1] => 38.70091
+                                )
+
+                            [372] => Array
+                                (
+                                    [0] => -90.265802
+                                    [1] => 38.70076
+                                )
+
+                            [373] => Array
+                                (
+                                    [0] => -90.265912
+                                    [1] => 38.70065
+                                )
+
+                            [374] => Array
+                                (
+                                    [0] => -90.26597
+                                    [1] => 38.700669
+                                )
+
+                            [375] => Array
+                                (
+                                    [0] => -90.266212
+                                    [1] => 38.70075
+                                )
+
+                            [376] => Array
+                                (
+                                    [0] => -90.266433
+                                    [1] => 38.700418
+                                )
+
+                            [377] => Array
+                                (
+                                    [0] => -90.266554
+                                    [1] => 38.700237
+                                )
+
+                            [378] => Array
+                                (
+                                    [0] => -90.266564
+                                    [1] => 38.700222
+                                )
+
+                            [379] => Array
+                                (
+                                    [0] => -90.266612
+                                    [1] => 38.70015
+                                )
+
+                            [380] => Array
+                                (
+                                    [0] => -90.266672
+                                    [1] => 38.700089
+                                )
+
+                            [381] => Array
+                                (
+                                    [0] => -90.267077
+                                    [1] => 38.699684
+                                )
+
+                            [382] => Array
+                                (
+                                    [0] => -90.267136
+                                    [1] => 38.699627
+                                )
+
+                            [383] => Array
+                                (
+                                    [0] => -90.267212
+                                    [1] => 38.69955
+                                )
+
+                            [384] => Array
+                                (
+                                    [0] => -90.267288
+                                    [1] => 38.699435
+                                )
+
+                            [385] => Array
+                                (
+                                    [0] => -90.267516
+                                    [1] => 38.699092
+                                )
+
+                            [386] => Array
+                                (
+                                    [0] => -90.267591
+                                    [1] => 38.698981
+                                )
+
+                            [387] => Array
+                                (
+                                    [0] => -90.267593
+                                    [1] => 38.698978
+                                )
+
+                            [388] => Array
+                                (
+                                    [0] => -90.267687
+                                    [1] => 38.698844
+                                )
+
+                            [389] => Array
+                                (
+                                    [0] => -90.267973
+                                    [1] => 38.698443
+                                )
+
+                            [390] => Array
+                                (
+                                    [0] => -90.268069
+                                    [1] => 38.698309
+                                )
+
+                            [391] => Array
+                                (
+                                    [0] => -90.268076
+                                    [1] => 38.698299
+                                )
+
+                            [392] => Array
+                                (
+                                    [0] => -90.268111
+                                    [1] => 38.69825
+                                )
+
+                            [393] => Array
+                                (
+                                    [0] => -90.268348
+                                    [1] => 38.697958
+                                )
+
+                            [394] => Array
+                                (
+                                    [0] => -90.268473
+                                    [1] => 38.697802
+                                )
+
+                            [395] => Array
+                                (
+                                    [0] => -90.268665
+                                    [1] => 38.697563
+                                )
+
+                            [396] => Array
+                                (
+                                    [0] => -90.269694
+                                    [1] => 38.696286
+                                )
+
+                            [397] => Array
+                                (
+                                    [0] => -90.270101
+                                    [1] => 38.695781
+                                )
+
+                            [398] => Array
+                                (
+                                    [0] => -90.270368
+                                    [1] => 38.695475
+                                )
+
+                            [399] => Array
+                                (
+                                    [0] => -90.271168
+                                    [1] => 38.694558
+                                )
+
+                            [400] => Array
+                                (
+                                    [0] => -90.271436
+                                    [1] => 38.694253
+                                )
+
+                            [401] => Array
+                                (
+                                    [0] => -90.27147
+                                    [1] => 38.694206
+                                )
+
+                            [402] => Array
+                                (
+                                    [0] => -90.271575
+                                    [1] => 38.694069
+                                )
+
+                            [403] => Array
+                                (
+                                    [0] => -90.271611
+                                    [1] => 38.694024
+                                )
+
+                            [404] => Array
+                                (
+                                    [0] => -90.271822
+                                    [1] => 38.693713
+                                )
+
+                            [405] => Array
+                                (
+                                    [0] => -90.272464
+                                    [1] => 38.692792
+                                )
+
+                            [406] => Array
+                                (
+                                    [0] => -90.272644
+                                    [1] => 38.692535
+                                )
+
+                            [407] => Array
+                                (
+                                    [0] => -90.272681
+                                    [1] => 38.692488
+                                )
+
+                            [408] => Array
+                                (
+                                    [0] => -90.272882
+                                    [1] => 38.692211
+                                )
+
+                            [409] => Array
+                                (
+                                    [0] => -90.273491
+                                    [1] => 38.691385
+                                )
+
+                            [410] => Array
+                                (
+                                    [0] => -90.273695
+                                    [1] => 38.69111
+                                )
+
+                            [411] => Array
+                                (
+                                    [0] => -90.27375
+                                    [1] => 38.691034
+                                )
+
+                            [412] => Array
+                                (
+                                    [0] => -90.27391
+                                    [1] => 38.690804
+                                )
+
+                            [413] => Array
+                                (
+                                    [0] => -90.27396
+                                    [1] => 38.690731
+                                )
+
+                            [414] => Array
+                                (
+                                    [0] => -90.273962
+                                    [1] => 38.690727
+                                )
+
+                            [415] => Array
+                                (
+                                    [0] => -90.274013
+                                    [1] => 38.690651
+                                )
+
+                            [416] => Array
+                                (
+                                    [0] => -90.274076
+                                    [1] => 38.690576
+                                )
+
+                            [417] => Array
+                                (
+                                    [0] => -90.274252
+                                    [1] => 38.690369
+                                )
+
+                            [418] => Array
+                                (
+                                    [0] => -90.274447
+                                    [1] => 38.690144
+                                )
+
+                            [419] => Array
+                                (
+                                    [0] => -90.274562
+                                    [1] => 38.69001
+                                )
+
+                            [420] => Array
+                                (
+                                    [0] => -90.274571
+                                    [1] => 38.69
+                                )
+
+                            [421] => Array
+                                (
+                                    [0] => -90.274613
+                                    [1] => 38.689951
+                                )
+
+                            [422] => Array
+                                (
+                                    [0] => -90.274702
+                                    [1] => 38.689835
+                                )
+
+                            [423] => Array
+                                (
+                                    [0] => -90.27488
+                                    [1] => 38.689606
+                                )
+
+                            [424] => Array
+                                (
+                                    [0] => -90.27509
+                                    [1] => 38.689336
+                                )
+
+                            [425] => Array
+                                (
+                                    [0] => -90.275193
+                                    [1] => 38.689205
+                                )
+
+                            [426] => Array
+                                (
+                                    [0] => -90.27522
+                                    [1] => 38.68917
+                                )
+
+                            [427] => Array
+                                (
+                                    [0] => -90.2752773
+                                    [1] => 38.6890966
+                                )
+
+                            [428] => Array
+                                (
+                                    [0] => -90.275313
+                                    [1] => 38.689051
+                                )
+
+                            [429] => Array
+                                (
+                                    [0] => -90.275592
+                                    [1] => 38.68869
+                                )
+
+                            [430] => Array
+                                (
+                                    [0] => -90.27569
+                                    [1] => 38.6885636
+                                )
+
+                            [431] => Array
+                                (
+                                    [0] => -90.275711
+                                    [1] => 38.6885365
+                                )
+
+                            [432] => Array
+                                (
+                                    [0] => -90.275791
+                                    [1] => 38.6884333
+                                )
+
+                            [433] => Array
+                                (
+                                    [0] => -90.276708
+                                    [1] => 38.68725
+                                )
+
+                            [434] => Array
+                                (
+                                    [0] => -90.27708
+                                    [1] => 38.686771
+                                )
+
+                            [435] => Array
+                                (
+                                    [0] => -90.277309
+                                    [1] => 38.686475
+                                )
+
+                            [436] => Array
+                                (
+                                    [0] => -90.277456
+                                    [1] => 38.686286
+                                )
+
+                            [437] => Array
+                                (
+                                    [0] => -90.277996
+                                    [1] => 38.68559
+                                )
+
+                            [438] => Array
+                                (
+                                    [0] => -90.278226
+                                    [1] => 38.685295
+                                )
+
+                            [439] => Array
+                                (
+                                    [0] => -90.278313
+                                    [1] => 38.685182
+                                )
+
+                            [440] => Array
+                                (
+                                    [0] => -90.278575
+                                    [1] => 38.684844
+                                )
+
+                            [441] => Array
+                                (
+                                    [0] => -90.278663
+                                    [1] => 38.684732
+                                )
+
+                            [442] => Array
+                                (
+                                    [0] => -90.278719
+                                    [1] => 38.684659
+                                )
+
+                            [443] => Array
+                                (
+                                    [0] => -90.278886
+                                    [1] => 38.68444
+                                )
+
+                            [444] => Array
+                                (
+                                    [0] => -90.279112
+                                    [1] => 38.68415
+                                )
+
+                            [445] => Array
+                                (
+                                    [0] => -90.279577
+                                    [1] => 38.683581
+                                )
+
+                            [446] => Array
+                                (
+                                    [0] => -90.27981
+                                    [1] => 38.683297
+                                )
+
+                            [447] => Array
+                                (
+                                    [0] => -90.279828
+                                    [1] => 38.683274
+                                )
+
+                            [448] => Array
+                                (
+                                    [0] => -90.280012
+                                    [1] => 38.68305
+                                )
+
+                            [449] => Array
+                                (
+                                    [0] => -90.280128
+                                    [1] => 38.682917
+                                )
+
+                            [450] => Array
+                                (
+                                    [0] => -90.281111
+                                    [1] => 38.681804
+                                )
+
+                            [451] => Array
+                                (
+                                    [0] => -90.28144
+                                    [1] => 38.681434
+                                )
+
+                            [452] => Array
+                                (
+                                    [0] => -90.281513
+                                    [1] => 38.681351
+                                )
+
+                            [453] => Array
+                                (
+                                    [0] => -90.2816989
+                                    [1] => 38.6810983
+                                )
+
+                            [454] => Array
+                                (
+                                    [0] => -90.2818
+                                    [1] => 38.680961
+                                )
+
+                            [455] => Array
+                                (
+                                    [0] => -90.2819861
+                                    [1] => 38.6807091
+                                )
+
+                            [456] => Array
+                                (
+                                    [0] => -90.282744
+                                    [1] => 38.679683
+                                )
+
+                            [457] => Array
+                                (
+                                    [0] => -90.282859
+                                    [1] => 38.679528
+                                )
+
+                            [458] => Array
+                                (
+                                    [0] => -90.283213
+                                    [1] => 38.679051
+                                )
+
+                            [459] => Array
+                                (
+                                    [0] => -90.28323
+                                    [1] => 38.679017
+                                )
+
+                            [460] => Array
+                                (
+                                    [0] => -90.283233
+                                    [1] => 38.679011
+                                )
+
+                            [461] => Array
+                                (
+                                    [0] => -90.283293
+                                    [1] => 38.678891
+                                )
+
+                            [462] => Array
+                                (
+                                    [0] => -90.283363
+                                    [1] => 38.678776
+                                )
+
+                            [463] => Array
+                                (
+                                    [0] => -90.283702
+                                    [1] => 38.678284
+                                )
+
+                            [464] => Array
+                                (
+                                    [0] => -90.283703
+                                    [1] => 38.678284
+                                )
+
+                            [465] => Array
+                                (
+                                    [0] => -90.283724
+                                    [1] => 38.678255
+                                )
+
+                            [466] => Array
+                                (
+                                    [0] => -90.283764
+                                    [1] => 38.6782
+                                )
+
+                            [467] => Array
+                                (
+                                    [0] => -90.283868
+                                    [1] => 38.678095
+                                )
+
+                            [468] => Array
+                                (
+                                    [0] => -90.28418
+                                    [1] => 38.677783
+                                )
+
+                            [469] => Array
+                                (
+                                    [0] => -90.284285
+                                    [1] => 38.677679
+                                )
+
+                            [470] => Array
+                                (
+                                    [0] => -90.2843
+                                    [1] => 38.677664
+                                )
+
+                            [471] => Array
+                                (
+                                    [0] => -90.284412
+                                    [1] => 38.67755
+                                )
+
+                            [472] => Array
+                                (
+                                    [0] => -90.28462
+                                    [1] => 38.677272
+                                )
+
+                            [473] => Array
+                                (
+                                    [0] => -90.2849107
+                                    [1] => 38.6768887
+                                )
+
+                            [474] => Array
+                                (
+                                    [0] => -90.2850107
+                                    [1] => 38.6767467
+                                )
+
+                            [475] => Array
+                                (
+                                    [0] => -90.28557
+                                    [1] => 38.676005
+                                )
+
+                            [476] => Array
+                                (
+                                    [0] => -90.285887
+                                    [1] => 38.675583
+                                )
+
+                            [477] => Array
+                                (
+                                    [0] => -90.285898
+                                    [1] => 38.675567
+                                )
+
+                            [478] => Array
+                                (
+                                    [0] => -90.285912
+                                    [1] => 38.67555
+                                )
+
+                            [479] => Array
+                                (
+                                    [0] => -90.286069
+                                    [1] => 38.675392
+                                )
+
+                            [480] => Array
+                                (
+                                    [0] => -90.28663
+                                    [1] => 38.67483
+                                )
+
+                            [481] => Array
+                                (
+                                    [0] => -90.286711
+                                    [1] => 38.67475
+                                )
+
+                            [482] => Array
+                                (
+                                    [0] => -90.2868
+                                    [1] => 38.674629
+                                )
+
+                            [483] => Array
+                                (
+                                    [0] => -90.28681
+                                    [1] => 38.674617
+                                )
+
+                            [484] => Array
+                                (
+                                    [0] => -90.286951
+                                    [1] => 38.674423
+                                )
+
+                            [485] => Array
+                                (
+                                    [0] => -90.287401
+                                    [1] => 38.673803
+                                )
+
+                            [486] => Array
+                                (
+                                    [0] => -90.287513
+                                    [1] => 38.673651
+                                )
+
+                            [487] => Array
+                                (
+                                    [0] => -90.287557
+                                    [1] => 38.673601
+                                )
+
+                            [488] => Array
+                                (
+                                    [0] => -90.287559
+                                    [1] => 38.673598
+                                )
+
+                            [489] => Array
+                                (
+                                    [0] => -90.287682
+                                    [1] => 38.673457
+                                )
+
+                            [490] => Array
+                                (
+                                    [0] => -90.288057
+                                    [1] => 38.673028
+                                )
+
+                            [491] => Array
+                                (
+                                    [0] => -90.288183
+                                    [1] => 38.672885
+                                )
+
+                            [492] => Array
+                                (
+                                    [0] => -90.288213
+                                    [1] => 38.672851
+                                )
+
+                            [493] => Array
+                                (
+                                    [0] => -90.288302
+                                    [1] => 38.672732
+                                )
+
+                            [494] => Array
+                                (
+                                    [0] => -90.28865
+                                    [1] => 38.672267
+                                )
+
+                            [495] => Array
+                                (
+                                    [0] => -90.288767
+                                    [1] => 38.672112
+                                )
+
+                            [496] => Array
+                                (
+                                    [0] => -90.288813
+                                    [1] => 38.672051
+                                )
+
+                            [497] => Array
+                                (
+                                    [0] => -90.288857
+                                    [1] => 38.671946
+                                )
+
+                            [498] => Array
+                                (
+                                    [0] => -90.289323
+                                    [1] => 38.671111
+                                )
+
+                            [499] => Array
+                                (
+                                    [0] => -90.289737
+                                    [1] => 38.670645
+                                )
+
+                            [500] => Array
+                                (
+                                    [0] => -90.289816
+                                    [1] => 38.670557
+                                )
+
+                            [501] => Array
+                                (
+                                    [0] => -90.289877
+                                    [1] => 38.670492
+                                )
+
+                            [502] => Array
+                                (
+                                    [0] => -90.289912
+                                    [1] => 38.670454
+                                )
+
+                            [503] => Array
+                                (
+                                    [0] => -90.290038
+                                    [1] => 38.670308
+                                )
+
+                            [504] => Array
+                                (
+                                    [0] => -90.29052
+                                    [1] => 38.669759
+                                )
+
+                            [505] => Array
+                                (
+                                    [0] => -90.290684
+                                    [1] => 38.669579
+                                )
+
+                            [506] => Array
+                                (
+                                    [0] => -90.290877
+                                    [1] => 38.669319
+                                )
+
+                            [507] => Array
+                                (
+                                    [0] => -90.291462
+                                    [1] => 38.668541
+                                )
+
+                            [508] => Array
+                                (
+                                    [0] => -90.291657
+                                    [1] => 38.668283
+                                )
+
+                            [509] => Array
+                                (
+                                    [0] => -90.29188
+                                    [1] => 38.668029
+                                )
+
+                            [510] => Array
+                                (
+                                    [0] => -90.292038
+                                    [1] => 38.667853
+                                )
+
+                            [511] => Array
+                                (
+                                    [0] => -90.292527
+                                    [1] => 38.667247
+                                )
+
+                            [512] => Array
+                                (
+                                    [0] => -90.292683
+                                    [1] => 38.667056
+                                )
+
+                            [513] => Array
+                                (
+                                    [0] => -90.292747
+                                    [1] => 38.666992
+                                )
+
+                            [514] => Array
+                                (
+                                    [0] => -90.292965
+                                    [1] => 38.666736
+                                )
+
+                            [515] => Array
+                                (
+                                    [0] => -90.293623
+                                    [1] => 38.665974
+                                )
+
+                            [516] => Array
+                                (
+                                    [0] => -90.293817
+                                    [1] => 38.665751
+                                )
+
+                            [517] => Array
+                                (
+                                    [0] => -90.293841
+                                    [1] => 38.665719
+                                )
+
+                            [518] => Array
+                                (
+                                    [0] => -90.293863
+                                    [1] => 38.66569
+                                )
+
+                            [519] => Array
+                                (
+                                    [0] => -90.293991
+                                    [1] => 38.665529
+                                )
+
+                            [520] => Array
+                                (
+                                    [0] => -90.294446
+                                    [1] => 38.66496
+                                )
+
+                            [521] => Array
+                                (
+                                    [0] => -90.294598
+                                    [1] => 38.664771
+                                )
+
+                            [522] => Array
+                                (
+                                    [0] => -90.294612
+                                    [1] => 38.664755
+                                )
+
+                            [523] => Array
+                                (
+                                    [0] => -90.294614
+                                    [1] => 38.664751
+                                )
+
+                            [524] => Array
+                                (
+                                    [0] => -90.294663
+                                    [1] => 38.664623
+                                )
+
+                            [525] => Array
+                                (
+                                    [0] => -90.2947231
+                                    [1] => 38.6644663
+                                )
+
+                            [526] => Array
+                                (
+                                    [0] => -90.294837
+                                    [1] => 38.664169
+                                )
+
+                            [527] => Array
+                                (
+                                    [0] => -90.294896
+                                    [1] => 38.664018
+                                )
+
+                            [528] => Array
+                                (
+                                    [0] => -90.294914
+                                    [1] => 38.663965
+                                )
+
+                            [529] => Array
+                                (
+                                    [0] => -90.294972
+                                    [1] => 38.663813
+                                )
+
+                            [530] => Array
+                                (
+                                    [0] => -90.294992
+                                    [1] => 38.663764
+                                )
+
+                            [531] => Array
+                                (
+                                    [0] => -90.295098
+                                    [1] => 38.663481
+                                )
+
+                            [532] => Array
+                                (
+                                    [0] => -90.295111
+                                    [1] => 38.66345
+                                )
+
+                            [533] => Array
+                                (
+                                    [0] => -90.295854
+                                    [1] => 38.663004
+                                )
+
+                            [534] => Array
+                                (
+                                    [0] => -90.296082
+                                    [1] => 38.66287
+                                )
+
+                            [535] => Array
+                                (
+                                    [0] => -90.296114
+                                    [1] => 38.662851
+                                )
+
+                            [536] => Array
+                                (
+                                    [0] => -90.296228
+                                    [1] => 38.662679
+                                )
+
+                            [537] => Array
+                                (
+                                    [0] => -90.29657
+                                    [1] => 38.662165
+                                )
+
+                            [538] => Array
+                                (
+                                    [0] => -90.296685
+                                    [1] => 38.661994
+                                )
+
+                            [539] => Array
+                                (
+                                    [0] => -90.296727
+                                    [1] => 38.661932
+                                )
+
+                            [540] => Array
+                                (
+                                    [0] => -90.296745
+                                    [1] => 38.661903
+                                )
+
+                            [541] => Array
+                                (
+                                    [0] => -90.296914
+                                    [1] => 38.661651
+                                )
+
+                            [542] => Array
+                                (
+                                    [0] => -90.296928
+                                    [1] => 38.661636
+                                )
+
+                            [543] => Array
+                                (
+                                    [0] => -90.297023
+                                    [1] => 38.661543
+                                )
+
+                            [544] => Array
+                                (
+                                    [0] => -90.297086
+                                    [1] => 38.661478
+                                )
+
+                            [545] => Array
+                                (
+                                    [0] => -90.297332
+                                    [1] => 38.661232
+                                )
+
+                            [546] => Array
+                                (
+                                    [0] => -90.297414
+                                    [1] => 38.661151
+                                )
+
+                            [547] => Array
+                                (
+                                    [0] => -90.297422
+                                    [1] => 38.661137
+                                )
+
+                            [548] => Array
+                                (
+                                    [0] => -90.297449
+                                    [1] => 38.661098
+                                )
+
+                            [549] => Array
+                                (
+                                    [0] => -90.297458
+                                    [1] => 38.661085
+                                )
+
+                            [550] => Array
+                                (
+                                    [0] => -90.297468
+                                    [1] => 38.661069
+                                )
+
+                            [551] => Array
+                                (
+                                    [0] => -90.297498
+                                    [1] => 38.661023
+                                )
+
+                            [552] => Array
+                                (
+                                    [0] => -90.297509
+                                    [1] => 38.661008
+                                )
+
+                            [553] => Array
+                                (
+                                    [0] => -90.297417
+                                    [1] => 38.660998
+                                )
+
+                            [554] => Array
+                                (
+                                    [0] => -90.297143
+                                    [1] => 38.660969
+                                )
+
+                            [555] => Array
+                                (
+                                    [0] => -90.297077
+                                    [1] => 38.660962
+                                )
+
+                            [556] => Array
+                                (
+                                    [0] => -90.297194
+                                    [1] => 38.660814
+                                )
+
+                            [557] => Array
+                                (
+                                    [0] => -90.297551
+                                    [1] => 38.660377
+                                )
+
+                            [558] => Array
+                                (
+                                    [0] => -90.297801
+                                    [1] => 38.660385
+                                )
+
+                            [559] => Array
+                                (
+                                    [0] => -90.297864
+                                    [1] => 38.660336
+                                )
+
+                            [560] => Array
+                                (
+                                    [0] => -90.298065
+                                    [1] => 38.660194
+                                )
+
+                            [561] => Array
+                                (
+                                    [0] => -90.298134
+                                    [1] => 38.660152
+                                )
+
+                            [562] => Array
+                                (
+                                    [0] => -90.298198
+                                    [1] => 38.660008
+                                )
+
+                            [563] => Array
+                                (
+                                    [0] => -90.298394
+                                    [1] => 38.65958
+                                )
+
+                            [564] => Array
+                                (
+                                    [0] => -90.29846
+                                    [1] => 38.659438
+                                )
+
+                            [565] => Array
+                                (
+                                    [0] => -90.298503
+                                    [1] => 38.659345
+                                )
+
+                            [566] => Array
+                                (
+                                    [0] => -90.298513
+                                    [1] => 38.659322
+                                )
+
+                            [567] => Array
+                                (
+                                    [0] => -90.298585
+                                    [1] => 38.659221
+                                )
+
+                            [568] => Array
+                                (
+                                    [0] => -90.299052
+                                    [1] => 38.658565
+                                )
+
+                            [569] => Array
+                                (
+                                    [0] => -90.299144
+                                    [1] => 38.658439
+                                )
+
+                            [570] => Array
+                                (
+                                    [0] => -90.299214
+                                    [1] => 38.658351
+                                )
+
+                            [571] => Array
+                                (
+                                    [0] => -90.299323
+                                    [1] => 38.658233
+                                )
+
+                            [572] => Array
+                                (
+                                    [0] => -90.29965
+                                    [1] => 38.65788
+                                )
+
+                            [573] => Array
+                                (
+                                    [0] => -90.299713
+                                    [1] => 38.657813
+                                )
+
+                            [574] => Array
+                                (
+                                    [0] => -90.29976
+                                    [1] => 38.657763
+                                )
+
+                            [575] => Array
+                                (
+                                    [0] => -90.299957
+                                    [1] => 38.65755
+                                )
+
+                            [576] => Array
+                                (
+                                    [0] => -90.300551
+                                    [1] => 38.65691
+                                )
+
+                            [577] => Array
+                                (
+                                    [0] => -90.300749
+                                    [1] => 38.656698
+                                )
+
+                            [578] => Array
+                                (
+                                    [0] => -90.300776
+                                    [1] => 38.656669
+                                )
+
+                            [579] => Array
+                                (
+                                    [0] => -90.300788
+                                    [1] => 38.656656
+                                )
+
+                            [580] => Array
+                                (
+                                    [0] => -90.300905
+                                    [1] => 38.65653
+                                )
+
+                            [581] => Array
+                                (
+                                    [0] => -90.300944
+                                    [1] => 38.656488
+                                )
+
+                            [582] => Array
+                                (
+                                    [0] => -90.300986
+                                    [1] => 38.656441
+                                )
+
+                            [583] => Array
+                                (
+                                    [0] => -90.301098
+                                    [1] => 38.656321
+                                )
+
+                            [584] => Array
+                                (
+                                    [0] => -90.3014526
+                                    [1] => 38.6559389
+                                )
+
+                            [585] => Array
+                                (
+                                    [0] => -90.301563
+                                    [1] => 38.65582
+                                )
+
+                            [586] => Array
+                                (
+                                    [0] => -90.3016234
+                                    [1] => 38.6557553
+                                )
+
+                            [587] => Array
+                                (
+                                    [0] => -90.301718
+                                    [1] => 38.655654
+                                )
+
+                            [588] => Array
+                                (
+                                    [0] => -90.301814
+                                    [1] => 38.655551
+                                )
+
+                            [589] => Array
+                                (
+                                    [0] => -90.301824
+                                    [1] => 38.655497
+                                )
+
+                            [590] => Array
+                                (
+                                    [0] => -90.301914
+                                    [1] => 38.655051
+                                )
+
+                            [591] => Array
+                                (
+                                    [0] => -90.301987
+                                    [1] => 38.65494
+                                )
+
+                            [592] => Array
+                                (
+                                    [0] => -90.30203
+                                    [1] => 38.654877
+                                )
+
+                            [593] => Array
+                                (
+                                    [0] => -90.302072
+                                    [1] => 38.654793
+                                )
+
+                            [594] => Array
+                                (
+                                    [0] => -90.302096
+                                    [1] => 38.654778
+                                )
+
+                            [595] => Array
+                                (
+                                    [0] => -90.302114
+                                    [1] => 38.654751
+                                )
+
+                            [596] => Array
+                                (
+                                    [0] => -90.30213
+                                    [1] => 38.654566
+                                )
+
+                            [597] => Array
+                                (
+                                    [0] => -90.302188
+                                    [1] => 38.653915
+                                )
+
+                            [598] => Array
+                                (
+                                    [0] => -90.302208
+                                    [1] => 38.653698
+                                )
+
+                            [599] => Array
+                                (
+                                    [0] => -90.302214
+                                    [1] => 38.653551
+                                )
+
+                            [600] => Array
+                                (
+                                    [0] => -90.302237
+                                    [1] => 38.653399
+                                )
+
+                            [601] => Array
+                                (
+                                    [0] => -90.302374
+                                    [1] => 38.65251
+                                )
+
+                            [602] => Array
+                                (
+                                    [0] => -90.302414
+                                    [1] => 38.652251
+                                )
+
+                            [603] => Array
+                                (
+                                    [0] => -90.302413
+                                    [1] => 38.652214
+                                )
+
+                            [604] => Array
+                                (
+                                    [0] => -90.3028539
+                                    [1] => 38.6494713
+                                )
+
+                            [605] => Array
+                                (
+                                    [0] => -90.3031313
+                                    [1] => 38.6478071
+                                )
+
+                            [606] => Array
+                                (
+                                    [0] => -90.3033968
+                                    [1] => 38.6462148
+                                )
+
+                            [607] => Array
+                                (
+                                    [0] => -90.3036089
+                                    [1] => 38.6449505
+                                )
+
+                            [608] => Array
+                                (
+                                    [0] => -90.3036496
+                                    [1] => 38.6448658
+                                )
+
+                            [609] => Array
+                                (
+                                    [0] => -90.3048124
+                                    [1] => 38.6424444
+                                )
+
+                            [610] => Array
+                                (
+                                    [0] => -90.305421
+                                    [1] => 38.6391253
+                                )
+
+                            [611] => Array
+                                (
+                                    [0] => -90.3054231
+                                    [1] => 38.6391139
+                                )
+
+                            [612] => Array
+                                (
+                                    [0] => -90.3054959
+                                    [1] => 38.6387168
+                                )
+
+                            [613] => Array
+                                (
+                                    [0] => -90.305505
+                                    [1] => 38.638667
+                                )
+
+                            [614] => Array
+                                (
+                                    [0] => -90.3055709
+                                    [1] => 38.6383078
+                                )
+
+                            [615] => Array
+                                (
+                                    [0] => -90.305861
+                                    [1] => 38.6367118
+                                )
+
+                            [616] => Array
+                                (
+                                    [0] => -90.3060332
+                                    [1] => 38.6357854
+                                )
+
+                            [617] => Array
+                                (
+                                    [0] => -90.3060492
+                                    [1] => 38.6356942
+                                )
+
+                            [618] => Array
+                                (
+                                    [0] => -90.30643
+                                    [1] => 38.633622
+                                )
+
+                            [619] => Array
+                                (
+                                    [0] => -90.3064546
+                                    [1] => 38.6334666
+                                )
+
+                            [620] => Array
+                                (
+                                    [0] => -90.3078213
+                                    [1] => 38.6324399
+                                )
+
+                            [621] => Array
+                                (
+                                    [0] => -90.308105
+                                    [1] => 38.632071
+                                )
+
+                            [622] => Array
+                                (
+                                    [0] => -90.30816
+                                    [1] => 38.63174
+                                )
+
+                            [623] => Array
+                                (
+                                    [0] => -90.308214
+                                    [1] => 38.631375
+                                )
+
+                            [624] => Array
+                                (
+                                    [0] => -90.308229
+                                    [1] => 38.631263
+                                )
+
+                            [625] => Array
+                                (
+                                    [0] => -90.308332
+                                    [1] => 38.631006
+                                )
+
+                            [626] => Array
+                                (
+                                    [0] => -90.308558
+                                    [1] => 38.630442
+                                )
+
+                            [627] => Array
+                                (
+                                    [0] => -90.308629
+                                    [1] => 38.630262
+                                )
+
+                            [628] => Array
+                                (
+                                    [0] => -90.308714
+                                    [1] => 38.630051
+                                )
+
+                            [629] => Array
+                                (
+                                    [0] => -90.30872
+                                    [1] => 38.63002
+                                )
+
+                            [630] => Array
+                                (
+                                    [0] => -90.308722
+                                    [1] => 38.630013
+                                )
+
+                            [631] => Array
+                                (
+                                    [0] => -90.308741
+                                    [1] => 38.629912
+                                )
+
+                            [632] => Array
+                                (
+                                    [0] => -90.308801
+                                    [1] => 38.629612
+                                )
+
+                            [633] => Array
+                                (
+                                    [0] => -90.308814
+                                    [1] => 38.629551
+                                )
+
+                            [634] => Array
+                                (
+                                    [0] => -90.308814
+                                    [1] => 38.629512
+                                )
+
+                            [635] => Array
+                                (
+                                    [0] => -90.308815
+                                    [1] => 38.629504
+                                )
+
+                            [636] => Array
+                                (
+                                    [0] => -90.308813
+                                    [1] => 38.629445
+                                )
+
+                            [637] => Array
+                                (
+                                    [0] => -90.308813
+                                    [1] => 38.629245
+                                )
+
+                            [638] => Array
+                                (
+                                    [0] => -90.308813
+                                    [1] => 38.6292122
+                                )
+
+                            [639] => Array
+                                (
+                                    [0] => -90.308813
+                                    [1] => 38.629188
+                                )
+
+                            [640] => Array
+                                (
+                                    [0] => -90.308813
+                                    [1] => 38.629179
+                                )
+
+                            [641] => Array
+                                (
+                                    [0] => -90.308814
+                                    [1] => 38.629059
+                                )
+
+                            [642] => Array
+                                (
+                                    [0] => -90.308812
+                                    [1] => 38.628927
+                                )
+
+                            [643] => Array
+                                (
+                                    [0] => -90.308814
+                                    [1] => 38.628851
+                                )
+
+                            [644] => Array
+                                (
+                                    [0] => -90.308893
+                                    [1] => 38.628212
+                                )
+
+                            [645] => Array
+                                (
+                                    [0] => -90.308914
+                                    [1] => 38.628051
+                                )
+
+                            [646] => Array
+                                (
+                                    [0] => -90.30893
+                                    [1] => 38.627973
+                                )
+
+                            [647] => Array
+                                (
+                                    [0] => -90.308934
+                                    [1] => 38.627948
+                                )
+
+                            [648] => Array
+                                (
+                                    [0] => -90.308971
+                                    [1] => 38.627767
+                                )
+
+                            [649] => Array
+                                (
+                                    [0] => -90.309094
+                                    [1] => 38.627151
+                                )
+
+                            [650] => Array
+                                (
+                                    [0] => -90.309114
+                                    [1] => 38.627052
+                                )
+
+                            [651] => Array
+                                (
+                                    [0] => -90.3091206
+                                    [1] => 38.6269629
+                                )
+
+                            [652] => Array
+                                (
+                                    [0] => -90.309122
+                                    [1] => 38.626944
+                                )
+
+                            [653] => Array
+                                (
+                                    [0] => -90.309139
+                                    [1] => 38.626665
+                                )
+
+                            [654] => Array
+                                (
+                                    [0] => -90.309195
+                                    [1] => 38.625829
+                                )
+
+                            [655] => Array
+                                (
+                                    [0] => -90.3095466
+                                    [1] => 38.625592
+                                )
+
+                            [656] => Array
+                                (
+                                    [0] => -90.3099602
+                                    [1] => 38.6235294
+                                )
+
+                            [657] => Array
+                                (
+                                    [0] => -90.3102658
+                                    [1] => 38.6217215
+                                )
+
+                            [658] => Array
+                                (
+                                    [0] => -90.3108547
+                                    [1] => 38.618218
+                                )
+
+                            [659] => Array
+                                (
+                                    [0] => -90.3120701
+                                    [1] => 38.6152401
+                                )
+
+                            [660] => Array
+                                (
+                                    [0] => -90.3185231
+                                    [1] => 38.5994269
+                                )
+
+                            [661] => Array
+                                (
+                                    [0] => -90.3190798
+                                    [1] => 38.5980615
+                                )
+
+                            [662] => Array
+                                (
+                                    [0] => -90.3206525
+                                    [1] => 38.594204
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+1
+-->
+                </aside>
+            </article>
+        </div>
+    </div>
+            </main>
+
+            <footer class="mt-auto text-center py-3">
+    <p>
+        United States Mutual Aid App
+    </p>
+    <small>
+            
+    </small>
+    <div>
+        <ul class="flex flex-wrap mx-auto justify-center text-center text-sm mt-3 mb-2">
+            <li>
+                <a href="https://aidus.fly.dev/community-guidelines" class="text-gray-500 hover:text-gray-900 m-2">Community Guidelines</a>
+            </li>
+            <li>
+                <a href="https://aidus.fly.dev/terms-of-service" class="text-gray-500 hover:text-gray-900 m-2">Terms of Service</a>
+            </li>
+            <li>
+                <a href="https://aidus.fly.dev/privacy-policy" class="text-gray-500 hover:text-gray-900 m-2">Privacy Policy</a>
+            </li>
+        </ul>
+    </div>
+</footer>        </div>
+
+        
+        <script src="/livewire/livewire.js?id=c69d0f2801c01fcf8166" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'wfQqKy0V4BnnLXxtm5eSpxALPsGCDTY4egqq2v5K';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+    </body>
+</html>

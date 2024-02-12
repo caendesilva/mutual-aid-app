@@ -1,0 +1,4148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="wfQqKy0V4BnnLXxtm5eSpxALPsGCDTY4egqq2v5K">
+
+        <title>Mutual Aid USA</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="/css/app.css?id=6b8761110b9dd8d2c8cd7b1fc57eb671">
+
+        <style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+
+        <!-- Scripts -->
+        <script src="/js/app.js?id=a57a1ded99bc153ce08aec70dc871d23" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        <div x-data="{&quot;show&quot;:true,&quot;style&quot;:&quot;success&quot;,&quot;message&quot;:null}"
+            :class="{ 'bg-indigo-500': style == 'success', 'bg-red-700': style == 'danger', 'bg-gray-500': style != 'success' && style != 'danger' }"
+            style="display: none;"
+            x-show="show && message"
+            x-init="
+                document.addEventListener('banner-message', event => {
+                    style = event.detail.style;
+                    message = event.detail.message;
+                    show = true;
+                });
+            ">
+    <div class="max-w-screen-xl mx-auto py-2 px-3 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between flex-wrap">
+            <div class="w-0 flex-1 flex items-center min-w-0">
+                <span class="flex p-2 rounded-lg" :class="{ 'bg-indigo-600': style == 'success', 'bg-red-600': style == 'danger' }">
+                    <svg x-show="style == 'success'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <svg x-show="style == 'danger'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <svg x-show="style != 'success' && style != 'danger'" class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+
+                <p class="ml-3 font-medium text-sm text-white truncate" x-text="message"></p>
+            </div>
+
+            <div class="shrink-0 sm:ml-3">
+                <button
+                    type="button"
+                    class="-mr-1 flex p-2 rounded-md focus:outline-none sm:-mr-2 transition"
+                    :class="{ 'hover:bg-indigo-600 focus:bg-indigo-600': style == 'success', 'hover:bg-red-600 focus:bg-red-600': style == 'danger' }"
+                    aria-label="Dismiss"
+                    x-on:click="show = false">
+                    <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div class="min-h-screen bg-gray-100 flex flex-col">
+            <nav wire:id="JC8AihEjwtBowbBYjNb7" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;JC8AihEjwtBowbBYjNb7&quot;,&quot;name&quot;:&quot;navigation-menu&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;listings\/2&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;refresh-navigation-menu&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;65961c9e&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;9613caf18595663faabba0403010256feb0e748a2d62dbce284d8d04ddee5d3b&quot;}}" x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="/">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="block h-9 w-auto">
+  <path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5"/>
+  <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
+</svg>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev">
+    Home
+</a>
+                    
+                    
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition" href="https://aidus.fly.dev/listings">
+    Listings
+</a>
+
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev/map">
+    Map
+</a>
+                    
+                    <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition" href="https://aidus.fly.dev/faq">
+    Faq
+</a>
+                </div>
+            </div>
+
+            <div class="hidden space-x-6 sm:-my-px sm:flex sm:ml-6  sm:items-center">
+                                <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition h-full" href="https://aidus.fly.dev/login">
+    Login
+</a>
+                <a class="inline-flex items-center mx-2 px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition h-full" href="https://aidus.fly.dev/register">
+    Register
+</a>
+                                            </div>
+
+            <!-- Hamburger -->
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        
+
+   
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev">
+    Home
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-indigo-400 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition" href="https://aidus.fly.dev/listings">
+    Listings
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/map">
+    Map
+</a>
+
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/faq">
+    Faq
+</a>
+        </div>
+        
+        
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/login">
+    Login
+</a>
+            <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition" href="https://aidus.fly.dev/register">
+    Register
+</a>
+        </div>
+        
+            </div>
+</nav>
+
+<!-- Livewire Component wire-end:JC8AihEjwtBowbBYjNb7 -->
+            <!-- Page Heading -->
+                            <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <div class="flex row items-center justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Offer Details
+            </h2>
+                        <div class="ml-3 relative">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Check out this listing on the Mutual Aid App!" data-dnt="true" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+                    </div>
+                    </div>
+                </header>
+            
+            <!-- Page Content -->
+            <main>
+                <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <article class="p-4 bg-white overflow-hidden shadow-xl sm:rounded-lg flex flex-col sm:flex-row">
+                <div class="max-w-5xl">
+                    <header class="p-3">
+                        <h1 class="text-2xl">
+                            (TEST) I can provide childcare services
+                        </h1>
+                        Offered <time datetime="2022-03-15 20:59:48">2022-03-15 20:59:48</time>
+                        by <address class="inline" rel="author">PLC</address>.
+                        <div class=inline aria-label="This offer is from a religious organisation."> 
+    <span title="Religious Provider" role="presentation" aria-hidden="true">⛪</span>
+</div>                    </header>
+                    <hr class="mx-3">
+                    <div class="article-content prose p-3">
+                        <h2 class="text-lg mb-1">Offer Details</h2>
+
+                        <p>I have experience caring for children through community youth programs and teaching assistant positions. I have CPR certifications and can prepare meals. I can provide care for up to 5 children at a time, Monday - Thursday 9am - 7pm</p>
+
+
+                        <h3 class="text-base">What the offerer can provide</h3>
+
+                                                <ul>
+                                                        <li class="leading-4">
+                                Shelter
+                            </li>
+                                                        <li class="leading-4">
+                                Other
+                            </li>
+                                                    </ul>
+                        
+
+                                                <h3 class="text-base font-bold">Contact information</h3>
+                                                        <blockquote>
+                                Please <a class="text-indigo-500 hover:text-indigo-700" href="https://aidus.fly.dev/login" >log in</a>                                or <a class="text-indigo-500 hover:text-indigo-700" href="https://aidus.fly.dev/register" >register for an account</a>                                to view contact information.
+                            </blockquote>
+                                                                                                    </div>
+                </div>
+                <aside class="p-3 sm:mx-auto">
+                    <h3 class="text-lg font-bold">Location:</h3>
+                    <address>New York, NY</address>
+                    <iframe class="w-auto mt-3" width="425" height="256" frameborder="0" scrolling="no" marginheight="0"
+marginwidth="0"
+src="https://www.openstreetmap.org/export/embed.html?bbox=-73.7002330%2C40.4765780%2C-74.2588430%2C40.9176300&amp;amp;layer=mapnik"
+style="border: 1px solid black">
+</iframe>
+<small>
+<a href="https://www.openstreetmap.org/#map=11/40.7127281/-74.0060152"
+    title="Links to external site">Show bigger map</a>
+</small>
+<!--
+Map Data:
+Array
+(
+    [place_id] => 371663561
+    [licence] => Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright
+    [osm_type] => relation
+    [osm_id] => 175905
+    [lat] => 40.7127281
+    [lon] => -74.0060152
+    [class] => boundary
+    [type] => administrative
+    [place_rank] => 10
+    [importance] => 0.81757661145185
+    [addresstype] => city
+    [name] => New York
+    [display_name] => New York, United States
+    [boundingbox] => Array
+        (
+            [0] => 40.4765780
+            [1] => 40.9176300
+            [2] => -74.2588430
+            [3] => -73.7002330
+        )
+
+    [geojson] => stdClass Object
+        (
+            [type] => MultiPolygon
+            [coordinates] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => -74.258843
+                                            [1] => 40.498875
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [0] => -74.2581372
+                                            [1] => 40.4973901
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [0] => -74.253144
+                                            [1] => 40.4868852
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [0] => -74.253037
+                                            [1] => 40.48666
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [0] => -74.2438105
+                                            [1] => 40.4833026
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [0] => -74.2282018
+                                            [1] => 40.4776224
+                                        )
+
+                                    [6] => Array
+                                        (
+                                            [0] => -74.225332
+                                            [1] => 40.476578
+                                        )
+
+                                    [7] => Array
+                                        (
+                                            [0] => -74.2064434
+                                            [1] => 40.4798299
+                                        )
+
+                                    [8] => Array
+                                        (
+                                            [0] => -74.0912609
+                                            [1] => 40.4996567
+                                        )
+
+                                    [9] => Array
+                                        (
+                                            [0] => -74.04378
+                                            [1] => 40.507828
+                                        )
+
+                                    [10] => Array
+                                        (
+                                            [0] => -73.977874
+                                            [1] => 40.519095
+                                        )
+
+                                    [11] => Array
+                                        (
+                                            [0] => -73.90214
+                                            [1] => 40.492121
+                                        )
+
+                                    [12] => Array
+                                        (
+                                            [0] => -73.894613
+                                            [1] => 40.504089
+                                        )
+
+                                    [13] => Array
+                                        (
+                                            [0] => -73.893458
+                                            [1] => 40.505019
+                                        )
+
+                                    [14] => Array
+                                        (
+                                            [0] => -73.892204
+                                            [1] => 40.505399
+                                        )
+
+                                    [15] => Array
+                                        (
+                                            [0] => -73.890828
+                                            [1] => 40.50571
+                                        )
+
+                                    [16] => Array
+                                        (
+                                            [0] => -73.887951
+                                            [1] => 40.505989
+                                        )
+
+                                    [17] => Array
+                                        (
+                                            [0] => -73.883724
+                                            [1] => 40.506349
+                                        )
+
+                                    [18] => Array
+                                        (
+                                            [0] => -73.880367
+                                            [1] => 40.506659
+                                        )
+
+                                    [19] => Array
+                                        (
+                                            [0] => -73.877616
+                                            [1] => 40.507326
+                                        )
+
+                                    [20] => Array
+                                        (
+                                            [0] => -73.874538
+                                            [1] => 40.508179
+                                        )
+
+                                    [21] => Array
+                                        (
+                                            [0] => -73.869582
+                                            [1] => 40.509806
+                                        )
+
+                                    [22] => Array
+                                        (
+                                            [0] => -73.86295
+                                            [1] => 40.511795
+                                        )
+
+                                    [23] => Array
+                                        (
+                                            [0] => -73.859452
+                                            [1] => 40.512724
+                                        )
+
+                                    [24] => Array
+                                        (
+                                            [0] => -73.853158
+                                            [1] => 40.515212
+                                        )
+
+                                    [25] => Array
+                                        (
+                                            [0] => -73.842826
+                                            [1] => 40.518744
+                                        )
+
+                                    [26] => Array
+                                        (
+                                            [0] => -73.819185
+                                            [1] => 40.527463
+                                        )
+
+                                    [27] => Array
+                                        (
+                                            [0] => -73.812558
+                                            [1] => 40.529976
+                                        )
+
+                                    [28] => Array
+                                        (
+                                            [0] => -73.810942
+                                            [1] => 40.530401
+                                        )
+
+                                    [29] => Array
+                                        (
+                                            [0] => -73.808429
+                                            [1] => 40.530952
+                                        )
+
+                                    [30] => Array
+                                        (
+                                            [0] => -73.805015
+                                            [1] => 40.531556
+                                        )
+
+                                    [31] => Array
+                                        (
+                                            [0] => -73.800523
+                                            [1] => 40.532397
+                                        )
+
+                                    [32] => Array
+                                        (
+                                            [0] => -73.793103
+                                            [1] => 40.53423
+                                        )
+
+                                    [33] => Array
+                                        (
+                                            [0] => -73.785891
+                                            [1] => 40.535875
+                                        )
+
+                                    [34] => Array
+                                        (
+                                            [0] => -73.783646
+                                            [1] => 40.536351
+                                        )
+
+                                    [35] => Array
+                                        (
+                                            [0] => -73.782261
+                                            [1] => 40.536179
+                                        )
+
+                                    [36] => Array
+                                        (
+                                            [0] => -73.777586
+                                            [1] => 40.534868
+                                        )
+
+                                    [37] => Array
+                                        (
+                                            [0] => -73.772976
+                                            [1] => 40.533878
+                                        )
+
+                                    [38] => Array
+                                        (
+                                            [0] => -73.768666
+                                            [1] => 40.532882
+                                        )
+
+                                    [39] => Array
+                                        (
+                                            [0] => -73.76322
+                                            [1] => 40.532148
+                                        )
+
+                                    [40] => Array
+                                        (
+                                            [0] => -73.757289
+                                            [1] => 40.531215
+                                        )
+
+                                    [41] => Array
+                                        (
+                                            [0] => -73.757153
+                                            [1] => 40.531218
+                                        )
+
+                                    [42] => Array
+                                        (
+                                            [0] => -73.756571
+                                            [1] => 40.580153
+                                        )
+
+                                    [43] => Array
+                                        (
+                                            [0] => -73.756565
+                                            [1] => 40.584405
+                                        )
+
+                                    [44] => Array
+                                        (
+                                            [0] => -73.756531
+                                            [1] => 40.58617
+                                        )
+
+                                    [45] => Array
+                                        (
+                                            [0] => -73.750949
+                                            [1] => 40.590604
+                                        )
+
+                                    [46] => Array
+                                        (
+                                            [0] => -73.749651
+                                            [1] => 40.591625
+                                        )
+
+                                    [47] => Array
+                                        (
+                                            [0] => -73.748767
+                                            [1] => 40.592286
+                                        )
+
+                                    [48] => Array
+                                        (
+                                            [0] => -73.7486655
+                                            [1] => 40.5923397
+                                        )
+
+                                    [49] => Array
+                                        (
+                                            [0] => -73.744774
+                                            [1] => 40.593791
+                                        )
+
+                                    [50] => Array
+                                        (
+                                            [0] => -73.743622
+                                            [1] => 40.593743
+                                        )
+
+                                    [51] => Array
+                                        (
+                                            [0] => -73.737586
+                                            [1] => 40.593507
+                                        )
+
+                                    [52] => Array
+                                        (
+                                            [0] => -73.7379441
+                                            [1] => 40.5944691
+                                        )
+
+                                    [53] => Array
+                                        (
+                                            [0] => -73.7380027
+                                            [1] => 40.5946265
+                                        )
+
+                                    [54] => Array
+                                        (
+                                            [0] => -73.738552
+                                            [1] => 40.596214
+                                        )
+
+                                    [55] => Array
+                                        (
+                                            [0] => -73.738117
+                                            [1] => 40.602627
+                                        )
+
+                                    [56] => Array
+                                        (
+                                            [0] => -73.739156
+                                            [1] => 40.604057
+                                        )
+
+                                    [57] => Array
+                                        (
+                                            [0] => -73.739935
+                                            [1] => 40.604253
+                                        )
+
+                                    [58] => Array
+                                        (
+                                            [0] => -73.740423
+                                            [1] => 40.604684
+                                        )
+
+                                    [59] => Array
+                                        (
+                                            [0] => -73.741654
+                                            [1] => 40.606094
+                                        )
+
+                                    [60] => Array
+                                        (
+                                            [0] => -73.743749
+                                            [1] => 40.607649
+                                        )
+
+                                    [61] => Array
+                                        (
+                                            [0] => -73.743059
+                                            [1] => 40.607997
+                                        )
+
+                                    [62] => Array
+                                        (
+                                            [0] => -73.745486
+                                            [1] => 40.611902
+                                        )
+
+                                    [63] => Array
+                                        (
+                                            [0] => -73.746682
+                                            [1] => 40.611449
+                                        )
+
+                                    [64] => Array
+                                        (
+                                            [0] => -73.747183
+                                            [1] => 40.612158
+                                        )
+
+                                    [65] => Array
+                                        (
+                                            [0] => -73.747647
+                                            [1] => 40.612035
+                                        )
+
+                                    [66] => Array
+                                        (
+                                            [0] => -73.747935
+                                            [1] => 40.612369
+                                        )
+
+                                    [67] => Array
+                                        (
+                                            [0] => -73.748864
+                                            [1] => 40.612027
+                                        )
+
+                                    [68] => Array
+                                        (
+                                            [0] => -73.748959
+                                            [1] => 40.612188
+                                        )
+
+                                    [69] => Array
+                                        (
+                                            [0] => -73.750196
+                                            [1] => 40.611742
+                                        )
+
+                                    [70] => Array
+                                        (
+                                            [0] => -73.75332
+                                            [1] => 40.610763
+                                        )
+
+                                    [71] => Array
+                                        (
+                                            [0] => -73.75473
+                                            [1] => 40.610336
+                                        )
+
+                                    [72] => Array
+                                        (
+                                            [0] => -73.755013
+                                            [1] => 40.610251
+                                        )
+
+                                    [73] => Array
+                                        (
+                                            [0] => -73.755248
+                                            [1] => 40.610179
+                                        )
+
+                                    [74] => Array
+                                        (
+                                            [0] => -73.755241
+                                            [1] => 40.610225
+                                        )
+
+                                    [75] => Array
+                                        (
+                                            [0] => -73.755161
+                                            [1] => 40.610726
+                                        )
+
+                                    [76] => Array
+                                        (
+                                            [0] => -73.759791
+                                            [1] => 40.611408
+                                        )
+
+                                    [77] => Array
+                                        (
+                                            [0] => -73.765355
+                                            [1] => 40.614874
+                                        )
+
+                                    [78] => Array
+                                        (
+                                            [0] => -73.766453
+                                            [1] => 40.61487
+                                        )
+
+                                    [79] => Array
+                                        (
+                                            [0] => -73.766567
+                                            [1] => 40.615544
+                                        )
+
+                                    [80] => Array
+                                        (
+                                            [0] => -73.766819
+                                            [1] => 40.617033
+                                        )
+
+                                    [81] => Array
+                                        (
+                                            [0] => -73.76729
+                                            [1] => 40.620372
+                                        )
+
+                                    [82] => Array
+                                        (
+                                            [0] => -73.767958
+                                            [1] => 40.625106
+                                        )
+
+                                    [83] => Array
+                                        (
+                                            [0] => -73.768008
+                                            [1] => 40.625565
+                                        )
+
+                                    [84] => Array
+                                        (
+                                            [0] => -73.7680218
+                                            [1] => 40.6256912
+                                        )
+
+                                    [85] => Array
+                                        (
+                                            [0] => -73.76809
+                                            [1] => 40.626316
+                                        )
+
+                                    [86] => Array
+                                        (
+                                            [0] => -73.767446
+                                            [1] => 40.6265579
+                                        )
+
+                                    [87] => Array
+                                        (
+                                            [0] => -73.76739
+                                            [1] => 40.626579
+                                        )
+
+                                    [88] => Array
+                                        (
+                                            [0] => -73.763703
+                                            [1] => 40.627968
+                                        )
+
+                                    [89] => Array
+                                        (
+                                            [0] => -73.749708
+                                            [1] => 40.63331
+                                        )
+
+                                    [90] => Array
+                                        (
+                                            [0] => -73.7474786
+                                            [1] => 40.6341899
+                                        )
+
+                                    [91] => Array
+                                        (
+                                            [0] => -73.745502
+                                            [1] => 40.63497
+                                        )
+
+                                    [92] => Array
+                                        (
+                                            [0] => -73.744392
+                                            [1] => 40.6372
+                                        )
+
+                                    [93] => Array
+                                        (
+                                            [0] => -73.744057
+                                            [1] => 40.637577
+                                        )
+
+                                    [94] => Array
+                                        (
+                                            [0] => -73.743693
+                                            [1] => 40.637802
+                                        )
+
+                                    [95] => Array
+                                        (
+                                            [0] => -73.74334
+                                            [1] => 40.637962
+                                        )
+
+                                    [96] => Array
+                                        (
+                                            [0] => -73.743083
+                                            [1] => 40.638042
+                                        )
+
+                                    [97] => Array
+                                        (
+                                            [0] => -73.742597
+                                            [1] => 40.638098
+                                        )
+
+                                    [98] => Array
+                                        (
+                                            [0] => -73.742462
+                                            [1] => 40.638096
+                                        )
+
+                                    [99] => Array
+                                        (
+                                            [0] => -73.742046
+                                            [1] => 40.63803
+                                        )
+
+                                    [100] => Array
+                                        (
+                                            [0] => -73.741872
+                                            [1] => 40.637998
+                                        )
+
+                                    [101] => Array
+                                        (
+                                            [0] => -73.741671
+                                            [1] => 40.637934
+                                        )
+
+                                    [102] => Array
+                                        (
+                                            [0] => -73.741344
+                                            [1] => 40.637766
+                                        )
+
+                                    [103] => Array
+                                        (
+                                            [0] => -73.741253
+                                            [1] => 40.637691
+                                        )
+
+                                    [104] => Array
+                                        (
+                                            [0] => -73.741162
+                                            [1] => 40.637556
+                                        )
+
+                                    [105] => Array
+                                        (
+                                            [0] => -73.74118
+                                            [1] => 40.637437
+                                        )
+
+                                    [106] => Array
+                                        (
+                                            [0] => -73.741238
+                                            [1] => 40.637308
+                                        )
+
+                                    [107] => Array
+                                        (
+                                            [0] => -73.741328
+                                            [1] => 40.63718
+                                        )
+
+                                    [108] => Array
+                                        (
+                                            [0] => -73.741502
+                                            [1] => 40.637013
+                                        )
+
+                                    [109] => Array
+                                        (
+                                            [0] => -73.74219
+                                            [1] => 40.636198
+                                        )
+
+                                    [110] => Array
+                                        (
+                                            [0] => -73.74245
+                                            [1] => 40.635836
+                                        )
+
+                                    [111] => Array
+                                        (
+                                            [0] => -73.742633
+                                            [1] => 40.635302
+                                        )
+
+                                    [112] => Array
+                                        (
+                                            [0] => -73.742602
+                                            [1] => 40.635114
+                                        )
+
+                                    [113] => Array
+                                        (
+                                            [0] => -73.742491
+                                            [1] => 40.634998
+                                        )
+
+                                    [114] => Array
+                                        (
+                                            [0] => -73.742355
+                                            [1] => 40.634948
+                                        )
+
+                                    [115] => Array
+                                        (
+                                            [0] => -73.741958
+                                            [1] => 40.634898
+                                        )
+
+                                    [116] => Array
+                                        (
+                                            [0] => -73.741715
+                                            [1] => 40.634913
+                                        )
+
+                                    [117] => Array
+                                        (
+                                            [0] => -73.7401621
+                                            [1] => 40.6351681
+                                        )
+
+                                    [118] => Array
+                                        (
+                                            [0] => -73.739438
+                                            [1] => 40.635287
+                                        )
+
+                                    [119] => Array
+                                        (
+                                            [0] => -73.739484
+                                            [1] => 40.635449
+                                        )
+
+                                    [120] => Array
+                                        (
+                                            [0] => -73.7397
+                                            [1] => 40.636208
+                                        )
+
+                                    [121] => Array
+                                        (
+                                            [0] => -73.740447
+                                            [1] => 40.637943
+                                        )
+
+                                    [122] => Array
+                                        (
+                                            [0] => -73.740838
+                                            [1] => 40.638517
+                                        )
+
+                                    [123] => Array
+                                        (
+                                            [0] => -73.742719
+                                            [1] => 40.64067
+                                        )
+
+                                    [124] => Array
+                                        (
+                                            [0] => -73.741885
+                                            [1] => 40.64119
+                                        )
+
+                                    [125] => Array
+                                        (
+                                            [0] => -73.742179
+                                            [1] => 40.641809
+                                        )
+
+                                    [126] => Array
+                                        (
+                                            [0] => -73.741033
+                                            [1] => 40.646967
+                                        )
+
+                                    [127] => Array
+                                        (
+                                            [0] => -73.741137
+                                            [1] => 40.647258
+                                        )
+
+                                    [128] => Array
+                                        (
+                                            [0] => -73.740708
+                                            [1] => 40.647611
+                                        )
+
+                                    [129] => Array
+                                        (
+                                            [0] => -73.740411
+                                            [1] => 40.647886
+                                        )
+
+                                    [130] => Array
+                                        (
+                                            [0] => -73.739855
+                                            [1] => 40.647995
+                                        )
+
+                                    [131] => Array
+                                        (
+                                            [0] => -73.739368
+                                            [1] => 40.648048
+                                        )
+
+                                    [132] => Array
+                                        (
+                                            [0] => -73.739008
+                                            [1] => 40.648154
+                                        )
+
+                                    [133] => Array
+                                        (
+                                            [0] => -73.738263
+                                            [1] => 40.648521
+                                        )
+
+                                    [134] => Array
+                                        (
+                                            [0] => -73.737587
+                                            [1] => 40.648816
+                                        )
+
+                                    [135] => Array
+                                        (
+                                            [0] => -73.735034
+                                            [1] => 40.64979
+                                        )
+
+                                    [136] => Array
+                                        (
+                                            [0] => -73.732242
+                                            [1] => 40.65011
+                                        )
+
+                                    [137] => Array
+                                        (
+                                            [0] => -73.731016
+                                            [1] => 40.650233
+                                        )
+
+                                    [138] => Array
+                                        (
+                                            [0] => -73.730328
+                                            [1] => 40.650362
+                                        )
+
+                                    [139] => Array
+                                        (
+                                            [0] => -73.729065
+                                            [1] => 40.650784
+                                        )
+
+                                    [140] => Array
+                                        (
+                                            [0] => -73.724804
+                                            [1] => 40.652333
+                                        )
+
+                                    [141] => Array
+                                        (
+                                            [0] => -73.7248007
+                                            [1] => 40.6534356
+                                        )
+
+                                    [142] => Array
+                                        (
+                                            [0] => -73.724799
+                                            [1] => 40.653991
+                                        )
+
+                                    [143] => Array
+                                        (
+                                            [0] => -73.724902
+                                            [1] => 40.654374
+                                        )
+
+                                    [144] => Array
+                                        (
+                                            [0] => -73.725384
+                                            [1] => 40.655356
+                                        )
+
+                                    [145] => Array
+                                        (
+                                            [0] => -73.725629
+                                            [1] => 40.655603
+                                        )
+
+                                    [146] => Array
+                                        (
+                                            [0] => -73.725918
+                                            [1] => 40.657318
+                                        )
+
+                                    [147] => Array
+                                        (
+                                            [0] => -73.726357
+                                            [1] => 40.658643
+                                        )
+
+                                    [148] => Array
+                                        (
+                                            [0] => -73.727087
+                                            [1] => 40.660094
+                                        )
+
+                                    [149] => Array
+                                        (
+                                            [0] => -73.727894
+                                            [1] => 40.661469
+                                        )
+
+                                    [150] => Array
+                                        (
+                                            [0] => -73.728276
+                                            [1] => 40.663128
+                                        )
+
+                                    [151] => Array
+                                        (
+                                            [0] => -73.72777
+                                            [1] => 40.66313
+                                        )
+
+                                    [152] => Array
+                                        (
+                                            [0] => -73.727734
+                                            [1] => 40.664252
+                                        )
+
+                                    [153] => Array
+                                        (
+                                            [0] => -73.727706
+                                            [1] => 40.665029
+                                        )
+
+                                    [154] => Array
+                                        (
+                                            [0] => -73.728429
+                                            [1] => 40.665968
+                                        )
+
+                                    [155] => Array
+                                        (
+                                            [0] => -73.727977
+                                            [1] => 40.670643
+                                        )
+
+                                    [156] => Array
+                                        (
+                                            [0] => -73.727575
+                                            [1] => 40.673998
+                                        )
+
+                                    [157] => Array
+                                        (
+                                            [0] => -73.7275366
+                                            [1] => 40.6741534
+                                        )
+
+                                    [158] => Array
+                                        (
+                                            [0] => -73.7274813
+                                            [1] => 40.6742866
+                                        )
+
+                                    [159] => Array
+                                        (
+                                            [0] => -73.727441
+                                            [1] => 40.674429
+                                        )
+
+                                    [160] => Array
+                                        (
+                                            [0] => -73.727141
+                                            [1] => 40.675096
+                                        )
+
+                                    [161] => Array
+                                        (
+                                            [0] => -73.7269772
+                                            [1] => 40.6754381
+                                        )
+
+                                    [162] => Array
+                                        (
+                                            [0] => -73.7267121
+                                            [1] => 40.6760953
+                                        )
+
+                                    [163] => Array
+                                        (
+                                            [0] => -73.726568
+                                            [1] => 40.6764369
+                                        )
+
+                                    [164] => Array
+                                        (
+                                            [0] => -73.7265439
+                                            [1] => 40.6764937
+                                        )
+
+                                    [165] => Array
+                                        (
+                                            [0] => -73.7264362
+                                            [1] => 40.6767525
+                                        )
+
+                                    [166] => Array
+                                        (
+                                            [0] => -73.7262728
+                                            [1] => 40.6771661
+                                        )
+
+                                    [167] => Array
+                                        (
+                                            [0] => -73.7262437
+                                            [1] => 40.6772616
+                                        )
+
+                                    [168] => Array
+                                        (
+                                            [0] => -73.7262091
+                                            [1] => 40.6773944
+                                        )
+
+                                    [169] => Array
+                                        (
+                                            [0] => -73.726011
+                                            [1] => 40.678078
+                                        )
+
+                                    [170] => Array
+                                        (
+                                            [0] => -73.7258314
+                                            [1] => 40.678746
+                                        )
+
+                                    [171] => Array
+                                        (
+                                            [0] => -73.7256431
+                                            [1] => 40.6795169
+                                        )
+
+                                    [172] => Array
+                                        (
+                                            [0] => -73.7256271
+                                            [1] => 40.679704
+                                        )
+
+                                    [173] => Array
+                                        (
+                                            [0] => -73.7256351
+                                            [1] => 40.6799176
+                                        )
+
+                                    [174] => Array
+                                        (
+                                            [0] => -73.725687
+                                            [1] => 40.68025
+                                        )
+
+                                    [175] => Array
+                                        (
+                                            [0] => -73.7257671
+                                            [1] => 40.6809466
+                                        )
+
+                                    [176] => Array
+                                        (
+                                            [0] => -73.725796
+                                            [1] => 40.68136
+                                        )
+
+                                    [177] => Array
+                                        (
+                                            [0] => -73.72582
+                                            [1] => 40.6816404
+                                        )
+
+                                    [178] => Array
+                                        (
+                                            [0] => -73.725907
+                                            [1] => 40.682657
+                                        )
+
+                                    [179] => Array
+                                        (
+                                            [0] => -73.7258899
+                                            [1] => 40.6829493
+                                        )
+
+                                    [180] => Array
+                                        (
+                                            [0] => -73.7258287
+                                            [1] => 40.6832562
+                                        )
+
+                                    [181] => Array
+                                        (
+                                            [0] => -73.725913
+                                            [1] => 40.683302
+                                        )
+
+                                    [182] => Array
+                                        (
+                                            [0] => -73.726429
+                                            [1] => 40.692683
+                                        )
+
+                                    [183] => Array
+                                        (
+                                            [0] => -73.7266226
+                                            [1] => 40.6969399
+                                        )
+
+                                    [184] => Array
+                                        (
+                                            [0] => -73.726635
+                                            [1] => 40.697212
+                                        )
+
+                                    [185] => Array
+                                        (
+                                            [0] => -73.726845
+                                            [1] => 40.703252
+                                        )
+
+                                    [186] => Array
+                                        (
+                                            [0] => -73.727259
+                                            [1] => 40.711051
+                                        )
+
+                                    [187] => Array
+                                        (
+                                            [0] => -73.7293949
+                                            [1] => 40.7191809
+                                        )
+
+                                    [188] => Array
+                                        (
+                                            [0] => -73.729515
+                                            [1] => 40.719638
+                                        )
+
+                                    [189] => Array
+                                        (
+                                            [0] => -73.730287
+                                            [1] => 40.722161
+                                        )
+
+                                    [190] => Array
+                                        (
+                                            [0] => -73.729976
+                                            [1] => 40.722344
+                                        )
+
+                                    [191] => Array
+                                        (
+                                            [0] => -73.729501
+                                            [1] => 40.722582
+                                        )
+
+                                    [192] => Array
+                                        (
+                                            [0] => -73.728832
+                                            [1] => 40.722851
+                                        )
+
+                                    [193] => Array
+                                        (
+                                            [0] => -73.727476
+                                            [1] => 40.723347
+                                        )
+
+                                    [194] => Array
+                                        (
+                                            [0] => -73.726333
+                                            [1] => 40.723787
+                                        )
+
+                                    [195] => Array
+                                        (
+                                            [0] => -73.725866
+                                            [1] => 40.723944
+                                        )
+
+                                    [196] => Array
+                                        (
+                                            [0] => -73.724083
+                                            [1] => 40.724477
+                                        )
+
+                                    [197] => Array
+                                        (
+                                            [0] => -73.721079
+                                            [1] => 40.725283
+                                        )
+
+                                    [198] => Array
+                                        (
+                                            [0] => -73.717571
+                                            [1] => 40.726226
+                                        )
+
+                                    [199] => Array
+                                        (
+                                            [0] => -73.717029
+                                            [1] => 40.726348
+                                        )
+
+                                    [200] => Array
+                                        (
+                                            [0] => -73.716545
+                                            [1] => 40.726438
+                                        )
+
+                                    [201] => Array
+                                        (
+                                            [0] => -73.712293
+                                            [1] => 40.726973
+                                        )
+
+                                    [202] => Array
+                                        (
+                                            [0] => -73.71071
+                                            [1] => 40.727184
+                                        )
+
+                                    [203] => Array
+                                        (
+                                            [0] => -73.708609
+                                            [1] => 40.727613
+                                        )
+
+                                    [204] => Array
+                                        (
+                                            [0] => -73.707954
+                                            [1] => 40.727768
+                                        )
+
+                                    [205] => Array
+                                        (
+                                            [0] => -73.701507
+                                            [1] => 40.737458
+                                        )
+
+                                    [206] => Array
+                                        (
+                                            [0] => -73.700233
+                                            [1] => 40.739303
+                                        )
+
+                                    [207] => Array
+                                        (
+                                            [0] => -73.700906
+                                            [1] => 40.745687
+                                        )
+
+                                    [208] => Array
+                                        (
+                                            [0] => -73.701328
+                                            [1] => 40.750115
+                                        )
+
+                                    [209] => Array
+                                        (
+                                            [0] => -73.701582
+                                            [1] => 40.752467
+                                        )
+
+                                    [210] => Array
+                                        (
+                                            [0] => -73.721788
+                                            [1] => 40.764975
+                                        )
+
+                                    [211] => Array
+                                        (
+                                            [0] => -73.739643
+                                            [1] => 40.775992
+                                        )
+
+                                    [212] => Array
+                                        (
+                                            [0] => -73.7467107
+                                            [1] => 40.780354
+                                        )
+
+                                    [213] => Array
+                                        (
+                                            [0] => -73.748931
+                                            [1] => 40.781725
+                                        )
+
+                                    [214] => Array
+                                        (
+                                            [0] => -73.750139
+                                            [1] => 40.782416
+                                        )
+
+                                    [215] => Array
+                                        (
+                                            [0] => -73.7502977
+                                            [1] => 40.782509
+                                        )
+
+                                    [216] => Array
+                                        (
+                                            [0] => -73.750344
+                                            [1] => 40.782553
+                                        )
+
+                                    [217] => Array
+                                        (
+                                            [0] => -73.750382
+                                            [1] => 40.782593
+                                        )
+
+                                    [218] => Array
+                                        (
+                                            [0] => -73.7563731
+                                            [1] => 40.7886389
+                                        )
+
+                                    [219] => Array
+                                        (
+                                            [0] => -73.7660428
+                                            [1] => 40.7983959
+                                        )
+
+                                    [220] => Array
+                                        (
+                                            [0] => -73.77674
+                                            [1] => 40.809188
+                                        )
+
+                                    [221] => Array
+                                        (
+                                            [0] => -73.779665
+                                            [1] => 40.812135
+                                        )
+
+                                    [222] => Array
+                                        (
+                                            [0] => -73.780415
+                                            [1] => 40.826414
+                                        )
+
+                                    [223] => Array
+                                        (
+                                            [0] => -73.758369
+                                            [1] => 40.845313
+                                        )
+
+                                    [224] => Array
+                                        (
+                                            [0] => -73.749677
+                                            [1] => 40.868468
+                                        )
+
+                                    [225] => Array
+                                        (
+                                            [0] => -73.748374
+                                            [1] => 40.871825
+                                        )
+
+                                    [226] => Array
+                                        (
+                                            [0] => -73.762401
+                                            [1] => 40.875491
+                                        )
+
+                                    [227] => Array
+                                        (
+                                            [0] => -73.784218
+                                            [1] => 40.881123
+                                        )
+
+                                    [228] => Array
+                                        (
+                                            [0] => -73.792949
+                                            [1] => 40.883385
+                                        )
+
+                                    [229] => Array
+                                        (
+                                            [0] => -73.822564
+                                            [1] => 40.891025
+                                        )
+
+                                    [230] => Array
+                                        (
+                                            [0] => -73.822813
+                                            [1] => 40.890881
+                                        )
+
+                                    [231] => Array
+                                        (
+                                            [0] => -73.823189
+                                            [1] => 40.891199
+                                        )
+
+                                    [232] => Array
+                                        (
+                                            [0] => -73.8232783
+                                            [1] => 40.8910296
+                                        )
+
+                                    [233] => Array
+                                        (
+                                            [0] => -73.823334
+                                            [1] => 40.890924
+                                        )
+
+                                    [234] => Array
+                                        (
+                                            [0] => -73.823333
+                                            [1] => 40.890628
+                                        )
+
+                                    [235] => Array
+                                        (
+                                            [0] => -73.8232797
+                                            [1] => 40.8905404
+                                        )
+
+                                    [236] => Array
+                                        (
+                                            [0] => -73.823246
+                                            [1] => 40.890485
+                                        )
+
+                                    [237] => Array
+                                        (
+                                            [0] => -73.823217
+                                            [1] => 40.890364
+                                        )
+
+                                    [238] => Array
+                                        (
+                                            [0] => -73.823338
+                                            [1] => 40.890032
+                                        )
+
+                                    [239] => Array
+                                        (
+                                            [0] => -73.823165
+                                            [1] => 40.889859
+                                        )
+
+                                    [240] => Array
+                                        (
+                                            [0] => -73.822927
+                                            [1] => 40.889818
+                                        )
+
+                                    [241] => Array
+                                        (
+                                            [0] => -73.822624
+                                            [1] => 40.889924
+                                        )
+
+                                    [242] => Array
+                                        (
+                                            [0] => -73.822509
+                                            [1] => 40.889882
+                                        )
+
+                                    [243] => Array
+                                        (
+                                            [0] => -73.822364
+                                            [1] => 40.88964
+                                        )
+
+                                    [244] => Array
+                                        (
+                                            [0] => -73.822376
+                                            [1] => 40.889477
+                                        )
+
+                                    [245] => Array
+                                        (
+                                            [0] => -73.8235732
+                                            [1] => 40.8898269
+                                        )
+
+                                    [246] => Array
+                                        (
+                                            [0] => -73.824
+                                            [1] => 40.8899516
+                                        )
+
+                                    [247] => Array
+                                        (
+                                            [0] => -73.838238
+                                            [1] => 40.894112
+                                        )
+
+                                    [248] => Array
+                                        (
+                                            [0] => -73.838837
+                                            [1] => 40.895574
+                                        )
+
+                                    [249] => Array
+                                        (
+                                            [0] => -73.839099
+                                            [1] => 40.895666
+                                        )
+
+                                    [250] => Array
+                                        (
+                                            [0] => -73.839448
+                                            [1] => 40.896508
+                                        )
+
+                                    [251] => Array
+                                        (
+                                            [0] => -73.839757
+                                            [1] => 40.897406
+                                        )
+
+                                    [252] => Array
+                                        (
+                                            [0] => -73.839773
+                                            [1] => 40.897608
+                                        )
+
+                                    [253] => Array
+                                        (
+                                            [0] => -73.839745
+                                            [1] => 40.897731
+                                        )
+
+                                    [254] => Array
+                                        (
+                                            [0] => -73.839282
+                                            [1] => 40.898745
+                                        )
+
+                                    [255] => Array
+                                        (
+                                            [0] => -73.839202
+                                            [1] => 40.898979
+                                        )
+
+                                    [256] => Array
+                                        (
+                                            [0] => -73.839217
+                                            [1] => 40.899283
+                                        )
+
+                                    [257] => Array
+                                        (
+                                            [0] => -73.839348
+                                            [1] => 40.899599
+                                        )
+
+                                    [258] => Array
+                                        (
+                                            [0] => -73.839763
+                                            [1] => 40.900097
+                                        )
+
+                                    [259] => Array
+                                        (
+                                            [0] => -73.840206
+                                            [1] => 40.900588
+                                        )
+
+                                    [260] => Array
+                                        (
+                                            [0] => -73.840659
+                                            [1] => 40.901327
+                                        )
+
+                                    [261] => Array
+                                        (
+                                            [0] => -73.840855
+                                            [1] => 40.901717
+                                        )
+
+                                    [262] => Array
+                                        (
+                                            [0] => -73.840947
+                                            [1] => 40.902026
+                                        )
+
+                                    [263] => Array
+                                        (
+                                            [0] => -73.841061
+                                            [1] => 40.902762
+                                        )
+
+                                    [264] => Array
+                                        (
+                                            [0] => -73.841221
+                                            [1] => 40.903467
+                                        )
+
+                                    [265] => Array
+                                        (
+                                            [0] => -73.841439
+                                            [1] => 40.904167
+                                        )
+
+                                    [266] => Array
+                                        (
+                                            [0] => -73.844812
+                                            [1] => 40.904209
+                                        )
+
+                                    [267] => Array
+                                        (
+                                            [0] => -73.844835
+                                            [1] => 40.905127
+                                        )
+
+                                    [268] => Array
+                                        (
+                                            [0] => -73.844866
+                                            [1] => 40.905571
+                                        )
+
+                                    [269] => Array
+                                        (
+                                            [0] => -73.847319
+                                            [1] => 40.906326
+                                        )
+
+                                    [270] => Array
+                                        (
+                                            [0] => -73.850084
+                                            [1] => 40.907477
+                                        )
+
+                                    [271] => Array
+                                        (
+                                            [0] => -73.850925
+                                            [1] => 40.906531
+                                        )
+
+                                    [272] => Array
+                                        (
+                                            [0] => -73.853278
+                                            [1] => 40.90741
+                                        )
+
+                                    [273] => Array
+                                        (
+                                            [0] => -73.851842
+                                            [1] => 40.909246
+                                        )
+
+                                    [274] => Array
+                                        (
+                                            [0] => -73.851121
+                                            [1] => 40.910113
+                                        )
+
+                                    [275] => Array
+                                        (
+                                            [0] => -73.851181
+                                            [1] => 40.910121
+                                        )
+
+                                    [276] => Array
+                                        (
+                                            [0] => -73.851265
+                                            [1] => 40.910101
+                                        )
+
+                                    [277] => Array
+                                        (
+                                            [0] => -73.851792
+                                            [1] => 40.909787
+                                        )
+
+                                    [278] => Array
+                                        (
+                                            [0] => -73.851919
+                                            [1] => 40.909742
+                                        )
+
+                                    [279] => Array
+                                        (
+                                            [0] => -73.852118
+                                            [1] => 40.9097
+                                        )
+
+                                    [280] => Array
+                                        (
+                                            [0] => -73.852321
+                                            [1] => 40.909714
+                                        )
+
+                                    [281] => Array
+                                        (
+                                            [0] => -73.852439
+                                            [1] => 40.909866
+                                        )
+
+                                    [282] => Array
+                                        (
+                                            [0] => -73.852462
+                                            [1] => 40.91
+                                        )
+
+                                    [283] => Array
+                                        (
+                                            [0] => -73.85259
+                                            [1] => 40.91016
+                                        )
+
+                                    [284] => Array
+                                        (
+                                            [0] => -73.852836
+                                            [1] => 40.910187
+                                        )
+
+                                    [285] => Array
+                                        (
+                                            [0] => -73.853023
+                                            [1] => 40.910107
+                                        )
+
+                                    [286] => Array
+                                        (
+                                            [0] => -73.853155
+                                            [1] => 40.909967
+                                        )
+
+                                    [287] => Array
+                                        (
+                                            [0] => -73.853342
+                                            [1] => 40.909627
+                                        )
+
+                                    [288] => Array
+                                        (
+                                            [0] => -73.853559
+                                            [1] => 40.909418
+                                        )
+
+                                    [289] => Array
+                                        (
+                                            [0] => -73.85382
+                                            [1] => 40.909286
+                                        )
+
+                                    [290] => Array
+                                        (
+                                            [0] => -73.854167
+                                            [1] => 40.909077
+                                        )
+
+                                    [291] => Array
+                                        (
+                                            [0] => -73.854514
+                                            [1] => 40.90877
+                                        )
+
+                                    [292] => Array
+                                        (
+                                            [0] => -73.854731
+                                            [1] => 40.908331
+                                        )
+
+                                    [293] => Array
+                                        (
+                                            [0] => -73.854774
+                                            [1] => 40.908067
+                                        )
+
+                                    [294] => Array
+                                        (
+                                            [0] => -73.854681
+                                            [1] => 40.907909
+                                        )
+
+                                    [295] => Array
+                                        (
+                                            [0] => -73.854443
+                                            [1] => 40.907881
+                                        )
+
+                                    [296] => Array
+                                        (
+                                            [0] => -73.85418
+                                            [1] => 40.907892
+                                        )
+
+                                    [297] => Array
+                                        (
+                                            [0] => -73.853949
+                                            [1] => 40.907881
+                                        )
+
+                                    [298] => Array
+                                        (
+                                            [0] => -73.853677
+                                            [1] => 40.907764
+                                        )
+
+                                    [299] => Array
+                                        (
+                                            [0] => -73.853657
+                                            [1] => 40.907451
+                                        )
+
+                                    [300] => Array
+                                        (
+                                            [0] => -73.853876
+                                            [1] => 40.907152
+                                        )
+
+                                    [301] => Array
+                                        (
+                                            [0] => -73.854083
+                                            [1] => 40.906944
+                                        )
+
+                                    [302] => Array
+                                        (
+                                            [0] => -73.854512
+                                            [1] => 40.906838
+                                        )
+
+                                    [303] => Array
+                                        (
+                                            [0] => -73.855094
+                                            [1] => 40.906735
+                                        )
+
+                                    [304] => Array
+                                        (
+                                            [0] => -73.855294
+                                            [1] => 40.906617
+                                        )
+
+                                    [305] => Array
+                                        (
+                                            [0] => -73.855597
+                                            [1] => 40.906145
+                                        )
+
+                                    [306] => Array
+                                        (
+                                            [0] => -73.855843
+                                            [1] => 40.906064
+                                        )
+
+                                    [307] => Array
+                                        (
+                                            [0] => -73.856769
+                                            [1] => 40.905979
+                                        )
+
+                                    [308] => Array
+                                        (
+                                            [0] => -73.856798
+                                            [1] => 40.905826
+                                        )
+
+                                    [309] => Array
+                                        (
+                                            [0] => -73.856798
+                                            [1] => 40.905672
+                                        )
+
+                                    [310] => Array
+                                        (
+                                            [0] => -73.85651
+                                            [1] => 40.90553
+                                        )
+
+                                    [311] => Array
+                                        (
+                                            [0] => -73.856176
+                                            [1] => 40.905489
+                                        )
+
+                                    [312] => Array
+                                        (
+                                            [0] => -73.855875
+                                            [1] => 40.905419
+                                        )
+
+                                    [313] => Array
+                                        (
+                                            [0] => -73.855875
+                                            [1] => 40.905188
+                                        )
+
+                                    [314] => Array
+                                        (
+                                            [0] => -73.856137
+                                            [1] => 40.905041
+                                        )
+
+                                    [315] => Array
+                                        (
+                                            [0] => -73.856545
+                                            [1] => 40.904966
+                                        )
+
+                                    [316] => Array
+                                        (
+                                            [0] => -73.857029
+                                            [1] => 40.905079
+                                        )
+
+                                    [317] => Array
+                                        (
+                                            [0] => -73.857261
+                                            [1] => 40.905057
+                                        )
+
+                                    [318] => Array
+                                        (
+                                            [0] => -73.857383
+                                            [1] => 40.904946
+                                        )
+
+                                    [319] => Array
+                                        (
+                                            [0] => -73.857385
+                                            [1] => 40.904837
+                                        )
+
+                                    [320] => Array
+                                        (
+                                            [0] => -73.857347
+                                            [1] => 40.904706
+                                        )
+
+                                    [321] => Array
+                                        (
+                                            [0] => -73.857072
+                                            [1] => 40.904563
+                                        )
+
+                                    [322] => Array
+                                        (
+                                            [0] => -73.857043
+                                            [1] => 40.904431
+                                        )
+
+                                    [323] => Array
+                                        (
+                                            [0] => -73.857073
+                                            [1] => 40.904237
+                                        )
+
+                                    [324] => Array
+                                        (
+                                            [0] => -73.857139
+                                            [1] => 40.904009
+                                        )
+
+                                    [325] => Array
+                                        (
+                                            [0] => -73.857118
+                                            [1] => 40.90378
+                                        )
+
+                                    [326] => Array
+                                        (
+                                            [0] => -73.857057
+                                            [1] => 40.903564
+                                        )
+
+                                    [327] => Array
+                                        (
+                                            [0] => -73.857057
+                                            [1] => 40.903421
+                                        )
+
+                                    [328] => Array
+                                        (
+                                            [0] => -73.8571
+                                            [1] => 40.903268
+                                        )
+
+                                    [329] => Array
+                                        (
+                                            [0] => -73.857519
+                                            [1] => 40.902631
+                                        )
+
+                                    [330] => Array
+                                        (
+                                            [0] => -73.857635
+                                            [1] => 40.902598
+                                        )
+
+                                    [331] => Array
+                                        (
+                                            [0] => -73.857794
+                                            [1] => 40.90262
+                                        )
+
+                                    [332] => Array
+                                        (
+                                            [0] => -73.857939
+                                            [1] => 40.902718
+                                        )
+
+                                    [333] => Array
+                                        (
+                                            [0] => -73.858098
+                                            [1] => 40.902685
+                                        )
+
+                                    [334] => Array
+                                        (
+                                            [0] => -73.85817
+                                            [1] => 40.902531
+                                        )
+
+                                    [335] => Array
+                                        (
+                                            [0] => -73.858112
+                                            [1] => 40.9024
+                                        )
+
+                                    [336] => Array
+                                        (
+                                            [0] => -73.858112
+                                            [1] => 40.902279
+                                        )
+
+                                    [337] => Array
+                                        (
+                                            [0] => -73.858189
+                                            [1] => 40.902185
+                                        )
+
+                                    [338] => Array
+                                        (
+                                            [0] => -73.8583
+                                            [1] => 40.902158
+                                        )
+
+                                    [339] => Array
+                                        (
+                                            [0] => -73.85843
+                                            [1] => 40.90218
+                                        )
+
+                                    [340] => Array
+                                        (
+                                            [0] => -73.858597
+                                            [1] => 40.90218
+                                        )
+
+                                    [341] => Array
+                                        (
+                                            [0] => -73.85901
+                                            [1] => 40.902553
+                                        )
+
+                                    [342] => Array
+                                        (
+                                            [0] => -73.859285
+                                            [1] => 40.902673
+                                        )
+
+                                    [343] => Array
+                                        (
+                                            [0] => -73.859458
+                                            [1] => 40.902673
+                                        )
+
+                                    [344] => Array
+                                        (
+                                            [0] => -73.859603
+                                            [1] => 40.902574
+                                        )
+
+                                    [345] => Array
+                                        (
+                                            [0] => -73.859675
+                                            [1] => 40.902344
+                                        )
+
+                                    [346] => Array
+                                        (
+                                            [0] => -73.859559
+                                            [1] => 40.902113
+                                        )
+
+                                    [347] => Array
+                                        (
+                                            [0] => -73.859272
+                                            [1] => 40.901801
+                                        )
+
+                                    [348] => Array
+                                        (
+                                            [0] => -73.859024
+                                            [1] => 40.901704
+                                        )
+
+                                    [349] => Array
+                                        (
+                                            [0] => -73.858994
+                                            [1] => 40.901581
+                                        )
+
+                                    [350] => Array
+                                        (
+                                            [0] => -73.859069
+                                            [1] => 40.901483
+                                        )
+
+                                    [351] => Array
+                                        (
+                                            [0] => -73.859501
+                                            [1] => 40.901454
+                                        )
+
+                                    [352] => Array
+                                        (
+                                            [0] => -73.859544
+                                            [1] => 40.901377
+                                        )
+
+                                    [353] => Array
+                                        (
+                                            [0] => -73.859428
+                                            [1] => 40.901103
+                                        )
+
+                                    [354] => Array
+                                        (
+                                            [0] => -73.859355
+                                            [1] => 40.901015
+                                        )
+
+                                    [355] => Array
+                                        (
+                                            [0] => -73.859043
+                                            [1] => 40.900876
+                                        )
+
+                                    [356] => Array
+                                        (
+                                            [0] => -73.859262
+                                            [1] => 40.900452
+                                        )
+
+                                    [357] => Array
+                                        (
+                                            [0] => -73.8614
+                                            [1] => 40.901084
+                                        )
+
+                                    [358] => Array
+                                        (
+                                            [0] => -73.861679
+                                            [1] => 40.901081
+                                        )
+
+                                    [359] => Array
+                                        (
+                                            [0] => -73.8617151
+                                            [1] => 40.9010934
+                                        )
+
+                                    [360] => Array
+                                        (
+                                            [0] => -73.862347
+                                            [1] => 40.90132
+                                        )
+
+                                    [361] => Array
+                                        (
+                                            [0] => -73.862643
+                                            [1] => 40.901474
+                                        )
+
+                                    [362] => Array
+                                        (
+                                            [0] => -73.863
+                                            [1] => 40.90144
+                                        )
+
+                                    [363] => Array
+                                        (
+                                            [0] => -73.86791
+                                            [1] => 40.902823
+                                        )
+
+                                    [364] => Array
+                                        (
+                                            [0] => -73.873471
+                                            [1] => 40.904427
+                                        )
+
+                                    [365] => Array
+                                        (
+                                            [0] => -73.875116
+                                            [1] => 40.904893
+                                        )
+
+                                    [366] => Array
+                                        (
+                                            [0] => -73.892945
+                                            [1] => 40.910166
+                                        )
+
+                                    [367] => Array
+                                        (
+                                            [0] => -73.896453
+                                            [1] => 40.911167
+                                        )
+
+                                    [368] => Array
+                                        (
+                                            [0] => -73.902589
+                                            [1] => 40.913014
+                                        )
+
+                                    [369] => Array
+                                        (
+                                            [0] => -73.910421
+                                            [1] => 40.915309
+                                        )
+
+                                    [370] => Array
+                                        (
+                                            [0] => -73.918346
+                                            [1] => 40.91763
+                                        )
+
+                                    [371] => Array
+                                        (
+                                            [0] => -73.9189436
+                                            [1] => 40.9161216
+                                        )
+
+                                    [372] => Array
+                                        (
+                                            [0] => -73.9271142
+                                            [1] => 40.8954936
+                                        )
+
+                                    [373] => Array
+                                        (
+                                            [0] => -73.929795
+                                            [1] => 40.888724
+                                        )
+
+                                    [374] => Array
+                                        (
+                                            [0] => -73.933907
+                                            [1] => 40.882012
+                                        )
+
+                                    [375] => Array
+                                        (
+                                            [0] => -73.9483347
+                                            [1] => 40.8584473
+                                        )
+
+                                    [376] => Array
+                                        (
+                                            [0] => -73.952829
+                                            [1] => 40.851105
+                                        )
+
+                                    [377] => Array
+                                        (
+                                            [0] => -73.9541923
+                                            [1] => 40.8480026
+                                        )
+
+                                    [378] => Array
+                                        (
+                                            [0] => -73.9587238
+                                            [1] => 40.8376892
+                                        )
+
+                                    [379] => Array
+                                        (
+                                            [0] => -73.963577
+                                            [1] => 40.826642
+                                        )
+
+                                    [380] => Array
+                                        (
+                                            [0] => -73.9772946
+                                            [1] => 40.8078634
+                                        )
+
+                                    [381] => Array
+                                        (
+                                            [0] => -73.9848673
+                                            [1] => 40.7974944
+                                        )
+
+                                    [382] => Array
+                                        (
+                                            [0] => -73.9916947
+                                            [1] => 40.7881446
+                                        )
+
+                                    [383] => Array
+                                        (
+                                            [0] => -73.9930017
+                                            [1] => 40.7863546
+                                        )
+
+                                    [384] => Array
+                                        (
+                                            [0] => -74.0004487
+                                            [1] => 40.7761545
+                                        )
+
+                                    [385] => Array
+                                        (
+                                            [0] => -74.0016207
+                                            [1] => 40.7745491
+                                        )
+
+                                    [386] => Array
+                                        (
+                                            [0] => -74.014028
+                                            [1] => 40.757551
+                                        )
+
+                                    [387] => Array
+                                        (
+                                            [0] => -74.0142459
+                                            [1] => 40.7566558
+                                        )
+
+                                    [388] => Array
+                                        (
+                                            [0] => -74.0174387
+                                            [1] => 40.7435392
+                                        )
+
+                                    [389] => Array
+                                        (
+                                            [0] => -74.0206386
+                                            [1] => 40.7303906
+                                        )
+
+                                    [390] => Array
+                                        (
+                                            [0] => -74.0213403
+                                            [1] => 40.7275071
+                                        )
+
+                                    [391] => Array
+                                        (
+                                            [0] => -74.023637
+                                            [1] => 40.718068
+                                        )
+
+                                    [392] => Array
+                                        (
+                                            [0] => -74.02639
+                                            [1] => 40.700102
+                                        )
+
+                                    [393] => Array
+                                        (
+                                            [0] => -74.034495
+                                            [1] => 40.6866935
+                                        )
+
+                                    [394] => Array
+                                        (
+                                            [0] => -74.035443
+                                            [1] => 40.685125
+                                        )
+
+                                    [395] => Array
+                                        (
+                                            [0] => -74.0378384
+                                            [1] => 40.6810948
+                                        )
+
+                                    [396] => Array
+                                        (
+                                            [0] => -74.049594
+                                            [1] => 40.661622
+                                        )
+
+                                    [397] => Array
+                                        (
+                                            [0] => -74.055766
+                                            [1] => 40.651475
+                                        )
+
+                                    [398] => Array
+                                        (
+                                            [0] => -74.086986
+                                            [1] => 40.651506
+                                        )
+
+                                    [399] => Array
+                                        (
+                                            [0] => -74.093442
+                                            [1] => 40.648064
+                                        )
+
+                                    [400] => Array
+                                        (
+                                            [0] => -74.109848
+                                            [1] => 40.648064
+                                        )
+
+                                    [401] => Array
+                                        (
+                                            [0] => -74.126018
+                                            [1] => 40.642151
+                                        )
+
+                                    [402] => Array
+                                        (
+                                            [0] => -74.132921
+                                            [1] => 40.643684
+                                        )
+
+                                    [403] => Array
+                                        (
+                                            [0] => -74.14311
+                                            [1] => 40.641989
+                                        )
+
+                                    [404] => Array
+                                        (
+                                            [0] => -74.1614661
+                                            [1] => 40.6441509
+                                        )
+
+                                    [405] => Array
+                                        (
+                                            [0] => -74.18165
+                                            [1] => 40.646528
+                                        )
+
+                                    [406] => Array
+                                        (
+                                            [0] => -74.185641
+                                            [1] => 40.646042
+                                        )
+
+                                    [407] => Array
+                                        (
+                                            [0] => -74.19143
+                                            [1] => 40.642025
+                                        )
+
+                                    [408] => Array
+                                        (
+                                            [0] => -74.196247
+                                            [1] => 40.637689
+                                        )
+
+                                    [409] => Array
+                                        (
+                                            [0] => -74.198164
+                                            [1] => 40.634786
+                                        )
+
+                                    [410] => Array
+                                        (
+                                            [0] => -74.2003778
+                                            [1] => 40.6331168
+                                        )
+
+                                    [411] => Array
+                                        (
+                                            [0] => -74.2024
+                                            [1] => 40.631592
+                                        )
+
+                                    [412] => Array
+                                        (
+                                            [0] => -74.202281
+                                            [1] => 40.628781
+                                        )
+
+                                    [413] => Array
+                                        (
+                                            [0] => -74.203925
+                                            [1] => 40.62437
+                                        )
+
+                                    [414] => Array
+                                        (
+                                            [0] => -74.202425
+                                            [1] => 40.61677
+                                        )
+
+                                    [415] => Array
+                                        (
+                                            [0] => -74.203889
+                                            [1] => 40.614276
+                                        )
+
+                                    [416] => Array
+                                        (
+                                            [0] => -74.204834
+                                            [1] => 40.606062
+                                        )
+
+                                    [417] => Array
+                                        (
+                                            [0] => -74.199589
+                                            [1] => 40.600382
+                                        )
+
+                                    [418] => Array
+                                        (
+                                            [0] => -74.199589
+                                            [1] => 40.597846
+                                        )
+
+                                    [419] => Array
+                                        (
+                                            [0] => -74.2036022
+                                            [1] => 40.5926384
+                                        )
+
+                                    [420] => Array
+                                        (
+                                            [0] => -74.207242
+                                            [1] => 40.587915
+                                        )
+
+                                    [421] => Array
+                                        (
+                                            [0] => -74.210145
+                                            [1] => 40.573724
+                                        )
+
+                                    [422] => Array
+                                        (
+                                            [0] => -74.214576
+                                            [1] => 40.560533
+                                        )
+
+                                    [423] => Array
+                                        (
+                                            [0] => -74.218004
+                                            [1] => 40.557057
+                                        )
+
+                                    [424] => Array
+                                        (
+                                            [0] => -74.2290376
+                                            [1] => 40.5588053
+                                        )
+
+                                    [425] => Array
+                                        (
+                                            [0] => -74.231415
+                                            [1] => 40.559182
+                                        )
+
+                                    [426] => Array
+                                        (
+                                            [0] => -74.247485
+                                            [1] => 40.549377
+                                        )
+
+                                    [427] => Array
+                                        (
+                                            [0] => -74.250285
+                                            [1] => 40.542299
+                                        )
+
+                                    [428] => Array
+                                        (
+                                            [0] => -74.2497377
+                                            [1] => 40.5395601
+                                        )
+
+                                    [429] => Array
+                                        (
+                                            [0] => -74.246021
+                                            [1] => 40.520958
+                                        )
+
+                                    [430] => Array
+                                        (
+                                            [0] => -74.254096
+                                            [1] => 40.515661
+                                        )
+
+                                    [431] => Array
+                                        (
+                                            [0] => -74.258129
+                                            [1] => 40.508717
+                                        )
+
+                                    [432] => Array
+                                        (
+                                            [0] => -74.258843
+                                            [1] => 40.498875
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => -74.047207
+                                            [1] => 40.690893
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [0] => -74.047196
+                                            [1] => 40.690794
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [0] => -74.047146
+                                            [1] => 40.690714
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [0] => -74.047026
+                                            [1] => 40.690589
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [0] => -74.047041
+                                            [1] => 40.690482
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [0] => -74.047183
+                                            [1] => 40.690411
+                                        )
+
+                                    [6] => Array
+                                        (
+                                            [0] => -74.046248
+                                            [1] => 40.689319
+                                        )
+
+                                    [7] => Array
+                                        (
+                                            [0] => -74.044792
+                                            [1] => 40.68859
+                                        )
+
+                                    [8] => Array
+                                        (
+                                            [0] => -74.044349
+                                            [1] => 40.688508
+                                        )
+
+                                    [9] => Array
+                                        (
+                                            [0] => -74.044132
+                                            [1] => 40.688537
+                                        )
+
+                                    [10] => Array
+                                        (
+                                            [0] => -74.043942
+                                            [1] => 40.688569
+                                        )
+
+                                    [11] => Array
+                                        (
+                                            [0] => -74.043618
+                                            [1] => 40.68876
+                                        )
+
+                                    [12] => Array
+                                        (
+                                            [0] => -74.043499
+                                            [1] => 40.689172
+                                        )
+
+                                    [13] => Array
+                                        (
+                                            [0] => -74.043455
+                                            [1] => 40.689629
+                                        )
+
+                                    [14] => Array
+                                        (
+                                            [0] => -74.043873
+                                            [1] => 40.690179
+                                        )
+
+                                    [15] => Array
+                                        (
+                                            [0] => -74.04457
+                                            [1] => 40.690559
+                                        )
+
+                                    [16] => Array
+                                        (
+                                            [0] => -74.045982
+                                            [1] => 40.691108
+                                        )
+
+                                    [17] => Array
+                                        (
+                                            [0] => -74.046135
+                                            [1] => 40.691125
+                                        )
+
+                                    [18] => Array
+                                        (
+                                            [0] => -74.046176
+                                            [1] => 40.691092
+                                        )
+
+                                    [19] => Array
+                                        (
+                                            [0] => -74.047041
+                                            [1] => 40.691041
+                                        )
+
+                                    [20] => Array
+                                        (
+                                            [0] => -74.047149
+                                            [1] => 40.690985
+                                        )
+
+                                    [21] => Array
+                                        (
+                                            [0] => -74.047207
+                                            [1] => 40.690893
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => -74.0407472
+                                            [1] => 40.7001669
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [0] => -74.0407397
+                                            [1] => 40.7001311
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [0] => -74.0407248
+                                            [1] => 40.7001055
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [0] => -74.0407192
+                                            [1] => 40.7000956
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [0] => -74.0407023
+                                            [1] => 40.7000713
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [0] => -74.0406912
+                                            [1] => 40.70005
+                                        )
+
+                                    [6] => Array
+                                        (
+                                            [0] => -74.0406874
+                                            [1] => 40.70001
+                                        )
+
+                                    [7] => Array
+                                        (
+                                            [0] => -74.0406837
+                                            [1] => 40.699983
+                                        )
+
+                                    [8] => Array
+                                        (
+                                            [0] => -74.0406744
+                                            [1] => 40.6999616
+                                        )
+
+                                    [9] => Array
+                                        (
+                                            [0] => -74.0406744
+                                            [1] => 40.6999346
+                                        )
+
+                                    [10] => Array
+                                        (
+                                            [0] => -74.0406631
+                                            [1] => 40.6999075
+                                        )
+
+                                    [11] => Array
+                                        (
+                                            [0] => -74.0406443
+                                            [1] => 40.6998832
+                                        )
+
+                                    [12] => Array
+                                        (
+                                            [0] => -74.0406237
+                                            [1] => 40.6998605
+                                        )
+
+                                    [13] => Array
+                                        (
+                                            [0] => -74.0406154
+                                            [1] => 40.6998284
+                                        )
+
+                                    [14] => Array
+                                        (
+                                            [0] => -74.0406173
+                                            [1] => 40.6998026
+                                        )
+
+                                    [15] => Array
+                                        (
+                                            [0] => -74.0406117
+                                            [1] => 40.6997657
+                                        )
+
+                                    [16] => Array
+                                        (
+                                            [0] => -74.0406004
+                                            [1] => 40.6997386
+                                        )
+
+                                    [17] => Array
+                                        (
+                                            [0] => -74.0405779
+                                            [1] => 40.69971
+                                        )
+
+                                    [18] => Array
+                                        (
+                                            [0] => -74.0405535
+                                            [1] => 40.6996801
+                                        )
+
+                                    [19] => Array
+                                        (
+                                            [0] => -74.0405311
+                                            [1] => 40.6996573
+                                        )
+
+                                    [20] => Array
+                                        (
+                                            [0] => -74.0405124
+                                            [1] => 40.6996274
+                                        )
+
+                                    [21] => Array
+                                        (
+                                            [0] => -74.0404842
+                                            [1] => 40.6995945
+                                        )
+
+                                    [22] => Array
+                                        (
+                                            [0] => -74.0404702
+                                            [1] => 40.6995581
+                                        )
+
+                                    [23] => Array
+                                        (
+                                            [0] => -74.0404664
+                                            [1] => 40.6995282
+                                        )
+
+                                    [24] => Array
+                                        (
+                                            [0] => -74.0404666
+                                            [1] => 40.6994927
+                                        )
+
+                                    [25] => Array
+                                        (
+                                            [0] => -74.0404553
+                                            [1] => 40.6994669
+                                        )
+
+                                    [26] => Array
+                                        (
+                                            [0] => -74.0404384
+                                            [1] => 40.6994384
+                                        )
+
+                                    [27] => Array
+                                        (
+                                            [0] => -74.0404262
+                                            [1] => 40.6994134
+                                        )
+
+                                    [28] => Array
+                                        (
+                                            [0] => -74.0404019
+                                            [1] => 40.6993934
+                                        )
+
+                                    [29] => Array
+                                        (
+                                            [0] => -74.0403511
+                                            [1] => 40.6993749
+                                        )
+
+                                    [30] => Array
+                                        (
+                                            [0] => -74.0403156
+                                            [1] => 40.699365
+                                        )
+
+                                    [31] => Array
+                                        (
+                                            [0] => -74.040278
+                                            [1] => 40.6993506
+                                        )
+
+                                    [32] => Array
+                                        (
+                                            [0] => -74.0402425
+                                            [1] => 40.6993335
+                                        )
+
+                                    [33] => Array
+                                        (
+                                            [0] => -74.0402106
+                                            [1] => 40.699315
+                                        )
+
+                                    [34] => Array
+                                        (
+                                            [0] => -74.0401899
+                                            [1] => 40.6992778
+                                        )
+
+                                    [35] => Array
+                                        (
+                                            [0] => -74.0401899
+                                            [1] => 40.6992451
+                                        )
+
+                                    [36] => Array
+                                        (
+                                            [0] => -74.0401863
+                                            [1] => 40.6992152
+                                        )
+
+                                    [37] => Array
+                                        (
+                                            [0] => -74.040158
+                                            [1] => 40.6991965
+                                        )
+
+                                    [38] => Array
+                                        (
+                                            [0] => -74.0400698
+                                            [1] => 40.6991722
+                                        )
+
+                                    [39] => Array
+                                        (
+                                            [0] => -74.03998
+                                            [1] => 40.6991236
+                                        )
+
+                                    [40] => Array
+                                        (
+                                            [0] => -74.0399479
+                                            [1] => 40.6990979
+                                        )
+
+                                    [41] => Array
+                                        (
+                                            [0] => -74.0398992
+                                            [1] => 40.699068
+                                        )
+
+                                    [42] => Array
+                                        (
+                                            [0] => -74.0398618
+                                            [1] => 40.6990423
+                                        )
+
+                                    [43] => Array
+                                        (
+                                            [0] => -74.0398149
+                                            [1] => 40.6990109
+                                        )
+
+                                    [44] => Array
+                                        (
+                                            [0] => -74.0397962
+                                            [1] => 40.6989767
+                                        )
+
+                                    [45] => Array
+                                        (
+                                            [0] => -74.039798
+                                            [1] => 40.6989367
+                                        )
+
+                                    [46] => Array
+                                        (
+                                            [0] => -74.0398243
+                                            [1] => 40.6989111
+                                        )
+
+                                    [47] => Array
+                                        (
+                                            [0] => -74.0398682
+                                            [1] => 40.6988933
+                                        )
+
+                                    [48] => Array
+                                        (
+                                            [0] => -74.0399097
+                                            [1] => 40.6988835
+                                        )
+
+                                    [49] => Array
+                                        (
+                                            [0] => -74.0399512
+                                            [1] => 40.6988816
+                                        )
+
+                                    [50] => Array
+                                        (
+                                            [0] => -74.0399861
+                                            [1] => 40.6988865
+                                        )
+
+                                    [51] => Array
+                                        (
+                                            [0] => -74.0400282
+                                            [1] => 40.6988979
+                                        )
+
+                                    [52] => Array
+                                        (
+                                            [0] => -74.0400437
+                                            [1] => 40.6989027
+                                        )
+
+                                    [53] => Array
+                                        (
+                                            [0] => -74.0400595
+                                            [1] => 40.6989072
+                                        )
+
+                                    [54] => Array
+                                        (
+                                            [0] => -74.0400963
+                                            [1] => 40.6989342
+                                        )
+
+                                    [55] => Array
+                                        (
+                                            [0] => -74.0401502
+                                            [1] => 40.6989014
+                                        )
+
+                                    [56] => Array
+                                        (
+                                            [0] => -74.0401454
+                                            [1] => 40.6988975
+                                        )
+
+                                    [57] => Array
+                                        (
+                                            [0] => -74.040215
+                                            [1] => 40.6988538
+                                        )
+
+                                    [58] => Array
+                                        (
+                                            [0] => -74.0402387
+                                            [1] => 40.6988362
+                                        )
+
+                                    [59] => Array
+                                        (
+                                            [0] => -74.040234
+                                            [1] => 40.6988328
+                                        )
+
+                                    [60] => Array
+                                        (
+                                            [0] => -74.0400782
+                                            [1] => 40.6987147
+                                        )
+
+                                    [61] => Array
+                                        (
+                                            [0] => -74.0399309
+                                            [1] => 40.6985897
+                                        )
+
+                                    [62] => Array
+                                        (
+                                            [0] => -74.0396695
+                                            [1] => 40.6987755
+                                        )
+
+                                    [63] => Array
+                                        (
+                                            [0] => -74.0396471
+                                            [1] => 40.69879
+                                        )
+
+                                    [64] => Array
+                                        (
+                                            [0] => -74.0396316
+                                            [1] => 40.6987899
+                                        )
+
+                                    [65] => Array
+                                        (
+                                            [0] => -74.0395853
+                                            [1] => 40.6987904
+                                        )
+
+                                    [66] => Array
+                                        (
+                                            [0] => -74.0395382
+                                            [1] => 40.6987875
+                                        )
+
+                                    [67] => Array
+                                        (
+                                            [0] => -74.0395083
+                                            [1] => 40.6987803
+                                        )
+
+                                    [68] => Array
+                                        (
+                                            [0] => -74.0394876
+                                            [1] => 40.6987775
+                                        )
+
+                                    [69] => Array
+                                        (
+                                            [0] => -74.0394688
+                                            [1] => 40.6987519
+                                        )
+
+                                    [70] => Array
+                                        (
+                                            [0] => -74.0394385
+                                            [1] => 40.6987394
+                                        )
+
+                                    [71] => Array
+                                        (
+                                            [0] => -74.0394115
+                                            [1] => 40.6987374
+                                        )
+
+                                    [72] => Array
+                                        (
+                                            [0] => -74.0393763
+                                            [1] => 40.6987314
+                                        )
+
+                                    [73] => Array
+                                        (
+                                            [0] => -74.0393648
+                                            [1] => 40.6987087
+                                        )
+
+                                    [74] => Array
+                                        (
+                                            [0] => -74.0393415
+                                            [1] => 40.6986841
+                                        )
+
+                                    [75] => Array
+                                        (
+                                            [0] => -74.0393171
+                                            [1] => 40.6986648
+                                        )
+
+                                    [76] => Array
+                                        (
+                                            [0] => -74.039285
+                                            [1] => 40.6986319
+                                        )
+
+                                    [77] => Array
+                                        (
+                                            [0] => -74.0392448
+                                            [1] => 40.6986141
+                                        )
+
+                                    [78] => Array
+                                        (
+                                            [0] => -74.0392054
+                                            [1] => 40.698604
+                                        )
+
+                                    [79] => Array
+                                        (
+                                            [0] => -74.0391679
+                                            [1] => 40.6985954
+                                        )
+
+                                    [80] => Array
+                                        (
+                                            [0] => -74.0391153
+                                            [1] => 40.6985924
+                                        )
+
+                                    [81] => Array
+                                        (
+                                            [0] => -74.039061
+                                            [1] => 40.6985967
+                                        )
+
+                                    [82] => Array
+                                        (
+                                            [0] => -74.0390065
+                                            [1] => 40.6985937
+                                        )
+
+                                    [83] => Array
+                                        (
+                                            [0] => -74.0389596
+                                            [1] => 40.6985951
+                                        )
+
+                                    [84] => Array
+                                        (
+                                            [0] => -74.0389252
+                                            [1] => 40.698607
+                                        )
+
+                                    [85] => Array
+                                        (
+                                            [0] => -74.0388788
+                                            [1] => 40.6986109
+                                        )
+
+                                    [86] => Array
+                                        (
+                                            [0] => -74.0388273
+                                            [1] => 40.6986241
+                                        )
+
+                                    [87] => Array
+                                        (
+                                            [0] => -74.0387796
+                                            [1] => 40.698636
+                                        )
+
+                                    [88] => Array
+                                        (
+                                            [0] => -74.038744
+                                            [1] => 40.6986371
+                                        )
+
+                                    [89] => Array
+                                        (
+                                            [0] => -74.0387123
+                                            [1] => 40.698654
+                                        )
+
+                                    [90] => Array
+                                        (
+                                            [0] => -74.0386807
+                                            [1] => 40.69866
+                                        )
+
+                                    [91] => Array
+                                        (
+                                            [0] => -74.0386528
+                                            [1] => 40.6986628
+                                        )
+
+                                    [92] => Array
+                                        (
+                                            [0] => -74.0386342
+                                            [1] => 40.698667
+                                        )
+
+                                    [93] => Array
+                                        (
+                                            [0] => -74.0386211
+                                            [1] => 40.6986713
+                                        )
+
+                                    [94] => Array
+                                        (
+                                            [0] => -74.0386028
+                                            [1] => 40.6986769
+                                        )
+
+                                    [95] => Array
+                                        (
+                                            [0] => -74.038623
+                                            [1] => 40.6986979
+                                        )
+
+                                    [96] => Array
+                                        (
+                                            [0] => -74.0386064
+                                            [1] => 40.6987175
+                                        )
+
+                                    [97] => Array
+                                        (
+                                            [0] => -74.0385693
+                                            [1] => 40.6987301
+                                        )
+
+                                    [98] => Array
+                                        (
+                                            [0] => -74.0385269
+                                            [1] => 40.6987117
+                                        )
+
+                                    [99] => Array
+                                        (
+                                            [0] => -74.0385048
+                                            [1] => 40.698702
+                                        )
+
+                                    [100] => Array
+                                        (
+                                            [0] => -74.038477
+                                            [1] => 40.6986908
+                                        )
+
+                                    [101] => Array
+                                        (
+                                            [0] => -74.0384529
+                                            [1] => 40.6986809
+                                        )
+
+                                    [102] => Array
+                                        (
+                                            [0] => -74.0384197
+                                            [1] => 40.6986655
+                                        )
+
+                                    [103] => Array
+                                        (
+                                            [0] => -74.0383919
+                                            [1] => 40.6986656
+                                        )
+
+                                    [104] => Array
+                                        (
+                                            [0] => -74.0383723
+                                            [1] => 40.6986686
+                                        )
+
+                                    [105] => Array
+                                        (
+                                            [0] => -74.0383683
+                                            [1] => 40.6986866
+                                        )
+
+                                    [106] => Array
+                                        (
+                                            [0] => -74.0383801
+                                            [1] => 40.6987135
+                                        )
+
+                                    [107] => Array
+                                        (
+                                            [0] => -74.038396
+                                            [1] => 40.6987285
+                                        )
+
+                                    [108] => Array
+                                        (
+                                            [0] => -74.0384116
+                                            [1] => 40.6987557
+                                        )
+
+                                    [109] => Array
+                                        (
+                                            [0] => -74.0384355
+                                            [1] => 40.6987917
+                                        )
+
+                                    [110] => Array
+                                        (
+                                            [0] => -74.0384551
+                                            [1] => 40.6988247
+                                        )
+
+                                    [111] => Array
+                                        (
+                                            [0] => -74.0384669
+                                            [1] => 40.6988698
+                                        )
+
+                                    [112] => Array
+                                        (
+                                            [0] => -74.0384629
+                                            [1] => 40.6989239
+                                        )
+
+                                    [113] => Array
+                                        (
+                                            [0] => -74.0384589
+                                            [1] => 40.6989808
+                                        )
+
+                                    [114] => Array
+                                        (
+                                            [0] => -74.0384668
+                                            [1] => 40.6990169
+                                        )
+
+                                    [115] => Array
+                                        (
+                                            [0] => -74.0384982
+                                            [1] => 40.699074
+                                        )
+
+                                    [116] => Array
+                                        (
+                                            [0] => -74.0384936
+                                            [1] => 40.6991151
+                                        )
+
+                                    [117] => Array
+                                        (
+                                            [0] => -74.0385101
+                                            [1] => 40.6991469
+                                        )
+
+                                    [118] => Array
+                                        (
+                                            [0] => -74.0385329
+                                            [1] => 40.6991722
+                                        )
+
+                                    [119] => Array
+                                        (
+                                            [0] => -74.038561
+                                            [1] => 40.6991929
+                                        )
+
+                                    [120] => Array
+                                        (
+                                            [0] => -74.0385985
+                                            [1] => 40.6992101
+                                        )
+
+                                    [121] => Array
+                                        (
+                                            [0] => -74.0386321
+                                            [1] => 40.6992385
+                                        )
+
+                                    [122] => Array
+                                        (
+                                            [0] => -74.0386642
+                                            [1] => 40.6992628
+                                        )
+
+                                    [123] => Array
+                                        (
+                                            [0] => -74.038697
+                                            [1] => 40.6992793
+                                        )
+
+                                    [124] => Array
+                                        (
+                                            [0] => -74.0387232
+                                            [1] => 40.699302
+                                        )
+
+                                    [125] => Array
+                                        (
+                                            [0] => -74.0387475
+                                            [1] => 40.6993362
+                                        )
+
+                                    [126] => Array
+                                        (
+                                            [0] => -74.0387588
+                                            [1] => 40.6993677
+                                        )
+
+                                    [127] => Array
+                                        (
+                                            [0] => -74.0387719
+                                            [1] => 40.6993976
+                                        )
+
+                                    [128] => Array
+                                        (
+                                            [0] => -74.0387831
+                                            [1] => 40.6994062
+                                        )
+
+                                    [129] => Array
+                                        (
+                                            [0] => -74.0387962
+                                            [1] => 40.699439
+                                        )
+
+                                    [130] => Array
+                                        (
+                                            [0] => -74.0388017
+                                            [1] => 40.6994874
+                                        )
+
+                                    [131] => Array
+                                        (
+                                            [0] => -74.0388149
+                                            [1] => 40.6995316
+                                        )
+
+                                    [132] => Array
+                                        (
+                                            [0] => -74.0388382
+                                            [1] => 40.6995622
+                                        )
+
+                                    [133] => Array
+                                        (
+                                            [0] => -74.0388796
+                                            [1] => 40.6996022
+                                        )
+
+                                    [134] => Array
+                                        (
+                                            [0] => -74.0388927
+                                            [1] => 40.6996251
+                                        )
+
+                                    [135] => Array
+                                        (
+                                            [0] => -74.0389358
+                                            [1] => 40.6996549
+                                        )
+
+                                    [136] => Array
+                                        (
+                                            [0] => -74.0389901
+                                            [1] => 40.6996622
+                                        )
+
+                                    [137] => Array
+                                        (
+                                            [0] => -74.0390239
+                                            [1] => 40.6996623
+                                        )
+
+                                    [138] => Array
+                                        (
+                                            [0] => -74.0390746
+                                            [1] => 40.699668
+                                        )
+
+                                    [139] => Array
+                                        (
+                                            [0] => -74.0391214
+                                            [1] => 40.6996709
+                                        )
+
+                                    [140] => Array
+                                        (
+                                            [0] => -74.0391629
+                                            [1] => 40.6996767
+                                        )
+
+                                    [141] => Array
+                                        (
+                                            [0] => -74.0392097
+                                            [1] => 40.699681
+                                        )
+
+                                    [142] => Array
+                                        (
+                                            [0] => -74.0392548
+                                            [1] => 40.6996867
+                                        )
+
+                                    [143] => Array
+                                        (
+                                            [0] => -74.0392866
+                                            [1] => 40.6997081
+                                        )
+
+                                    [144] => Array
+                                        (
+                                            [0] => -74.0393298
+                                            [1] => 40.6997268
+                                        )
+
+                                    [145] => Array
+                                        (
+                                            [0] => -74.0393815
+                                            [1] => 40.6997504
+                                        )
+
+                                    [146] => Array
+                                        (
+                                            [0] => -74.0394283
+                                            [1] => 40.6997632
+                                        )
+
+                                    [147] => Array
+                                        (
+                                            [0] => -74.0394771
+                                            [1] => 40.6997818
+                                        )
+
+                                    [148] => Array
+                                        (
+                                            [0] => -74.0395109
+                                            [1] => 40.6998161
+                                        )
+
+                                    [149] => Array
+                                        (
+                                            [0] => -74.0395465
+                                            [1] => 40.6998431
+                                        )
+
+                                    [150] => Array
+                                        (
+                                            [0] => -74.0395859
+                                            [1] => 40.6998533
+                                        )
+
+                                    [151] => Array
+                                        (
+                                            [0] => -74.0396215
+                                            [1] => 40.6998561
+                                        )
+
+                                    [152] => Array
+                                        (
+                                            [0] => -74.0396647
+                                            [1] => 40.6998733
+                                        )
+
+                                    [153] => Array
+                                        (
+                                            [0] => -74.0396891
+                                            [1] => 40.699899
+                                        )
+
+                                    [154] => Array
+                                        (
+                                            [0] => -74.0397134
+                                            [1] => 40.6999275
+                                        )
+
+                                    [155] => Array
+                                        (
+                                            [0] => -74.0397453
+                                            [1] => 40.6999503
+                                        )
+
+                                    [156] => Array
+                                        (
+                                            [0] => -74.0397827
+                                            [1] => 40.6999518
+                                        )
+
+                                    [157] => Array
+                                        (
+                                            [0] => -74.0398251
+                                            [1] => 40.6999554
+                                        )
+
+                                    [158] => Array
+                                        (
+                                            [0] => -74.0398588
+                                            [1] => 40.6999655
+                                        )
+
+                                    [159] => Array
+                                        (
+                                            [0] => -74.0399002
+                                            [1] => 40.6999811
+                                        )
+
+                                    [160] => Array
+                                        (
+                                            [0] => -74.0399339
+                                            [1] => 40.6999941
+                                        )
+
+                                    [161] => Array
+                                        (
+                                            [0] => -74.0399657
+                                            [1] => 40.7000183
+                                        )
+
+                                    [162] => Array
+                                        (
+                                            [0] => -74.0399938
+                                            [1] => 40.7000412
+                                        )
+
+                                    [163] => Array
+                                        (
+                                            [0] => -74.040022
+                                            [1] => 40.700061
+                                        )
+
+                                    [164] => Array
+                                        (
+                                            [0] => -74.0400483
+                                            [1] => 40.700074
+                                        )
+
+                                    [165] => Array
+                                        (
+                                            [0] => -74.040082
+                                            [1] => 40.7000925
+                                        )
+
+                                    [166] => Array
+                                        (
+                                            [0] => -74.0401196
+                                            [1] => 40.700094
+                                        )
+
+                                    [167] => Array
+                                        (
+                                            [0] => -74.0401534
+                                            [1] => 40.7001026
+                                        )
+
+                                    [168] => Array
+                                        (
+                                            [0] => -74.0401871
+                                            [1] => 40.700114
+                                        )
+
+                                    [169] => Array
+                                        (
+                                            [0] => -74.0402491
+                                            [1] => 40.700117
+                                        )
+
+                                    [170] => Array
+                                        (
+                                            [0] => -74.0402827
+                                            [1] => 40.7001113
+                                        )
+
+                                    [171] => Array
+                                        (
+                                            [0] => -74.0403288
+                                            [1] => 40.7001007
+                                        )
+
+                                    [172] => Array
+                                        (
+                                            [0] => -74.0403756
+                                            [1] => 40.7001122
+                                        )
+
+                                    [173] => Array
+                                        (
+                                            [0] => -74.0404152
+                                            [1] => 40.7001264
+                                        )
+
+                                    [174] => Array
+                                        (
+                                            [0] => -74.0404601
+                                            [1] => 40.7001494
+                                        )
+
+                                    [175] => Array
+                                        (
+                                            [0] => -74.0404958
+                                            [1] => 40.7001623
+                                        )
+
+                                    [176] => Array
+                                        (
+                                            [0] => -74.0405278
+                                            [1] => 40.7001765
+                                        )
+
+                                    [177] => Array
+                                        (
+                                            [0] => -74.0405689
+                                            [1] => 40.7001879
+                                        )
+
+                                    [178] => Array
+                                        (
+                                            [0] => -74.0406121
+                                            [1] => 40.7002008
+                                        )
+
+                                    [179] => Array
+                                        (
+                                            [0] => -74.0406477
+                                            [1] => 40.7002136
+                                        )
+
+                                    [180] => Array
+                                        (
+                                            [0] => -74.0406966
+                                            [1] => 40.7002152
+                                        )
+
+                                    [181] => Array
+                                        (
+                                            [0] => -74.0407303
+                                            [1] => 40.7001925
+                                        )
+
+                                    [182] => Array
+                                        (
+                                            [0] => -74.0407472
+                                            [1] => 40.7001669
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+1
+-->
+                </aside>
+            </article>
+        </div>
+    </div>
+            </main>
+
+            <footer class="mt-auto text-center py-3">
+    <p>
+        United States Mutual Aid App
+    </p>
+    <small>
+            
+    </small>
+    <div>
+        <ul class="flex flex-wrap mx-auto justify-center text-center text-sm mt-3 mb-2">
+            <li>
+                <a href="https://aidus.fly.dev/community-guidelines" class="text-gray-500 hover:text-gray-900 m-2">Community Guidelines</a>
+            </li>
+            <li>
+                <a href="https://aidus.fly.dev/terms-of-service" class="text-gray-500 hover:text-gray-900 m-2">Terms of Service</a>
+            </li>
+            <li>
+                <a href="https://aidus.fly.dev/privacy-policy" class="text-gray-500 hover:text-gray-900 m-2">Privacy Policy</a>
+            </li>
+        </ul>
+    </div>
+</footer>        </div>
+
+        
+        <script src="/livewire/livewire.js?id=c69d0f2801c01fcf8166" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'wfQqKy0V4BnnLXxtm5eSpxALPsGCDTY4egqq2v5K';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+    </body>
+</html>
